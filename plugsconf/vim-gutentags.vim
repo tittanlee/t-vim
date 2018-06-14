@@ -26,7 +26,7 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 " 使用 universal-ctags 的话需要下面这行，请反注释
-" let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 " 禁止 gutentags 自动链接 gtags 数据库
 let g:gutentags_auto_add_gtags_cscope = 0

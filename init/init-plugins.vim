@@ -13,6 +13,7 @@ if !exists('g:bundle_group')
     let g:bundle_group = ['basic', 'programming', 'enhanced', 'filetypes', 'textobj']
     let g:bundle_group += ['tags', 'grammer']
     let g:bundle_group += ['fuzzy_serach']
+    let g:bundle_group += ['youcompleteme']
     let g:bundle_group += ['uefi']
 endif
 
@@ -120,6 +121,13 @@ if index(g:bundle_group, 'enhanced') >= 0
     " 提供 gist 接口
     Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 
+    Plug 'AdamWhittingham/vim-copy-filename'
+
+    Plug 'jlanzarotta/bufexplorer'
+
+    Plug 'maxbrunsfeld/vim-yankstack'
+
+    Plug 'severin-lemaignan/vim-minimap'
 endif
 
 
@@ -256,6 +264,27 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     " Things you can do with fzf and Vim.
     Plug 'junegunn/fzf.vim'
 
+endif
+
+"----------------------------------------------------------------------
+" YoucompletetMe vim 自動補全套件
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'youcompleteme') >= 0
+    Plug 'Valloric/YouCompleteMe'
+endif
+
+
+"----------------------------------------------------------------------
+" deoplete.nvim vim 自動補全套件
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'deoplete') >= 0
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
 endif
 
 
