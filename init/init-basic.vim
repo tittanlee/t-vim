@@ -20,17 +20,11 @@ set nocompatible
 " 设置 Backspace 键模式
 set bs=eol,start,indent
 
-" 自动缩进
-set autoindent
-
 " 打开 C/C++ 语言缩进优化
 set cindent
 
 " Windows 禁用 ALT 操作菜单（使得 ALT 可以用到 Vim里）
 set winaltkeys=no
-
-" 关闭自动换行
-set nowrap
 
 " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
 set ttimeout
@@ -166,6 +160,12 @@ set formatoptions+=B
 " 文件换行符，默认使用 unix 换行符
 set ffs=unix,dos,mac
 
+" Lines to scroll when cursor leaves screen
+set scrolljump=5
+
+" Minimum lines to keep above and below cursor
+set scrolloff=3
+
 
 "----------------------------------------------------------------------
 " 设置代码折叠
@@ -182,8 +182,14 @@ if has('folding')
 endif
 
 "----------------------------------------------------------------------
-" 默认缩进模式（可以后期覆盖）
+" 格式設定（可以后期覆盖）
 "----------------------------------------------------------------------
+
+" 关闭自动换行
+set nowrap
+
+" 自动缩进
+set autoindent
 
 " 设置缩进宽度
 set shiftwidth=4
@@ -196,6 +202,12 @@ set noexpandtab
 
 " 如果后面设置了 expandtab 那么展开 tab 为多少字符
 set softtabstop=4
+
+" Puts new vsplit windows to the right of the current
+set splitright
+
+" Puts new split windows to the bottom of the current
+set splitbelow
 
 
 augroup PythonTab
