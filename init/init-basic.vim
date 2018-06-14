@@ -41,6 +41,42 @@ set ttimeoutlen=50
 " 显示光标位置
 set ruler
 
+" Automatically enable mouse usage
+set mouse=a
+
+" Hide the mouse cursor while typing
+set mousehide
+
+" Automatically write a file when leaving a modified buffer
+"set autowrite
+
+" Abbrev. of messages (avoids 'hit enter')
+set shortmess+=filmnrxoOtT
+
+" Better Unix / Windows compatibility
+set viewoptions=folds,options,cursor,unix,slash
+
+" Allow for cursor beyond last character
+set virtualedit=onemore
+
+" Store a ton of history (default is 20)
+set history=1000
+
+" Spell checking on
+set spell
+
+" Allow buffer switching without saving
+set hidden
+
+" '.' is an end of word designator
+set iskeyword-=.
+
+" '#' is an end of word designator
+set iskeyword-=#
+
+" '-' is an end of word designator
+set iskeyword-=-
+
 
 "----------------------------------------------------------------------
 " 搜索设置
@@ -63,14 +99,14 @@ set incsearch
 " 编码设置
 "----------------------------------------------------------------------
 if has('multi_byte')
-	" 内部工作编码
-	set encoding=utf-8
+    " 内部工作编码
+    set encoding=utf-8
 
-	" 文件默认编码
-	set fileencoding=utf-8
+    " 文件默认编码
+    set fileencoding=utf-8
 
-	" 打开文件时自动尝试下面顺序的编码
-	set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
+    " 打开文件时自动尝试下面顺序的编码
+    set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1,utf-16le,cp1252,iso-8859-15
 endif
 
 
@@ -78,16 +114,16 @@ endif
 " 允许 Vim 自带脚本根据文件类型自动设置缩进等
 "----------------------------------------------------------------------
 if has('autocmd')
-	filetype plugin indent on
+    filetype plugin indent on
 endif
 
 
 "----------------------------------------------------------------------
 " 语法高亮设置
 "----------------------------------------------------------------------
-if has('syntax')  
-	syntax enable 
-	syntax on 
+if has('syntax')
+    syntax enable
+    syntax on
 endif
 
 
@@ -114,8 +150,8 @@ set lazyredraw
 set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m
 
 " 设置分隔符可视
-set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
-
+set list
+set listchars=tab:\|\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " 设置 tags：当前文件所在目录往上向根目录搜索直到碰到 .tags 文件
 " 或者 Vim 当前目录包含 .tags 文件
@@ -135,14 +171,69 @@ set ffs=unix,dos,mac
 " 设置代码折叠
 "----------------------------------------------------------------------
 if has('folding')
-	" 允许代码折叠
-	set foldenable
+    " 允许代码折叠
+    set foldenable
 
-	" 代码折叠默认使用缩进
-	set fdm=indent
+    " 代码折叠默认使用缩进
+    set fdm=indent
 
-	" 默认打开所有缩进
-	set foldlevel=99
+    " 默认打开所有缩进
+    set foldlevel=99
+endif
+
+"----------------------------------------------------------------------
+" 默认缩进模式（可以后期覆盖）
+"----------------------------------------------------------------------
+
+" 设置缩进宽度
+set shiftwidth=4
+
+" 设置 TAB 宽度
+set tabstop=4
+
+" 禁止展开 tab (noexpandtab)
+set noexpandtab
+
+" 如果后面设置了 expandtab 那么展开 tab 为多少字符
+set softtabstop=4
+
+
+augroup PythonTab
+    au!
+    " 如果你需要 python 里用 tab，那么反注释下面这行字，否则vim会在打开py文件
+    " 时自动设置成空格缩进。
+    "au FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
+augroup END
+
+"----------------------------------------------------------------------
+" 备份设置
+"----------------------------------------------------------------------
+
+" 允许备份
+set backup
+
+" 保存时备份
+set writebackup
+
+" 备份文件地址，统一管理
+set backupdir=~/.vim/backup
+
+" 备份文件扩展名
+set backupext=.bak
+
+" 禁用交换文件
+set noswapfile
+
+" 禁用 undo文件
+set noundofile
+
+" 创建目录，并且忽略可能出现的警告
+silent! call mkdir(expand('~/.vim/backup'), "p", 0755)
+
+if has('persistent_undo')
+    set undofile                " So is persistent undo ...
+    set undolevels=1000         " Maximum number of changes that can be undone
+    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
 
