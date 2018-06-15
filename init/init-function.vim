@@ -30,3 +30,17 @@
         call cursor(l, c)
     endfunction
 " }
+
+" Vim Bundle Directory function {
+"
+    if !exists('g:bundle_home')
+        let g:bundle_home = '~/.vim/bundles'
+    endif
+
+    function! VimBundleDir(bundlename)
+        let bundle_path = expand(g:bundle_home . '/' . a:path )
+        return substitute(bundle_path, '\\', '/', 'g')
+    endfunction
+
+" }
+

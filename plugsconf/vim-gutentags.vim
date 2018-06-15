@@ -4,7 +4,7 @@ let g:gutentags_project_root = ['.root']
 let g:gutentags_ctags_tagfile = '.tags'
 
 " 默认生成的数据文件集中到 ~/.cache/tags 避免污染项目目录，好清理
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_cache_dir = expand('~/.vim/cache/tags')
 
 " 默认禁用自动生成
 let g:gutentags_modules = [] 

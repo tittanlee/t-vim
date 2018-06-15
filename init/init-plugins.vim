@@ -10,8 +10,14 @@
 
 
 if !exists('g:bundle_group')
-    let g:bundle_group = ['basic', 'programming', 'enhanced', 'filetypes', 'textobj']
-    let g:bundle_group += ['tags', 'grammer']
+    let g:bundle_group += ['vim_util_lib']
+    let g:bundle_group += ['basic']
+    let g:bundle_group += ['programming']
+    let g:bundle_group += ['enhanced']
+    let g:bundle_group += ['filetypes']
+    let g:bundle_group += ['textobj']
+    let g:bundle_group += ['source_control']
+    let g:bundle_group += ['grammer']
     let g:bundle_group += ['fuzzy_serach']
     let g:bundle_group += ['youcompleteme']
     let g:bundle_group += ['uefi']
@@ -31,28 +37,29 @@ endfunc
 "----------------------------------------------------------------------
 " 在 ~/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
+
+if !exists('g:bundle_home')
+    let g:bundle_home = '~/.vim/bundles'
+endif
 call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
 
 
 "----------------------------------------------------------------------
-" 默认插件 
+" Vim Utility Library function
 "----------------------------------------------------------------------
+if index(g:bundle_group, 'vim_util_lib') >= 0
 
-"vim: interpret a file by function and cache file automatically
-Plug 'MarcWeber/vim-addon-mw-utils'
+    "vim: interpret a file by function and cache file automatically
+    Plug 'MarcWeber/vim-addon-mw-utils'
 
-"Some utility functions for VIM
-Plug 'tomtom/tlib_vim'
+    "Some utility functions for VIM
+    Plug 'tomtom/tlib_vim'
 
-" 全文快速移动，<leader><leader>f{char} 即可触发
-Plug 'easymotion/vim-easymotion'
+    " 支持库，给其他插件用的函默认插件 数库
+    Plug 'xolox/vim-misc'
 
-" 文件浏览器，代替 netrw
-Plug 'justinmk/vim-dirvish'
+endif
 
-
-" Diff 增强，支持 histogram / patience 等更科学的 diff 算法
-Plug 'chrisbra/vim-diff-enhanced'
 
 "----------------------------------------------------------------------
 " 基础插件
@@ -65,20 +72,19 @@ if index(g:bundle_group, 'basic') >= 0
     " 一次性安装一大堆 colorscheme
     Plug 'rafi/awesome-vim-colorschemes'
 
-    " 支持库，给其他插件用的函数库
-    Plug 'xolox/vim-misc'
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
 
-    " 用于在侧边符号栏显示 git/svn 的 diff
-    Plug 'mhinz/vim-signify'
 
     " The ultimate undo history visualizer for VIM 
     Plug 'mbbill/undotree'
 
     " Indent Guides is a plugin for visually displaying indent levels in Vim.
     Plug 'nathanaelkane/vim-indent-guides'
+
+    " 文件浏览器，代替 netrw
+    Plug 'justinmk/vim-dirvish'
 
     " A tree explorer plugin for vim.
     Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
@@ -109,17 +115,17 @@ if index(g:bundle_group, 'enhanced') >= 0
     " 给不同语言提供字典补全，插入模式下 c-x c-k 触发
     Plug 'asins/vim-dict'
 
-    " 使用 :FlyGrep 命令进行实时 grep
-    Plug 'wsdjeg/FlyGrep.vim'
-
-    " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
-    Plug 'dyng/ctrlsf.vim'
-
     " 配对括号和引号自动补全
     Plug 'Raimondi/delimitMate'
 
-    " 提供 gist 接口
-    Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
+    " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
+    Plug 'chrisbra/vim-diff-enhanced'
+
+    " 全文快速移动，<leader><leader>f{char} 即可触发
+    Plug 'easymotion/vim-easymotion'
+
+    " 多光標操作
+    Plug 'terryma/vim-multiple-cursors'
 
     Plug 'AdamWhittingham/vim-copy-filename'
 
@@ -130,14 +136,31 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'severin-lemaignan/vim-minimap'
 endif
 
+"----------------------------------------------------------------------
+"  Source control system plugins
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'source_control') >= 0
+
+    " 提供 gist 接口
+    Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
+
+    " 用于在侧边符号栏显示 git/svn 的 diff
+    Plug 'mhinz/vim-signify'
+
+    " Git 支持
+    Plug 'tpope/vim-fugitive'
+
+endif
+
 
 "----------------------------------------------------------------------
-" 自动生成 ctags/gtags，并提供自动索引功能
-" 不在 git/svn 内的项目，需要在项目根目录 touch 一个空的 .root 文件
-" 详细用法见：https://zhuanlan.zhihu.com/p/36279445
+"  Programming plugins
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'programming') >= 0
 
+    " 自动生成 ctags/gtags，并提供自动索引功能
+    " 不在 git/svn 内的项目，需要在项目根目录 touch 一个空的 .root 文件
+    " 详细用法见：https://zhuanlan.zhihu.com/p/36279445
     " 提供 ctags/gtags 后台数据库自动更新功能
     Plug 'ludovicchabant/vim-gutentags'
 
@@ -151,9 +174,6 @@ if index(g:bundle_group, 'programming') >= 0
 
     " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
     Plug 'skywind3000/vim-preview'
-
-    " Git 支持
-    Plug 'tpope/vim-fugitive'
 
     " 表格对齐，使用命令 Tabularize
     Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
@@ -264,6 +284,12 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     " Things you can do with fzf and Vim.
     Plug 'junegunn/fzf.vim'
 
+    " 使用 :FlyGrep 命令进行实时 grep
+    Plug 'wsdjeg/FlyGrep.vim'
+
+    " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
+    Plug 'dyng/ctrlsf.vim'
+
 endif
 
 "----------------------------------------------------------------------
@@ -288,6 +314,9 @@ if index(g:bundle_group, 'deoplete') >= 0
 endif
 
 
+"----------------------------------------------------------------------
+" UEFI 語法高亮
+"----------------------------------------------------------------------
 if index(g:bundle_group, 'uefi') >= 0
 
     Plug 'martinlroth/vim-acpi-asl'

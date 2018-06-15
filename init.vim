@@ -48,3 +48,6 @@ LoadScript init/init-keymaps.vim
 
 " 插件加载
 LoadScript init/init-plugins.vim
+
+" 插件設定
+LoadScript init/init-plugsconf.vim
