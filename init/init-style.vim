@@ -287,6 +287,22 @@ function! Vim_NeatGuiTabTip()
     return tip
 endfunc
 
+"----------------------------------------------------------------------
+" GUI vim setting
+"----------------------------------------------------------------------
+if has('gui_running')
+    " Remove the toolbar
+    set guioptions-=T
+    set guioptions-=m
+    set lines=40
+    if WINDOWS()
+        set guifont=Knack_NF:h12,Consolas,Courier_New:h10
+    else
+        set guifont=Knack_Regular_Nerd_Font_Complete_Mono:h12
+    endif
+endif
+
+
 
 "----------------------------------------------------------------------
 " 标签栏最终设置

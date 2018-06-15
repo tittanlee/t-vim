@@ -57,7 +57,7 @@ set virtualedit=onemore
 set history=1000
 
 " Spell checking on
-set spell
+set nospell
 
 " Allow buffer switching without saving
 set hidden
@@ -70,6 +70,14 @@ set iskeyword-=#
 
 " '-' is an end of word designator
 set iskeyword-=-
+
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
 
 
 "----------------------------------------------------------------------
@@ -145,7 +153,9 @@ set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m
 
 " 设置分隔符可视
 set list
-set listchars=tab:\|\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+
+" Highlight problematic whitespace
+set listchars=tab:\|\ ,trail:•,extends:#,nbsp:.
 
 " 设置 tags：当前文件所在目录往上向根目录搜索直到碰到 .tags 文件
 " 或者 Vim 当前目录包含 .tags 文件

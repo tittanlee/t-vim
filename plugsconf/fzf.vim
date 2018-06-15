@@ -1,6 +1,6 @@
 " fzf drop down
 let g:fzf_layout         = { 'down': '~30%' }
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
 " fzf mappings
