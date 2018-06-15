@@ -38,7 +38,7 @@
     endif
 
     function! VimBundleDir(bundlename)
-        let bundle_path = expand(g:bundle_home . '/' . a:path )
+        let bundle_path = expand(g:bundle_home . '/' . a:bundlename )
         return substitute(bundle_path, '\\', '/', 'g')
     endfunction
 

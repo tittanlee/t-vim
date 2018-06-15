@@ -10,7 +10,7 @@
 
 
 if !exists('g:bundle_group')
-    let g:bundle_group += ['vim_util_lib']
+    let g:bundle_group =  ['vim_util_lib']
     let g:bundle_group += ['basic']
     let g:bundle_group += ['programming']
     let g:bundle_group += ['enhanced']
@@ -99,7 +99,7 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'vim-airline/vim-airline-themes'
 
     " This plugin provides extended matching for the % operator.
-    plug 'adelarsq/vim-matchit'
+    Plug 'adelarsq/vim-matchit'
 
 endif
 
@@ -235,7 +235,7 @@ if index(g:bundle_group, 'filetypes') >= 0
     Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 
     "This is Vim syntax files with C++11 support
-    Plug 'vim-jp/vim-cpp' , { 'for': ['c', 'cpp']' }
+    Plug 'vim-jp/vim-cpp' , { 'for': ['c', 'cpp'] }
 
     " 额外语法文件
     Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'bison', 'flex', 'cpp'] }
