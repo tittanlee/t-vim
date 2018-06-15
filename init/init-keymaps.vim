@@ -33,7 +33,7 @@ endif
 if !exists('g:spf13_localleader')
     let maplocalleader = '_'
 else
-    let maplocalleader=g:spf13_localleader
+    let maplocalleader=g:t_vim_localleader
 endif
 
 

@@ -169,10 +169,6 @@ if index(g:bundle_group, 'programming') >= 0
     " 支持光标移动到符号名上：<leader>cg 查看定义，<leader>cs 查看引用
     Plug 'skywind3000/gutentags_plus'
 
-    " 根据 quickfix 中匹配到的错误信息，高亮对应文件的错误行
-    " 使用 :RemoveErrorMarkers 命令或者 <space>ha 清除错误
-    Plug 'mh21/errormarker.vim'
-
     " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
     Plug 'skywind3000/vim-preview'
 
