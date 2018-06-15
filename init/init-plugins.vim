@@ -10,17 +10,17 @@
 
 
 if !exists('g:bundle_group')
-    let g:bundle_group += ['vim_util_lib']
-    let g:bundle_group += ['basic']
-    let g:bundle_group += ['programming']
-    let g:bundle_group += ['enhanced']
-    let g:bundle_group += ['filetypes']
-    let g:bundle_group += ['textobj']
-    let g:bundle_group += ['source_control']
-    let g:bundle_group += ['grammer']
-    let g:bundle_group += ['fuzzy_serach']
-    let g:bundle_group += ['youcompleteme']
-    let g:bundle_group += ['uefi']
+    let g:bundle_group=['vim_util_lib']
+    let g:bundle_group+=['basic']
+    let g:bundle_group+=['programming']
+    let g:bundle_group+=['enhanced']
+    let g:bundle_group+=['filetypes']
+    let g:bundle_group+=['textobj']
+    let g:bundle_group+=['source_control']
+    let g:bundle_group+=['grammer']
+    let g:bundle_group+=['fuzzy_serach']
+    let g:bundle_group+=['youcompleteme']
+    let g:bundle_group+=['uefi']
 endif
 
 "----------------------------------------------------------------------
@@ -72,10 +72,8 @@ if index(g:bundle_group, 'basic') >= 0
     " 一次性安装一大堆 colorscheme
     Plug 'rafi/awesome-vim-colorschemes'
 
-
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
-
 
     " The ultimate undo history visualizer for VIM 
     Plug 'mbbill/undotree'
@@ -97,6 +95,9 @@ if index(g:bundle_group, 'basic') >= 0
 
     " A collection of themes for vim-airline
     Plug 'vim-airline/vim-airline-themes'
+
+    " Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline, Powerline, Unite, vim-startify and more
+    Plug 'ryanoasis/vim-devicons'
 
     " This plugin provides extended matching for the % operator.
     plug 'adelarsq/vim-matchit'
@@ -189,6 +190,7 @@ if index(g:bundle_group, 'programming') >= 0
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     Plug 'Shougo/echodoc.vim'
+
 endif
 
 
@@ -224,6 +226,9 @@ endif
 " 文件类型扩展
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'filetypes') >= 0
+
+    " A solid language pack for Vim.
+    Plug 'sheerun/vim-polyglot'
 
     " powershell 脚本文件的语法高亮
     Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
@@ -320,7 +325,8 @@ endif
 if index(g:bundle_group, 'uefi') >= 0
 
     Plug 'martinlroth/vim-acpi-asl'
-    Plug 'fedorov7/vim-uefi'
+    Plug 'tittanlee/vim_for_UEFI'
+    "Plug 'fedorov7/vim-uefi'
 
 endif
 
