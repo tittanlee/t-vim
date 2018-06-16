@@ -4,6 +4,9 @@ let g:Lf_ShortcutF = '<c-p>'
 " ALT+n 打开 buffer 模糊匹配
 let g:Lf_ShortcutB = '<m-n>'
 
+" Set this to 2 or 3 to specify the version of Python
+le g:Lf_PythonVersion = 2
+
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
 "'bottom' - the LeaderF window is at the bottom of the screen.
@@ -50,28 +53,35 @@ let g:Lf_StlColorscheme = 'powerline'
 
 " 禁用 function/buftag 的预览功能，可以手动用 p 预览
 let g:Lf_PreviewResult = {
-            \ 'File'        : 0,
+            \ 'File'        : 1,
             \ 'Buffer'      : 0,
             \ 'Mru'         : 0,
-            \ 'Tag'         : 0,
-            \ 'BufTag'      : 1,
-            \ 'Function'    : 1,
+            \ 'Tag'         : 1,
+            \ 'BufTag'      : 0,
+            \ 'Function'    : 0,
             \ 'Line'        : 0,
             \ 'Colorscheme' : 1
             \}
 
 
-" CTRL+n 打开最近使用的文件 MRU，进行模糊匹配
-noremap <c-n> :LeaderfMru<cr>
+"----------------------------------------------------------------------
+" LeaderF key mapping <leader><leader> + [u, p, t, b, m]
+"----------------------------------------------------------------------
 
-" ALT+p 打开函数列表，按 i 进入模糊匹配，ESC 退出
-noremap <m-p> :LeaderfFunction!<cr>
+" f 打開檔案列表
+noremap <leader><leader>f :LeaderfFile<cr>
 
-" ALT+SHIFT+p 打开 tag 列表，i 进入模糊匹配，ESC退出
-noremap <m-P> :LeaderfBufTag!<cr>
+" u 打开最近使用的文件 MRU，进行模糊匹配
+noremap <leader><leader>u :LeaderfMru<cr>
 
-" ALT+n 打开 buffer 列表进行模糊匹配
-noremap <m-n> :LeaderfBuffer<cr>
+" n 打开函数列表，按 i 进入模糊匹配，ESC 退出
+noremap <leader><leader>n :LeaderfFunction!<cr>
+
+" t 打开 tag 列表，i 进入模糊匹配，ESC退出
+noremap <leader><leader>t :LeaderfBufTag!<cr>
+
+" b 打开 buffer 列表进行模糊匹配
+noremap <leader><leader>b :LeaderfBuffer<cr>
 
 " 全局 tags 模糊匹配
-noremap <m-m> :LeaderfTag<cr>
+noremap <leader><leader>m :LeaderfTag<cr>

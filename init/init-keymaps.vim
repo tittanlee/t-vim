@@ -30,7 +30,7 @@ else
     let mapleader=g:t_vim_leader
 endif
 
-if !exists('g:spf13_localleader')
+if !exists('g:t_vim_localleader')
     let maplocalleader = '_'
 else
     let maplocalleader=g:t_vim_localleader
