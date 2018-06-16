@@ -9,7 +9,7 @@ let g:Lf_ShortcutB = '<m-n>'
 "'bottom' - the LeaderF window is at the bottom of the screen.
 "'left' - the LeaderF window is at the left of the screen.
 "'right' - the LeaderF window is at the right of the screen.
-g:Lf_WindowPosition = 'bottom'
+let g:Lf_WindowPosition = 'bottom'
 
 " Use this option to specify the default external tool which is used to index the files.
 let g:Lf_DefaultExternalTool = "rg"
@@ -18,7 +18,7 @@ let g:Lf_DefaultExternalTool = "rg"
 let g:Lf_UseVersionControlTool = 0
 
 " Use this option to specify a external command to index the files
-let g:Lf_ExternalCommand = 'rg --files --hidden --no-ignore'
+let g:Lf_ExternalCommand = 'rg --files --hidden --no-ignore "%s"'
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048

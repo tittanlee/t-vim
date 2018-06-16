@@ -95,3 +95,50 @@
     endif
 " }
 
+" leaderF plugin setting {
+    if isdirectory(expand(VimBundleDir('LeaderF'))) " {
+        LoadScript plugsconf/LeaderF.vim
+    endif
+" }
+
+" LeaderF plugin setting {
+    if isdirectory(expand(VimBundleDir('LeaderF'))) " {
+        LoadScript plugsconf/LeaderF.vim
+    endif
+" }
+
+" vim-dirvish setting {
+    if isdirectory(expand(VimBundleDir('vim-dirvish'))) " {
+        LoadScript plugsconf/vim-dirvish.vim
+    endif
+" }
+
+" vim-expand-region setting {
+    if isdirectory(expand(VimBundleDir('vim-expand-region'))) " {
+        LoadScript plugsconf/vim-expand-region.vim
+    endif
+" }
+
+" vim-grammarous setting {
+    if isdirectory(expand(VimBundleDir('vim-grammarous'))) " {
+        LoadScript plugsconf/vim-grammarous.vim
+    endif
+" }
+
+" vim-guntentags setting {
+    if isdirectory(expand(VimBundleDir('vim-gutentags'))) " {
+        LoadScript plugsconf/vim-gutentags.vim
+    endif
+" }
+
+" vim-signify setting {
+    if isdirectory(expand(VimBundleDir('vim-signify'))) " {
+        LoadScript plugsconf/vim-signify.vim
+    endif
+" }
+
+" vim-startify setting {
+    if isdirectory(expand(VimBundleDir('vim-startify'))) " {
+        LoadScript plugsconf/vim-startify.vim
+    endif
+" }
