@@ -122,9 +122,6 @@ if index(g:bundle_group, 'enhanced') >= 0
     " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
     Plug 'chrisbra/vim-diff-enhanced'
 
-    " 全文快速移动，<leader><leader>f{char} 即可触发
-    Plug 'easymotion/vim-easymotion'
-
     " 多光標操作
     Plug 'terryma/vim-multiple-cursors'
 

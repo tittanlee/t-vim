@@ -176,6 +176,25 @@ set scrolljump=5
 " Minimum lines to keep above and below cursor
 set scrolloff=3
 
+"----------------------------------------------------------------------
+" Vim leader and local_leader key mapping
+"----------------------------------------------------------------------
+
+" The default leader is '\', but many people prefer ',' as it's in a standard
+" location. To override this behavior and set it back to '\' (or any other
+" character) add the following to your .vimrc file:
+"   let g:spf13_leader='\'
+if !exists('g:t_vim_leader')
+    let mapleader = ','
+else
+    let mapleader=g:t_vim_leader
+endif
+
+if !exists('g:t_vim_localleader')
+    let maplocalleader = '_'
+else
+    let maplocalleader=g:t_vim_localleader
+endif
 
 "----------------------------------------------------------------------
 " 设置代码折叠
@@ -232,10 +251,10 @@ augroup END
 "----------------------------------------------------------------------
 
 " 允许备份
-set backup
+set nobackup
 
 " 保存时备份
-set writebackup
+"set writebackup
 
 " 备份文件地址，统一管理
 set backupdir=~/.vim/backup
