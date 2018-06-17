@@ -32,8 +32,8 @@ nmap <A-l> :bn <cr> zz
 "----------------------------------------------------------------------
 "QucikFix window open and close
 "----------------------------------------------------------------------
-nmap <A-k> :bo copen<CR>
-nmap <A-j> :bo cclose<CR>
+nmap <A-k> :copen<CR>
+nmap <A-j> :cclose<CR>
 
 "----------------------------------------------------------------------
 "Focus on middle screen

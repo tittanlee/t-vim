@@ -131,6 +131,13 @@
     endif
 " }
 
+" guntentags_plus setting {
+    if isdirectory(expand(VimBundleDir('gutentags_plus'))) " {
+        LoadScript plugsconf/gutentags_plus.vim
+    endif
+" }
+
+
 " vim-signify setting {
     if isdirectory(expand(VimBundleDir('vim-signify'))) " {
         LoadScript plugsconf/vim-signify.vim
