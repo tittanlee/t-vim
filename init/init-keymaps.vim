@@ -16,26 +16,6 @@
 " vim: set ts=4 sw=4 tw=78 noet :
 
 "----------------------------------------------------------------------
-" Vim leader and local_leader key mapping
-"----------------------------------------------------------------------
-
-" The default leader is '\', but many people prefer ',' as it's in a standard
-" location. To override this behavior and set it back to '\' (or any other
-" character) add the following to your .vimrc file:
-"   let g:spf13_leader='\'
-if !exists('g:t_vim_leader')
-    let mapleader = ','
-else
-    let mapleader=g:t_vim_leader
-endif
-
-if !exists('g:t_vim_localleader')
-    let maplocalleader = '_'
-else
-    let maplocalleader=g:t_vim_localleader
-endif
-
-"----------------------------------------------------------------------
 " Switch cusor focus
 "----------------------------------------------------------------------
 nmap <silent> <C-left> :wincmd h<CR>
