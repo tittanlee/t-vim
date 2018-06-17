@@ -40,6 +40,9 @@ LoadScript init/init-basic.vim
 " 加载扩展配置
 LoadScript init/init-config.vim
 
+" 自定义按键
+LoadScript init/init-keymaps.vim
+
 " 插件加载
 LoadScript init/init-plugins.vim
 
@@ -49,5 +52,3 @@ LoadScript init/init-plugsconf.vim
 " 界面样式
 LoadScript init/init-style.vim
 
-" 自定义按键
-LoadScript init/init-keymaps.vim

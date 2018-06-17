@@ -5,7 +5,11 @@ let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 
 " Set this to 2 or 3 to specify the version of Python
-le g:Lf_PythonVersion = 2
+"let g:Lf_PythonVersion = 2
+
+" Use this option to specify whether to show the preview of the code the tag
+" locates in when navigating the tags.
+let g:Lf_PreviewCode = 1
 
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
@@ -57,8 +61,8 @@ let g:Lf_PreviewResult = {
             \ 'Buffer'      : 0,
             \ 'Mru'         : 0,
             \ 'Tag'         : 1,
-            \ 'BufTag'      : 0,
-            \ 'Function'    : 0,
+            \ 'BufTag'      : 1,
+            \ 'Function'    : 1,
             \ 'Line'        : 0,
             \ 'Colorscheme' : 1
             \}
