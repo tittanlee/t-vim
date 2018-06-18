@@ -137,7 +137,6 @@
     endif
 " }
 
-
 " vim-signify setting {
     if isdirectory(expand(VimBundleDir('vim-signify'))) " {
         LoadScript plugsconf/vim-signify.vim
@@ -147,5 +146,11 @@
 " vim-startify setting {
     if isdirectory(expand(VimBundleDir('vim-startify'))) " {
         LoadScript plugsconf/vim-startify.vim
+    endif
+" }
+
+" vim-fugitive setting {
+    if isdirectory(expand(VimBundleDir('vim-fugitive'))) " {
+        LoadScript plugsconf/vim-fugitive.vim
     endif
 " }
