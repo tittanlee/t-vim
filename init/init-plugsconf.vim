@@ -160,3 +160,9 @@
         LoadScript plugsconf/vim-indent-guides.vim
     endif
 " }
+
+" tabularize setting {
+    if isdirectory(expand(VimBundleDir('tabular'))) " {
+        LoadScript plugsconf/tabular.vim
+    endif
+" }
