@@ -12,7 +12,7 @@ let g:Lf_ShortcutB = '<m-n>'
 let g:Lf_PreviewCode = 1
 
 " 显示绝对路径
-let g:Lf_ShowRelativePath = 1
+let g:Lf_ShowRelativePath = 0
 
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
@@ -41,9 +41,6 @@ let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
-
-" 显示绝对路径
-let g:Lf_ShowRelativePath = 0
 
 " 隐藏帮助
 let g:Lf_HideHelp = 1
