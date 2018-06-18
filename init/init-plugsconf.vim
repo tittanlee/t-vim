@@ -154,3 +154,9 @@
         LoadScript plugsconf/vim-fugitive.vim
     endif
 " }
+
+" vim-indent-guides setting {
+    if isdirectory(expand(VimBundleDir('vim-indent-guides'))) " {
+        LoadScript plugsconf/vim-indent-guides.vim
+    endif
+" }

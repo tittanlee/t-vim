@@ -269,11 +269,11 @@ set noundofile
 " 创建目录，并且忽略可能出现的警告
 silent! call mkdir(expand('~/.vim/backup'), "p", 0755)
 
-if has('persistent_undo')
-    set undofile                " So is persistent undo ...
-    set undolevels=1000         " Maximum number of changes that can be undone
-    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
-endif
+"if has('persistent_undo')
+"    set undofile                " So is persistent undo ...
+"    set undolevels=1000         " Maximum number of changes that can be undone
+"    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+"endif
 
 
 "----------------------------------------------------------------------

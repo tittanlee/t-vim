@@ -12,7 +12,7 @@ let g:Lf_ShortcutB = '<m-n>'
 let g:Lf_PreviewCode = 1
 
 " 显示绝对路径
-let g:Lf_ShowRelativePath = 0
+let g:Lf_ShowRelativePath = 1
 
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
