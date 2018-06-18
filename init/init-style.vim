@@ -32,16 +32,13 @@ set list
 set showcmd
 
 " 插入模式在状态栏下面显示 -- INSERT --
-set showmode
+" set showmode
 
 " 水平切割窗口时，默认在右边显示新窗口
 set splitright
 
 " Only show 15 tabs
 set tabpagemax=15
-
-" Display the current mode
-set showmode
 
 " Highlight current line
 set cursorline
