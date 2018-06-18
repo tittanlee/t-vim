@@ -24,7 +24,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " Always use alternative delimiter
 let g:NERD_c_alt_style = 1
 let g:NERDCustomDelimiters = {
-			\ 'c'   : { 'left' : '//', 'leftAlt' : '/*', 'rightAlt' : '*/' }
+			\ 'c'   : { 'left' : '//', 'leftAlt' : '/*', 'rightAlt' : '*/' },
 			\ 'sdl' : { 'left' : '#', 'leftAlt'  : '#'},
 			\ }
 
