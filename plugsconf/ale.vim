@@ -1,3 +1,7 @@
+" When set to `0`, this option will completely disable ALE, such that no
+" error checking will be performed, etc. ALE can be toggled on and off with
+" the |ALEToggle| command, which changes this option
+let g:ale_enabled = 0
 
 " 在 linux/mac 下降低语法检查程序的进程优先级（不要卡到前台进程）
 if has('win32') == 0 && has('win64') == 0 && has('win32unix') == 0
@@ -5,11 +9,15 @@ if has('win32') == 0 && has('win64') == 0 && has('win32unix') == 0
 endif
 
 " Disable realtime linting due to performance issue
-"let g:ale_lint_on_text_changed = 'normal'
-" Ensure ale use location list
-"let g:ale_set_loclist = 1
+let g:ale_lint_on_text_changed = 'normal'
 let g:ale_open_list = 1
 let g:ale_list_window_size = 8
+
+" By updating loclist. (On by default)
+let g:ale_set_loclist = 0
+
+" By updating quickfix. (Off by default)
+let g:ale_set_quickfix = 1
 
 let g:ale_fix_on_save = 1
 
