@@ -128,6 +128,9 @@ if index(g:bundle_group, 'enhanced') >= 0
     " 多光標操作
     Plug 'terryma/vim-multiple-cursors'
 
+    " A simple vim plugin for toggling the display of the quickfix list and the location-list.
+    Plug 'Valloric/ListToggle'
+
     Plug 'AdamWhittingham/vim-copy-filename'
 
     Plug 'jlanzarotta/bufexplorer'

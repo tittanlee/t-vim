@@ -9,7 +9,7 @@ let g:Lf_ShortcutB = '<m-n>'
 
 " Use this option to specify whether to show the preview of the code the tag
 " locates in when navigating the tags.
-let g:Lf_PreviewCode = 1
+let g:Lf_PreviewCode = 0
 
 " 显示绝对路径
 let g:Lf_ShowRelativePath = 1
@@ -39,7 +39,7 @@ let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 " 如何识别项目目录，从当前文件目录向父目录递归知道碰到下面的文件/目录
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
-let g:Lf_WindowHeight = 0.30
+let g:Lf_WindowHeight = 0.40
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
 
 " 隐藏帮助
@@ -57,7 +57,7 @@ let g:Lf_StlColorscheme = 'powerline'
 
 " 禁用 function/buftag 的预览功能，可以手动用 p 预览
 let g:Lf_PreviewResult = {
-            \ 'File'        : 1,
+            \ 'File'        : 0,
             \ 'Buffer'      : 0,
             \ 'Mru'         : 0,
             \ 'Tag'         : 0,
