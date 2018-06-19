@@ -74,6 +74,7 @@ let g:Lf_PreviewResult = {
 
 " f 打開檔案列表
 noremap <leader><leader>f :LeaderfFile<cr>
+noremap <C-p> :LeaderfFile<cr>
 
 " u 打开最近使用的文件 MRU，进行模糊匹配
 noremap <leader><leader>u :LeaderfMru<cr>

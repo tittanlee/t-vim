@@ -4,7 +4,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
 " fzf mappings
-nnoremap <C-P>       :Files<CR>
+nnoremap <leader>.f  :Files<CR>
 nnoremap <Leader>.l  :Lines<CR>
 nnoremap <Leader>.t  :Tags<CR>
 nnoremap <Leader>.b  :Buffers<CR>

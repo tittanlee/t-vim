@@ -1,6 +1,6 @@
 "======================================================================
 "
-" init-plugins.vim - 
+" init-plugins.vim -
 "
 " Created by skywind on 2018/05/31
 " Last Modified: 2018/06/10 23:11
@@ -70,12 +70,15 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'mhinz/vim-startify'
 
     " 一次性安装一大堆 colorscheme
-    Plug 'rafi/awesome-vim-colorschemes'
+    " Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'dracula/vim'
+    Plug 'ajmwagar/vim-deus'
+    Plug 'morhetz/gruvbox'
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
 
-    " The ultimate undo history visualizer for VIM 
+    " The ultimate undo history visualizer for VIM
     Plug 'mbbill/undotree'
 
     " Indent Guides is a plugin for visually displaying indent levels in Vim.
@@ -244,7 +247,7 @@ if index(g:bundle_group, 'filetypes') >= 0
     " rust 语法增强
     Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-    " vim org-mode 
+    " vim org-mode
     Plug 'jceb/vim-orgmode', { 'for': 'org' }
 
 endif

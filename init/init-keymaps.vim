@@ -28,12 +28,18 @@ nmap <silent> <C-right> :wincmd l<CR>
 "----------------------------------------------------------------------
 nmap <A-h> :bp <cr> zz
 nmap <A-l> :bn <cr> zz
+nmap <A-left> :bp <cr> zz
+nmap <A-right> :bn <cr> zz
+
 
 "----------------------------------------------------------------------
 "QucikFix window open and close
 "----------------------------------------------------------------------
 nmap <A-k> :copen<CR>
 nmap <A-j> :cclose<CR>
+nmap <A-up> :copen<CR>
+nmap <A-down> :cclose<CR>
+
 
 "----------------------------------------------------------------------
 "Focus on middle screen
