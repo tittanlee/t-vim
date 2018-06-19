@@ -115,7 +115,6 @@
                     \ "This will take about 2-5 minutes, depending on your network condition.\n" .
                     \ "After finish updating, you can try:\n".
                     \ "    - press `D` to see the changes for plugins.\n" .
-                    \ "    - run `:call EverVimShowLog()` to view the git log for EverVim in Agit\n" .
                     \ "A restart is **required** after the updating process is finished.\n" . "Enjoy!"
         sleep 1000m
 

@@ -45,10 +45,10 @@ endfunction
 
 function! s:boxed_header(line)
     let boxed_header = ""
-    if (strwidth(a:line) <= 70)
-        let boxed_header = a:line . repeat(' ', 70 - strwidth(a:line))
+    if (strwidth(a:line) <= 80)
+        let boxed_header = a:line . repeat(' ', 80 - strwidth(a:line))
     else
-        let boxed_header = strpart(a:line, 0, 70)
+        let boxed_header = strpart(a:line, 0, 80)
     endif
     let boxed_header = "|| " . boxed_header . "||"
     return boxed_header
@@ -108,9 +108,9 @@ let g:startify_custom_header = [
             \'            \ \  \ \|____________|  \ \    / /    \ \  \   \ \  \    \ \  \  ',
             \'             \ \__\                  \ \__/ /      \ \__\   \ \__\    \ \__\ ',
             \'              \|__|                   \|__|/        \|__|    \|__|     \|__| ',
-            \'     ||=======================================================================||',
+            \'     ||=================================================================================||',
             \'     ' . s:boxed_header(startify_icon_vulkan . ' Welcome to T-Vim. The Ultimate Vim Distribution for everyone.'),
-            \'     ||-----------------------------------------------------------------------||'
+            \'     ||---------------------------------------------------------------------------------||'
             \ ]
 
 let g:startify_custom_header = g:startify_custom_header + [
@@ -127,7 +127,7 @@ if (REMOTE())
 endif
 
 let g:startify_custom_header = g:startify_custom_header + [
-            \'     ||=======================================================================||']
+            \'     ||=================================================================================||']
 
 
 let g:startify_files_number = 5
