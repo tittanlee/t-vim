@@ -26,10 +26,11 @@ nmap <silent> <C-right> :wincmd l<CR>
 "----------------------------------------------------------------------
 "Switch buffer tab
 "----------------------------------------------------------------------
-nmap <A-h> :bp <cr> zz
-nmap <A-l> :bn <cr> zz
-nmap <A-left> :bp <cr> zz
-nmap <A-right> :bn <cr> zz
+nmap <A-h> :bp <CR> zz
+nmap <A-l> :bn <CR> zz
+nmap <A-left> :bp <CR> zz
+nmap <A-right> :bn <CR> zz
+nmap <C-w> :bw <CR>
 
 
 "----------------------------------------------------------------------
@@ -58,10 +59,10 @@ nmap sv :vsplit<CR>
 "----------------------------------------------------------------------
 
 "<F2> Save
-nmap <F2> :w! <cr>
+nmap <F2> :w! <CR>
 
 "<F4>Quit
-nmap <F4> :q! <cr>
+nmap <F4> :q! <CR>
 
 " <F6> Replace words
 nmap <F6> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
