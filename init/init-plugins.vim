@@ -15,7 +15,7 @@ if !exists('g:bundle_group')
     let g:bundle_group += ['programming']
     let g:bundle_group += ['enhanced']
     let g:bundle_group += ['filetypes']
-    let g:bundle_group += ['textobj']
+    " let g:bundle_group += ['textobj']
     let g:bundle_group += ['source_control']
     let g:bundle_group += ['grammer']
     let g:bundle_group += ['fuzzy_serach']
@@ -197,6 +197,9 @@ if index(g:bundle_group, 'programming') >= 0
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     Plug 'Shougo/echodoc.vim'
 
+    " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
+    Plug 'skywind3000/asyncrun.vim'
+
 endif
 
 
@@ -225,6 +228,7 @@ if index(g:bundle_group, 'textobj')
 
     " 提供 uri/url 的文本对象，iu/au 表示
     Plug 'jceb/vim-textobj-uri'
+
 endif
 
 
