@@ -22,8 +22,6 @@ nnoremap <Leader>.e  :Helptags<CR>
 nnoremap <Leader>..c :BCommits<CR>
 nnoremap <Leader>..t :BTags<CR>
 nnoremap <Leader>..l :BLines<CR>
-nnoremap <silent> <leader>ag :call fzf#vim#ag(expand('<cword>'))<CR>
-nnoremap <leader>j :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
