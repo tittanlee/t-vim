@@ -18,10 +18,15 @@
 "----------------------------------------------------------------------
 " Switch cusor focus
 "----------------------------------------------------------------------
-nmap <silent> <C-left> :wincmd h<CR>
-nmap <silent> <C-down> :wincmd j<CR>
-nmap <silent> <C-up> :wincmd k<CR>
-nmap <silent> <C-right> :wincmd l<CR>
+nmap <silent> <C-left>  <C-w>h
+nmap <silent> <C-down>  <C-w>j
+nmap <silent> <C-up>    <C-w>k
+nmap <silent> <C-right> <C-w>l
+
+nmap <silent> <C-h> <C-w>h
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <silent> <C-l> <C-w>l
 
 "----------------------------------------------------------------------
 "Switch buffer tab
@@ -30,7 +35,7 @@ nmap <A-h> :bp <CR> zz
 nmap <A-l> :bn <CR> zz
 nmap <A-left> :bp <CR> zz
 nmap <A-right> :bn <CR> zz
-nmap <C-w> :bw <CR>
+nmap <A-w> :bw <CR>
 
 
 "----------------------------------------------------------------------
@@ -53,6 +58,9 @@ nmap [[ [[zz
 "----------------------------------------------------------------------
 nmap sh :split<CR>
 nmap sv :vsplit<CR>
+
+"Locad and edit vimrc key mapping
+noremap  <leader>sv  :source $MYVIMRC <CR>
 
 "----------------------------------------------------------------------
 " F1 ~ F12 key mapping
