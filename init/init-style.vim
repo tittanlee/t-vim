@@ -299,7 +299,9 @@ if has('gui_running')
     endif
 
     " Use ~x on an English Windows version or ~n for French.
-    au GUIEnter * simalt ~x
+    if WINDOWS()
+        au GUIEnter * simalt ~x
+    endif
 endif
 
 
