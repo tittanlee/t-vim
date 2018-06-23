@@ -1,3 +1,5 @@
+" set the height of quickfix windws
+let g:gutentags_plus_height = 10
 
 " You can disable the default keymaps by:
 let g:gutentags_plus_nomap = 1
