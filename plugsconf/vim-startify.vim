@@ -147,3 +147,7 @@ let g:startify_commands = [
             \ {'u': ['Update T-Vim', 'call T_VimFullUpgrade()']},
             \ ]
 
+" When opening a file or bookmark, change to its directory.
+let g:startify_change_to_dir = 0
+
+
