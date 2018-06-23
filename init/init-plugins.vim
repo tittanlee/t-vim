@@ -81,7 +81,6 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'iCyMind/NeoSolarized'
     Plug 'crusoexia/vim-monokai'
 
-
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
 
@@ -140,6 +139,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 
     Plug 'AdamWhittingham/vim-copy-filename'
 
+    " Display the list of buffers in various sort orders
     Plug 'jlanzarotta/bufexplorer'
 
     Plug 'maxbrunsfeld/vim-yankstack'
