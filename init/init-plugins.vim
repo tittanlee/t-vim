@@ -74,6 +74,13 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'dracula/vim'
     Plug 'ajmwagar/vim-deus'
     Plug 'morhetz/gruvbox'
+    Plug 'jacoborus/tender.vim'
+    Plug 'rakr/vim-one'
+    Plug 'drewtempelmeyer/palenight.vim'
+    Plug 'KeitaNakamura/neodark.vim'
+    Plug 'iCyMind/NeoSolarized'
+    Plug 'crusoexia/vim-monokai'
+
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'

@@ -31,20 +31,20 @@ nmap <silent> <C-l> <C-w>l
 "----------------------------------------------------------------------
 "Switch buffer tab
 "----------------------------------------------------------------------
-nmap <A-h> :bp <CR> zz
-nmap <A-l> :bn <CR> zz
-nmap <A-left> :bp <CR> zz
-nmap <A-right> :bn <CR> zz
-nmap <A-w> :bw <CR>
+nmap <A-h>     : bp <CR> zz
+nmap <A-l>     : bn <CR> zz
+nmap <A-left>  : bp <CR> zz
+nmap <A-right> : bn <CR> zz
+nmap <A-w>     : bw <CR>
 
 
 "----------------------------------------------------------------------
 "QucikFix window open and close
 "----------------------------------------------------------------------
-nmap <A-k> :copen<CR>
-nmap <A-j> :cclose<CR>
-nmap <A-up> :copen<CR>
-nmap <A-down> :cclose<CR>
+nmap <A-k>    : copen<CR>
+nmap <A-j>    : cclose<CR>
+nmap <A-up>   : copen<CR>
+nmap <A-down> : cclose<CR>
 
 
 "----------------------------------------------------------------------
