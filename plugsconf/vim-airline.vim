@@ -13,39 +13,45 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.notexists = '∄'
+let g:airline_left_sep           = '▶'
+let g:airline_right_sep          = '◀'
+let g:airline_symbols.crypt      = '🔒'
+let g:airline_symbols.linenr     = '¶'
+let g:airline_symbols.branch     = '⎇'
+let g:airline_symbols.paste      = '∥'
+let g:airline_symbols.notexists  = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " powerline symbols
 if get(g:, 'airline_powerline_fonts', 0)
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
-    let g:airline_symbols.maxlinenr= ''
+    let g:airline_left_sep          = ''
+    let g:airline_left_alt_sep      = ''
+    let g:airline_right_sep         = ''
+    let g:airline_right_alt_sep     = ''
+    let g:airline_symbols.branch    = ''
+    let g:airline_symbols.readonly  = ''
+    let g:airline_symbols.linenr    = ''
+    let g:airline_symbols.maxlinenr = ''
 endif
 
 " enable tabline
 set showtabline=2
-let g:airline#extensions#tabline#enabled   = 1
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#tab_nr_type= 2
+let g:airline#extensions#tabline#enabled       = 1
+let g:airline#extensions#tabline#show_tab_nr   = 1
+let g:airline#extensions#tabline#tab_nr_type   = 2
 let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#fnamemod  = ':t'
-let g:airline#extensions#tabline#left_sep = ""
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ""
+let g:airline#extensions#tabline#formatter     = 'default'
+let g:airline#extensions#tabline#fnamemod      = ':t'
+let g:airline#extensions#tabline#left_sep      = ""
+let g:airline#extensions#tabline#left_alt_sep  = ''
+let g:airline#extensions#tabline#right_sep     = ""
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#buffers_label = ''
-let g:airline#extensions#tabline#tabs_label = ''
+let g:airline#extensions#tabline#tabs_label    = ''
+
+" configure the title text for quickfix buffers >
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+
+" configure the title text for location list buffers >
+let g:airline#extensions#quickfix#location_text = 'Location'
 
