@@ -132,7 +132,7 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'chrisbra/vim-diff-enhanced'
 
     " 多光標操作
-    Plug 'terryma/vim-multiple-cursors'
+    Plug 'terryma/vim-multiple-cursors', { 'on':  'MultipleCursorFind' }
 
     " A simple vim plugin for toggling the display of the quickfix list and the location-list.
     Plug 'Valloric/ListToggle'
@@ -140,11 +140,11 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'AdamWhittingham/vim-copy-filename'
 
     " Display the list of buffers in various sort orders
-    Plug 'jlanzarotta/bufexplorer'
+    Plug 'jlanzarotta/bufexplorer', { 'on':  'BufExplorer' }
 
     Plug 'maxbrunsfeld/vim-yankstack'
 
-    Plug 'severin-lemaignan/vim-minimap'
+    Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
 endif
 
 "----------------------------------------------------------------------
@@ -159,7 +159,7 @@ if index(g:bundle_group, 'source_control') >= 0
     Plug 'mhinz/vim-signify'
 
     " Git 支持
-    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive', { 'on': 'Git' }
 
 endif
 
@@ -180,7 +180,8 @@ if index(g:bundle_group, 'programming') >= 0
     Plug 'skywind3000/gutentags_plus'
 
     " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
-    Plug 'skywind3000/vim-preview'
+    Plug 'skywind3000/vim-preview', { 'on': ['PreviewTag', 'PreviewQuickfix', 'PreviewClose'] }
+
 
     " 表格对齐，使用命令 Tabularize
     Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
@@ -192,13 +193,13 @@ if index(g:bundle_group, 'programming') >= 0
     Plug 'scrooloose/nerdcommenter'
 
     " A class outline viewer for Vim
-    Plug 'majutsushi/tagbar'
+    Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     Plug 'Shougo/echodoc.vim'
 
     " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
-    Plug 'skywind3000/asyncrun.vim'
+    Plug 'skywind3000/asyncrun.vim' , { 'on': 'AsyncRun' }
 
 endif
 
@@ -273,7 +274,7 @@ if index(g:bundle_group, 'grammer') >= 0
 
     Plug 'rhysd/vim-grammarous'
 
-    Plug 'w0rp/ale'
+    Plug 'w0rp/ale', { 'on':  'ALEtoggle' }
 
 endif
 
@@ -284,7 +285,7 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
 
     " 如果 vim 支持 python 则启用  Leaderf
     if has('python') || has('python3')
-        Plug 'Yggdroot/LeaderF'
+        Plug 'Yggdroot/LeaderF', { 'on':  'LeaderfFile' }
     else
         " 不支持 python ，使用 CtrlP 代替
         Plug 'ctrlpvim/ctrlp.vim'
@@ -297,13 +298,13 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
     " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf.vim', { 'on':  'Files' }
 
     " 使用 :FlyGrep 命令进行实时 grep
-    Plug 'wsdjeg/FlyGrep.vim'
+    Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }
 
     " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
-    Plug 'dyng/ctrlsf.vim'
+    Plug 'dyng/ctrlsf.vim', { 'on':  'CtrlSF' }
 
 endif
 
