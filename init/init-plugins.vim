@@ -141,7 +141,7 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'AdamWhittingham/vim-copy-filename'
 
     " Display the list of buffers in various sort orders
-    Plug 'jlanzarotta/bufexplorer', { 'on':  'BufExplorer' }
+    Plug 'jlanzarotta/bufexplorer', { 'on':  ['BufExplorer', 'ToggleBufExplorer', 'BufExplorerHorizontalSplit', 'BufExplorerVerticalSplit'] }
 
     Plug 'maxbrunsfeld/vim-yankstack'
 
@@ -276,7 +276,7 @@ if index(g:bundle_group, 'grammer') >= 0
 
     Plug 'rhysd/vim-grammarous'
 
-    Plug 'w0rp/ale', { 'on':  'ALEtoggle' }
+    Plug 'w0rp/ale', { 'on':  'ALEToggle' }
 
 endif
 
@@ -300,7 +300,7 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
     " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Colors', 'Maps', 'Commands'] }
+    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Tags', 'Colors', 'Maps', 'Commands'] }
 
     " 使用 :FlyGrep 命令进行实时 grep
     Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }
