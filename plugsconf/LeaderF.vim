@@ -73,20 +73,27 @@ let g:Lf_PreviewResult = {
 "----------------------------------------------------------------------
 
 " f 打開檔案列表
-noremap <leader><leader>f :LeaderfFile<cr>
-noremap <C-p> :LeaderfFile<cr>
+noremap <leader><leader>f :Leaderf --stayOpen --bottom --nameOnly file<CR>
+noremap <C-p> :Leaderf --bottom --nameOnly file<CR>
 
 " u 打开最近使用的文件 MRU，进行模糊匹配
-noremap <leader><leader>u :LeaderfMru<cr>
+noremap <leader><leader>u :LeaderfMru<CR>
+noremap <leader><leader>u :Leaderf --stayOpen --bottom --fuzzy mru<CR>
 
 " n 打开函数列表，按 i 进入模糊匹配，ESC 退出
-noremap <leader><leader>n :LeaderfFunction!<cr>
+noremap <leader><leader>n :Leaderf --stayOpen --left function<CR>
 
 " t 打开 tag 列表，i 进入模糊匹配，ESC退出
-noremap <leader><leader>t :LeaderfBufTag!<cr>
+noremap <leader><leader>t :Leaderf --stayOpen --left bufTag<CR>
 
 " b 打开 buffer 列表进行模糊匹配
-noremap <leader><leader>b :LeaderfBuffer<cr>
+noremap <leader><leader>b :Leaderf --stayOpen --bottom --nameOnly buffer<CR>
 
 " 全局 tags 模糊匹配
-noremap <leader><leader>m :LeaderfTag<cr>
+noremap <leader><leader>m :Leaderf --stayOpen --bottom --regex tag<CR>
+
+" switch between colorschemes
+noremap <leader><leader>r :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
+
+" search a line in the buffer
+noremap <leader><leader>r :Leaderf --stayOpen --bottom --regex line<CR>

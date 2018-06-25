@@ -91,7 +91,7 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'nathanaelkane/vim-indent-guides'
 
     " 文件浏览器，代替 netrw
-    Plug 'justinmk/vim-dirvish'
+    Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
 
     " A tree explorer plugin for vim.
     Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
@@ -137,6 +137,7 @@ if index(g:bundle_group, 'enhanced') >= 0
     " A simple vim plugin for toggling the display of the quickfix list and the location-list.
     Plug 'Valloric/ListToggle'
 
+    " Vim commands for copy various bits of the path for the current file
     Plug 'AdamWhittingham/vim-copy-filename'
 
     " Display the list of buffers in various sort orders
@@ -144,6 +145,7 @@ if index(g:bundle_group, 'enhanced') >= 0
 
     Plug 'maxbrunsfeld/vim-yankstack'
 
+    " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
     Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
 endif
 
@@ -159,7 +161,7 @@ if index(g:bundle_group, 'source_control') >= 0
     Plug 'mhinz/vim-signify'
 
     " Git 支持
-    Plug 'tpope/vim-fugitive', { 'on': 'Git' }
+    Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gstatus', 'Gdiff', 'Gcommit', 'Gblame', 'Glog', 'Gread', 'Gwrite', 'Gedit' ] }
 
 endif
 
@@ -193,7 +195,7 @@ if index(g:bundle_group, 'programming') >= 0
     Plug 'scrooloose/nerdcommenter'
 
     " A class outline viewer for Vim
-    Plug 'majutsushi/tagbar', { 'on': 'Tagbar' }
+    Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     Plug 'Shougo/echodoc.vim'
@@ -207,7 +209,7 @@ endif
 "----------------------------------------------------------------------
 " 文本对象：textobj 全家桶
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'textobj')
+if index(g:bundle_group, 'textobj') >= 0
 
     " 基础插件：提供让用户方便的自定义文本对象的接口
     Plug 'kana/vim-textobj-user'
@@ -285,7 +287,7 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
 
     " 如果 vim 支持 python 则启用  Leaderf
     if has('python') || has('python3')
-        Plug 'Yggdroot/LeaderF', { 'on':  'LeaderfFile' }
+        Plug 'Yggdroot/LeaderF', { 'on':  ['Leaderf', 'LeaderfFile'] }
     else
         " 不支持 python ，使用 CtrlP 代替
         Plug 'ctrlpvim/ctrlp.vim'
@@ -298,7 +300,7 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
     " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim', { 'on':  'Files' }
+    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Colors', 'Maps', 'Commands'] }
 
     " 使用 :FlyGrep 命令进行实时 grep
     Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }

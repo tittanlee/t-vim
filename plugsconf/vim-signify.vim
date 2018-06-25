@@ -13,3 +13,5 @@ let g:signify_vcs_cmds = {
             \ 'git': 'git diff --no-color --diff-algorithm=histogram --no-ext-diff -U0 -- %f',
             \}
 
+
+nnoremap <silent> <leader>gg :SignifyToggle<CR>
