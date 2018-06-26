@@ -80,6 +80,7 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'KeitaNakamura/neodark.vim'
     Plug 'iCyMind/NeoSolarized'
     Plug 'crusoexia/vim-monokai'
+    Plug 'liuchengxu/space-vim-dark'
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
