@@ -119,7 +119,7 @@
         sleep 1000m
 
         if WINDOWS()
-            execute '!git -C ' .g:t_vim_root.' pull'
+            execute '!git -C ' .g:t_vim_root. ' pull'
         else
             execute '!git -C ' .g:t_vim_root. ' pull'
         endif

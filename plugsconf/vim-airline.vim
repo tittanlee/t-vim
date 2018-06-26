@@ -55,3 +55,8 @@ let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 " configure the title text for location list buffers >
 let g:airline#extensions#quickfix#location_text = 'Location'
 
+" enable/disable bufferline integration >
+let g:airline#extensions#bufferline#enabled = 1
+
+" enable/disable bufferline integration >
+let g:airline#extensions#fugitiveline#enabled = 1
