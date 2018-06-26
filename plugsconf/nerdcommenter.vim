@@ -24,9 +24,10 @@ let g:NERDTrimTrailingWhitespace = 1
 " Always use alternative delimiter
 let g:NERD_c_alt_style = 1
 let g:NERDCustomDelimiters = {
-			\ 'c'   : { 'left' : '//', 'leftAlt' : '/*', 'rightAlt' : '*/' },
-			\ 'sdl' : { 'left' : '#', 'leftAlt'  : '#'},
-			\ }
+            \ 'c'    : { 'left' : '//', 'leftAlt' : '/*', 'rightAlt' : '*/' },
+            \ 'uefi' : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
+            \ 'sdl'  : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
+            \ }
 
 map cx <plug>NERDCommenterUncomment
 map cc <plug>NERDCommenterComment

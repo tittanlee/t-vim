@@ -173,7 +173,7 @@ set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m
 set list
 
 " Highlight problematic whitespace
-set listchars=tab:\|\ ,trail:•,extends:#,nbsp:.
+set listchars=tab:\⇄\ ,trail:•,extends:#,nbsp:.
 
 " 设置 tags：当前文件所在目录往上向根目录搜索直到碰到 .tags 文件
 " 或者 Vim 当前目录包含 .tags 文件

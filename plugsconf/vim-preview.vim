@@ -3,7 +3,7 @@ augroup quickfix
     autocmd!
     autocmd FileType qf setlocal wrap
     autocmd FileType qf setlocal number
-    autocmd FileType qf setlocal scroll=0
+    autocmd FileType qf setlocal scrolloff=0
     autocmd FileType qf setlocal nohidden
     autocmd FileType qf setlocal nolist
 

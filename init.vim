@@ -24,7 +24,7 @@ command! -nargs=1 LoadScript exec 'so '.g:t_vim_root.'/'.'<args>'
 exec 'set rtp+='.g:t_vim_root
 
 " 将 ~/.vim 目录加入 runtimepath (有时候 vim 不会自动帮你加入）
-set rtp+=~/.vim
+set rtp+=$HOME/.vim/
 
 
 "----------------------------------------------------------------------

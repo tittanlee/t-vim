@@ -42,10 +42,10 @@ let g:airline#extensions#tabline#tab_nr_type   = 2
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter     = 'default'
 let g:airline#extensions#tabline#fnamemod      = ':t'
-let g:airline#extensions#tabline#left_sep      = ""
-let g:airline#extensions#tabline#left_alt_sep  = ''
-let g:airline#extensions#tabline#right_sep     = ""
-let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#left_sep      = ""
+let g:airline#extensions#tabline#left_alt_sep  = ''
+let g:airline#extensions#tabline#right_sep     = ""
+let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#tabs_label    = ''
 
@@ -60,3 +60,9 @@ let g:airline#extensions#bufferline#enabled = 1
 
 " enable/disable bufferline integration >
 let g:airline#extensions#fugitiveline#enabled = 1
+
+" enable/disable vim-gutentags integration >
+let g:airline#extensions#gutentags#enabled = 1
+
+" enable/disable vim-capslock integration >
+let g:airline#extensions#capslock#enabled = 1
