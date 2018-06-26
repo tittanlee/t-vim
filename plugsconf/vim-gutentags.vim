@@ -1,6 +1,13 @@
 
+" Defines whether Gutentags should be enabled
+let g:gutentags_enabled = 0
+
+" Defines some advanced commands like
+" |GutentagsToggleEnabled| and |GutentagsUnlock|
+let g:gutentags_define_advanced_commands = 1
+
 " GTAGSLABEL 告诉 gtags 默认 C/C++/Java 等六种原生支持的代码直接使用 gtags 本地分析器，而其他语言使用 pygments 模块
-"let $GTAGSLABEL = 'native-pygments'
+" let $GTAGSLABEL = 'native-pygments'
 
 " 环境变量必须设置，否则会找不到 native-pygments 和 language map 的定义,
 " Windows 下面在 gtags/share/gtags/gtags.conf，Linux 下要到 /usr/local/share/gtags 里找，
