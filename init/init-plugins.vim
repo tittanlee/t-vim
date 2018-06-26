@@ -91,7 +91,7 @@ if index(g:bundle_group, 'basic') >= 0
     Plug 'nathanaelkane/vim-indent-guides'
 
     " 文件浏览器，代替 netrw
-    Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
+    " Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
 
     " A tree explorer plugin for vim.
     Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
@@ -132,7 +132,7 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'chrisbra/vim-diff-enhanced'
 
     " 多光標操作
-    Plug 'terryma/vim-multiple-cursors', { 'on':  'MultipleCursorFind' }
+    Plug 'terryma/vim-multiple-cursors'
 
     " A simple vim plugin for toggling the display of the quickfix list and the location-list.
     Plug 'Valloric/ListToggle'
@@ -198,10 +198,10 @@ if index(g:bundle_group, 'programming') >= 0
     Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
-    Plug 'Shougo/echodoc.vim'
+    " Plug 'Shougo/echodoc.vim'
 
     " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
-    Plug 'skywind3000/asyncrun.vim' , { 'on': 'AsyncRun' }
+    Plug 'skywind3000/asyncrun.vim'
 
 endif
 
@@ -287,7 +287,7 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
 
     " 如果 vim 支持 python 则启用  Leaderf
     if has('python') || has('python3')
-        Plug 'Yggdroot/LeaderF', { 'on':  ['Leaderf', 'LeaderfFile'] }
+        Plug 'Yggdroot/LeaderF'
     else
         " 不支持 python ，使用 CtrlP 代替
         Plug 'ctrlpvim/ctrlp.vim'
@@ -300,13 +300,13 @@ if index(g:bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
     " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Tags', 'Colors', 'Maps', 'Commands'] }
+    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Lines', 'Tags', 'Buffers', 'Commands', 'Windows', 'GitFiles', 'Locate', 'Maps', 'History', 'Snippets', 'Commits', 'Colors', 'Helptags', 'BCommits', 'Btags', 'BLines'] }
 
     " 使用 :FlyGrep 命令进行实时 grep
-    Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }
+    " Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }
 
     " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
-    Plug 'dyng/ctrlsf.vim', { 'on':  'CtrlSF' }
+    Plug 'dyng/ctrlsf.vim'
 
 endif
 
