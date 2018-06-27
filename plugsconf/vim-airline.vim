@@ -24,10 +24,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " powerline symbols
 if get(g:, 'airline_powerline_fonts', 0)
-    let g:airline_left_sep          = "\uE0B8"
-    let g:airline_left_alt_sep      = "\uE0B9"
-    let g:airline_right_sep         = "\uE0BA"
-    let g:airline_right_alt_sep     = "\uE0BB"
+    let g:airline_left_sep          = "\uE0BC"
+    let g:airline_left_alt_sep      = "\uE0BD"
+    let g:airline_right_sep         = "\uE0BE"
+    let g:airline_right_alt_sep     = "\uE0BF"
     let g:airline_symbols.branch    = ''
     let g:airline_symbols.readonly  = ''
     let g:airline_symbols.linenr    = ''
@@ -42,10 +42,10 @@ let g:airline#extensions#tabline#tab_nr_type   = 2
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#formatter     = 'default'
 let g:airline#extensions#tabline#fnamemod      = ':t'
-let g:airline#extensions#tabline#left_sep      = "\uE0B8"
-let g:airline#extensions#tabline#left_alt_sep  = "\uE0B9"
-let g:airline#extensions#tabline#right_sep     = "\uE0BA"
-let g:airline#extensions#tabline#right_alt_sep = "\uE0BB"
+let g:airline#extensions#tabline#left_sep      = "\uE0BC"
+let g:airline#extensions#tabline#left_alt_sep  = "\uE0BD"
+let g:airline#extensions#tabline#right_sep     = "\uE0BE"
+let g:airline#extensions#tabline#right_alt_sep = "\uE0BF"
 let g:airline#extensions#tabline#buffers_label = ''
 let g:airline#extensions#tabline#tabs_label    = ''
 
