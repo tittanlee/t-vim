@@ -63,8 +63,8 @@ nnoremap <leader>ydc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>ygt :YcmCompleter GoTo<CR>
 
 " Vim 自動補全的彈出窗口配色
-highlight PMenu     ctermfg = 0 ctermbg=242 guifg=black guibg=darkgrey
-highlight PMenuSel  ctermfg = 242 ctermbg=8 guifg=darkgrey guibg=DarkYellow
+" highlight PMenu     ctermfg = 0 ctermbg=242 guifg=black guibg=darkgrey
+" highlight PMenuSel  ctermfg = 242 ctermbg=8 guifg=darkgrey guibg=DarkYellow
 
 let g:ycm_semantic_triggers =  {
             \   'c' : ['->', '.'],
