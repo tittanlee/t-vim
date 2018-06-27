@@ -131,7 +131,5 @@ if has('gui_running')
     " Use ~x on an English Windows version or ~n for French.
     if WINDOWS()
         au GUIEnter * simalt ~x
-    elseif OSX()
-        set fullscreen
     endif
 endif
