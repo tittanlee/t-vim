@@ -130,6 +130,7 @@ if has('gui_running')
 
     " Use ~x on an English Windows version or ~n for French.
     if WINDOWS()
-        au GUIEnter * simalt ~x
+        autocmd GUIEnter * simalt ~x
+        simalt ~x
     endif
 endif

@@ -161,7 +161,7 @@ if index(g:bundle_group, 'source_control') >= 0
     Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 
     " 用于在侧边符号栏显示 git/svn 的 diff
-    Plug 'mhinz/vim-signify'
+    Plug 'airblade/vim-gitgutter'
 
     " Git 支持
     Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gstatus', 'Gdiff', 'Gcommit', 'Gblame', 'Glog', 'Gread', 'Gwrite', 'Gedit' ] }

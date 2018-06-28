@@ -66,3 +66,12 @@ let g:airline#extensions#gutentags#enabled = 1
 
 " enable/disable vim-capslock integration >
 let g:airline#extensions#capslock#enabled = 1
+
+" enable/disable showing a summary of changed hunks under source control. >
+let g:airline#extensions#hunks#enabled = 1
+
+" enable/disable showing only non-zero hunks. >
+let g:airline#extensions#hunks#non_zero_only = 0
+
+" set hunk count symbols. >
+let g:airline#extensions#hunks#hunk_symbols = ["\uF067", "\uE77F", "\uF068"]

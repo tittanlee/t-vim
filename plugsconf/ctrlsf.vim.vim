@@ -53,8 +53,8 @@ let g:ctrlsf_auto_close = {
 "     autocmd * CtrlSFFocus
 " endfunction
 "
-nmap <space>sf <Plug>CtrlSFCwordPath
-nmap <space>st :CtrlSFToggle<CR>
+nmap <leader>sf <Plug>CtrlSFCwordPath
+nmap <leader>st :CtrlSFToggle<CR>
 let g:ctrlsf_toggle_map_key = '<leader>st'
 
 let g:ctrlsf_mapping = {

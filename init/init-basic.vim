@@ -23,6 +23,9 @@ set bs=eol,start,indent
 " 打开 C/C++ 语言缩进优化
 set cindent
 
+" Do smart autoindenting when starting a new line.
+set smartindent
+
 " Windows 禁用 ALT 操作菜单（使得 ALT 可以用到 Vim里）
 set winaltkeys=no
 
@@ -238,10 +241,10 @@ set splitbelow
 
 
 augroup PythonTab
-    au!
+    " au!
     " 如果你需要 python 里用 tab，那么反注释下面这行字，否则vim会在打开py文件
     " 时自动设置成空格缩进。
-    "au FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
+    " au FileType python setlocal shiftwidth=4 tabstop=4 noexpandtab
 augroup END
 
 "----------------------------------------------------------------------
@@ -252,7 +255,7 @@ augroup END
 set nobackup
 
 " 保存时备份
-"set writebackup
+set nowritebackup
 
 " 备份文件地址，统一管理
 set backupdir=~/.vim/backup
