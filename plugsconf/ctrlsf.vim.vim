@@ -52,10 +52,11 @@ let g:ctrlsf_auto_close = {
 "     autocmd FileType ctrlsf setlocal nolist
 "     autocmd * CtrlSFFocus
 " endfunction
-"
+
+
 nmap <leader>sf <Plug>CtrlSFCwordPath
 nmap <leader>st :CtrlSFToggle<CR>
-let g:ctrlsf_toggle_map_key = '<leader>st'
+
 
 let g:ctrlsf_mapping = {
             \ "open"    : ["<CR>", "o"],
