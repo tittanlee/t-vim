@@ -54,9 +54,9 @@ let g:ctrlsf_auto_close = {
 " endfunction
 
 
-nmap <leader>sf <Plug>CtrlSFCwordPath
+" nmap <leader>sf <Plug>CtrlSFCwordPath
+nmap <leader>sf :RGSEARCH<space>
 nmap <leader>st :CtrlSFToggle<CR>
-
 
 let g:ctrlsf_mapping = {
             \ "open"    : ["<CR>", "o"],
@@ -73,5 +73,87 @@ let g:ctrlsf_mapping = {
             \ "pquit"   : "q",
             \ "loclist" : "",
             \ "chgmode" : "M",
-            \ "stop"    : "<C-C>",
+            \ "stop"    : "<M-c>",
             \ }
+
+
+"=======================================
+" CtrlSF backend args plus
+"=======================================
+let g:rg_args_map = {
+            \ 'c'      : '*.c',
+            \ 'h'      : '*.h',
+            \ 'dsc'    : '*.dsc',
+            \ 'dec'    : '*.dec',
+            \ 'fdf'    : '*.fdf',
+            \ 'uni'    : '*.uni',
+            \ 'vfr'    : '*.vfr',
+            \ 'inf'    : '*.inf',
+            \ 'uefi'   : '*.c,*.h,*.dec,*.dsc,*.fdf,*.inf,*.uni,*.vfr',
+            \ 'sdl'    : '*.sdl',
+            \ 'sd'     : '*.sd',
+            \ 'txt'    : '*.txt',
+            \ 'mak'    : '*.mak',
+            \ 'equ'    : '*.equ',
+            \ 'cbin'   : '*.cbin',
+            \ 'ami'    : '*.sdl,*.sd,*.txt,*.mak,*.equ,*.cbin',
+            \ 'asm'    : '*.asm,*.s,*.S',
+            \ 'xml'    : '*.xml',
+            \ 'py'     : '*.py',
+            \ 'cfg'    : '*.cfg',
+            \ 'ld'     : '*.ld',
+            \ 'qcom'   : '*.xml,*.py,*.cfg,*.inc,*.ld',
+            \ 'report' : '*.report',
+            \ 'inc'    : '*.inc'
+            \ }
+
+let g:rg_cmd_list = {
+    \ 'def' : ['--vimgrep --no-heading'],
+    \ 'inc' : ['--vimgrep --type-add "fexts:{', '}" -tfexts'],
+    \ 'exc' : ['--vimgrep --type-add "fexts:{', '}" --type-not fexts']
+\ }
+
+function! s:Rg_search(...)
+    let filter       = ''
+    let filter_flag  = 0
+    let exclude_flag = 0
+
+    for args in a:000
+        if args == '!'
+            let exclude_flag = 1
+        else
+            let filter_flag = 1
+            let args_list = split(args, ',')
+            for key in args_list
+                if has_key(g:rg_args_map, key)
+                    let filter = !strlen(filter) ? filter.g:rg_args_map[key] : filter.','.g:rg_args_map[key]
+                endif
+            endfor
+        endif
+    endfor
+
+    if filter_flag && exclude_flag
+        if has_key(g:rg_cmd_list, 'exc')
+            let cmd_format = g:rg_cmd_list['exc']
+        endif
+    elseif filter_flag && !exclude_flag
+        if has_key(g:rg_cmd_list, 'inc')
+            let cmd_format = g:rg_cmd_list['inc']
+        endif
+    else
+        if has_key(g:rg_cmd_list, 'def')
+            let cmd_format = g:rg_cmd_list['def']
+        endif
+    endif
+
+    let cmd_package = join(cmd_format, filter)
+
+    " override rg command to ctrlsf
+    if has_key(g:ctrlsf_extra_backend_args, 'rg')
+        let g:ctrlsf_extra_backend_args['rg'] = cmd_package
+    endif
+
+    "echo g:ctrlsf_extra_backend_args['rg']
+    :CtrlSF
+endfunc
+command! -nargs=* RGSEARCH call s:Rg_search(<f-args>)
