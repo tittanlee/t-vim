@@ -78,7 +78,6 @@ noremap <leader><leader>f :Leaderf --stayOpen --bottom --nameOnly file<CR>
 noremap <C-p> :Leaderf --bottom --nameOnly file<CR>
 
 " u 打开最近使用的文件 MRU，进行模糊匹配
-noremap <leader><leader>u :LeaderfMru<CR>
 noremap <leader><leader>u :Leaderf --stayOpen --bottom --fuzzy mru<CR>
 
 " n 打开函数列表，按 i 进入模糊匹配，ESC 退出
@@ -97,4 +96,5 @@ noremap <leader><leader>m :Leaderf --stayOpen --bottom --regex tag<CR>
 noremap <leader><leader>r :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
 
 " search a line in the buffer
-noremap / :Leaderf --bottom --fuzzy line<CR>
+noremap <leader>/ :Leaderf --bottom --fuzzy line<CR>
+
