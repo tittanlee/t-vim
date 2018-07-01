@@ -96,5 +96,5 @@ noremap <leader><leader>m :Leaderf --stayOpen --bottom --regex tag<CR>
 noremap <leader><leader>r :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
 
 " search a line in the buffer
-noremap <leader>/ :Leaderf --bottom --fuzzy line<CR>
+noremap <leader>/ :Leaderf --bottom --stayOpen --fuzzy line<CR>
 
