@@ -12,15 +12,15 @@ let g:ctrlsf_search_mode = 'async'
 
 " By default CtrlSF window will be opened at left. You can also specify for it to
 " be opened 'top', 'right', or 'bottom'
-let g:ctrlsf_position = 'left'
+let g:ctrlsf_position = 'right'
 
+" Size of CtrlSF window.
 let g:ctrlsf_winsize = '50%'
-
 
 " Highlight matching line in the target file. It is useful especially in preview mode.
 " 'o' : highlight matching line in the target file after file is opened.
 " 'p' : highlight matching line in preview window.
-let g:ctrlsf_selected_line_hl = 'op'
+let g:ctrlsf_selected_line_hl = 'p'
 
 let g:ctrlsf_extra_backend_args = {
     \ 'pt': '--home-ptignore',
@@ -54,8 +54,7 @@ let g:ctrlsf_auto_close = {
 " endfunction
 
 
-" nmap <leader>sf <Plug>CtrlSFCwordPath
-nmap <leader>sf :RGSEARCH<space>
+nmap <leader>sf <Plug>CtrlSFCwordPath
 nmap <leader>st :CtrlSFToggle<CR>
 
 let g:ctrlsf_mapping = {
@@ -113,7 +112,7 @@ let g:rg_cmd_list = {
     \ 'exc' : ['--vimgrep --type-add "fexts:{', '}" --type-not fexts']
 \ }
 
-function! s:Rg_search(...)
+function! s:CtrlSFBackEndArgsOptions(...)
     let filter       = ''
     let filter_flag  = 0
     let exclude_flag = 0
@@ -152,8 +151,6 @@ function! s:Rg_search(...)
     if has_key(g:ctrlsf_extra_backend_args, 'rg')
         let g:ctrlsf_extra_backend_args['rg'] = cmd_package
     endif
-
     "echo g:ctrlsf_extra_backend_args['rg']
-    :CtrlSF
 endfunc
-command! -nargs=* RGSEARCH call s:Rg_search(<f-args>)
+command! -nargs=* CtrlSFOptions call s:CtrlSFBackEndArgsOptions(<f-args>)
