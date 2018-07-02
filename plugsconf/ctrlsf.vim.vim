@@ -151,6 +151,6 @@ function! s:CtrlSFBackEndArgsOptions(...)
     if has_key(g:ctrlsf_extra_backend_args, 'rg')
         let g:ctrlsf_extra_backend_args['rg'] = cmd_package
     endif
-    "echo g:ctrlsf_extra_backend_args['rg']
+    echo g:ctrlsf_extra_backend_args['rg']
 endfunc
 command! -nargs=* CtrlSFOptions call s:CtrlSFBackEndArgsOptions(<f-args>)
