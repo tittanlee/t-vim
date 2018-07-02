@@ -114,6 +114,9 @@ if index(g:bundle_group, 'basic') >= 0
     " This plugin provides extended matching for the % operator.
     Plug 'adelarsq/vim-matchit'
 
+    " Vim 中文文檔
+    Plug 'yianwillis/vimcdoc'
+
 endif
 
 
@@ -161,7 +164,7 @@ if index(g:bundle_group, 'source_control') >= 0
     Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 
     " 用于在侧边符号栏显示 git/svn 的 diff
-    Plug 'airblade/vim-gitgutter'
+    Plug 'mhinz/vim-signify'
 
     " Git 支持
     Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gstatus', 'Gdiff', 'Gcommit', 'Gblame', 'Glog', 'Gread', 'Gwrite', 'Gedit' ] }
