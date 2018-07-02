@@ -7,9 +7,9 @@ augroup quickfix
     autocmd FileType qf setlocal nohidden
     autocmd FileType qf setlocal nolist
 
-    autocmd FileType qf nnoremap  <space>  :PreviewQuickfix<cr>
-    autocmd FileType qf nnoremap  <space>c :PreviewClose<cr> :cclose<cr>
+    autocmd FileType qf nnoremap <buffer> <space>  :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <buffer> <space>c :PreviewClose<cr> :cclose<cr>
 
-    autocmd FileType qf nnoremap  <C-n> <down> :PreviewQuickfix<cr>
-    autocmd FileType qf nnoremap  <C-b> <up>   :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <buffer> <C-n> <down> :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <buffer> <C-b> <up>   :PreviewQuickfix<cr>
 augroup END
