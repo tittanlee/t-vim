@@ -14,3 +14,5 @@ let g:indent_guides_space_guides = 1
 " Use this option to control whether the plugin considers tabs as indention.
 let g:indent_guides_tab_guides = 1
 
+" Use this option to specify a list of filetypes to disable the plugin for.
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
