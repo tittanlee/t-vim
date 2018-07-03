@@ -44,8 +44,9 @@ endif
 
 " 设置 ctags 的参数
 let g:gutentags_ctags_extra_args = []
-let g:gutentags_ctags_extra_args = ['-R']
-let g:gutentags_ctags_extra_args = ['--sort=foldcase']
+let g:gutentags_ctags_extra_args += ['-R']
+let g:gutentags_ctags_extra_args += ['--sort=foldcase']
+let g:gutentags_ctags_extra_args += ['--exclude=Build']
 
 " $ ctags --list-kinds=C
 " d  macro definitions
