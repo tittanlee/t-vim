@@ -147,12 +147,13 @@ if index(g:bundle_group, 'enhanced') >= 0
     Plug 'AdamWhittingham/vim-copy-filename'
 
     " Display the list of buffers in various sort orders
-    Plug 'jlanzarotta/bufexplorer', { 'on':  ['BufExplorer', 'ToggleBufExplorer', 'BufExplorerHorizontalSplit', 'BufExplorerVerticalSplit'] }
+    Plug 'jlanzarotta/bufexplorer'
 
     Plug 'maxbrunsfeld/vim-yankstack'
 
     " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
     Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
+
 endif
 
 "----------------------------------------------------------------------
