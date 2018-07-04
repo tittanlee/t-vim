@@ -20,6 +20,7 @@ if !exists('g:bundle_group')
     let g:bundle_group += ['grammer']
     let g:bundle_group += ['fuzzy_serach']
     let g:bundle_group += ['youcompleteme']
+    " let g:bundle_group += ['vimsnips']
     let g:bundle_group += ['uefi']
 endif
 
@@ -149,6 +150,7 @@ if index(g:bundle_group, 'enhanced') >= 0
     " Display the list of buffers in various sort orders
     Plug 'jlanzarotta/bufexplorer'
 
+    " A lightweight implementation of emacs's kill-ring for vim
     Plug 'maxbrunsfeld/vim-yankstack'
 
     " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
@@ -336,6 +338,20 @@ if index(g:bundle_group, 'deoplete') >= 0
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
+endif
+
+
+"----------------------------------------------------------------------
+" Sinps plugin package
+"----------------------------------------------------------------------
+if index(g:bundle_group, 'vimsnips') >= 0
+
+    " Track the engine.
+    Plug 'SirVer/ultisnips'
+
+    " Snippets are separated from the engine. Add this if you want them:
+    Plug 'honza/vim-snippets'
+
 endif
 
 
