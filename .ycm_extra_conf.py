@@ -28,9 +28,13 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
+import ConfigParser
+import codecs
+from io import StringIO
+
 import fnmatch
 import os
-#  import ycm_core
+import ycm_core
 
 flags = [
     '-Wall',
@@ -71,13 +75,44 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
     if not working_directory:
         return list( flags )
     new_flags = []
+    new_flags += flags
 
-    for root, dirnames, filenames in os.walk (working_directory):
-        for filename in fnmatch.filter(filenames, '*.h'):
-            if root in new_flags:
-                break
-            new_flags.append("-I")
-            new_flags.append(root)
+
+    #
+    # walk the root to collect all package dec file into list.
+    #
+	PkgDecFileList = []
+    UefiPkgDirList = [PkgDir for PkgDir in os.listdir(working_directory) if os.path.isdir(PkgDir)]
+    for UefiPkgName in UefiPkgDirList:
+        PkgDecFile = os.path.join(working_directory, UefiPkgName, UefiPkgName + '.dec')
+        if os.path.isfile(PkgDecFile):
+            PkgDecFileList.append (PkgDecFile)
+
+    #
+    # Parser the include section for each dec files.
+    #
+    for DecFile in PkgDecFileList:
+        Collection = False;
+        fp = codecs.open(DecFile, 'r', 'utf-8')
+        for line in fp.readlines():
+            line = line.strip()
+            line = line.replace('\r\n', '\n')
+            if line.startswith('#') or line.startswith('$') or len(line) == 0:
+                continue
+
+            if line.startswith('[Includes'):
+                Collection = True
+                continue
+
+            if Collection:
+                if line.startswith('['):
+                    Collection = False
+                    break
+                DecDirpath = os.path.dirname(DecFile)
+                line = line.split()[0]
+                new_flags.append('-I')
+                new_flags.append(os.path.join(DecDirpath, line))
+
     return new_flags
 
 def FlagsForFile( filename, **kwargs ):
