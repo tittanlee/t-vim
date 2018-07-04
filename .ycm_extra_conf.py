@@ -81,7 +81,7 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
     #
     # walk the root to collect all package dec file into list.
     #
-	PkgDecFileList = []
+    PkgDecFileList = []
     UefiPkgDirList = [PkgDir for PkgDir in os.listdir(working_directory) if os.path.isdir(PkgDir)]
     for UefiPkgName in UefiPkgDirList:
         PkgDecFile = os.path.join(working_directory, UefiPkgName, UefiPkgName + '.dec')
