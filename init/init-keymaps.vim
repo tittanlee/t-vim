@@ -65,8 +65,11 @@ nmap [[ [[zz
 nmap sh :split<CR>
 nmap sv :vsplit<CR>
 
-"Locad and edit vimrc key mapping
+"Source MYVIMRC
 noremap  <leader>sv  :source $MYVIMRC <CR>
+
+" Source current vim script
+noremap  <leader>sc  :source % <CR>
 
 "----------------------------------------------------------------------
 " F1 ~ F12 key mapping
@@ -79,11 +82,11 @@ nmap <F2> :w! <CR>
 nmap <F4> :q! <CR>
 
 " <F6> Replace words
-nmap <F6> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
-cmap <F6> <Esc> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
-imap <F6> <Esc> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
-vmap <F6> <Esc> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
-omap <F6> <Esc> :1,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+nmap <F6> :<C-R>=line('.')<CR>,$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+cmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+imap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+vmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+omap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 
 " <F10> Show syntax highlighting group under cursor.
 " http://vim.wikia.com/wiki/VimTip99
