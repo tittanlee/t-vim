@@ -43,6 +43,13 @@ nmap <A-left>  : bp <CR> zz
 nmap <A-right> : bn <CR> zz
 nmap <A-w>     : bw <CR>
 
+"----------------------------------------------------------------------
+" Move cursor on inser mode
+"----------------------------------------------------------------------
+inoremap <M-h> <Left>
+inoremap <M-j> <Down>
+inoremap <M-k> <Up>
+inoremap <M-l> <Right>
 
 "----------------------------------------------------------------------
 "QucikFix window open and close
