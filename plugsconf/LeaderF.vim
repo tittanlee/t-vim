@@ -78,23 +78,30 @@ noremap <leader><leader>f :Leaderf --stayOpen --bottom --nameOnly file<CR>
 noremap <C-p> :Leaderf --bottom --nameOnly file<CR>
 
 " u 打开最近使用的文件 MRU，进行模糊匹配
-noremap <leader><leader>u :Leaderf --stayOpen --bottom --fuzzy mru<CR>
+noremap <leader><leader>u :Leaderf --bottom --fuzzy mru<CR>
+noremap <leader><leader>u! :Leaderf --stayOpen --bottom --fuzzy mru<CR>
 
 " n 打开函数列表，按 i 进入模糊匹配，ESC 退出
-noremap <leader><leader>n :Leaderf --stayOpen --left function<CR>
+noremap <leader><leader>n :Leaderf --left function<CR>
+noremap <leader><leader>n! :Leaderf --stayOpen --left function<CR>
 
 " t 打开 tag 列表，i 进入模糊匹配，ESC退出
-noremap <leader><leader>t :Leaderf --stayOpen --left bufTag<CR>
+noremap <leader><leader>t :Leaderf --left bufTag<CR>
+noremap <leader><leader>t! :Leaderf --stayOpen --left bufTag<CR>
 
 " b 打开 buffer 列表进行模糊匹配
-noremap <leader><leader>b :Leaderf --stayOpen --bottom --nameOnly buffer<CR>
+noremap <leader><leader>b :Leaderf --bottom --nameOnly buffer<CR>
+noremap <leader><leader>b! :Leaderf --stayOpen --bottom --nameOnly buffer<CR>
 
 " 全局 tags 模糊匹配
-noremap <leader><leader>m :Leaderf --stayOpen --bottom --regex tag<CR>
+noremap <leader><leader>m :Leaderf --bottom --regex tag<CR>
+noremap <leader><leader>m! :Leaderf --stayOpen --bottom --regex tag<CR>
 
 " switch between colorschemes
-noremap <leader><leader>r :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
+noremap <leader><leader>r :Leaderf --bottom --nameOnly colorscheme<CR>
+noremap <leader><leader>r! :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
 
 " search a line in the buffer
-noremap <leader>/ :Leaderf --bottom --stayOpen --fuzzy line<CR>
+noremap <leader><leader>/ :Leaderf --bottom --fuzzy line<CR>
+noremap <leader><leader>/! :Leaderf --stayOpen --bottom --fuzzy line<CR>
 
