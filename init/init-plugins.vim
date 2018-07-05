@@ -328,7 +328,13 @@ endif
 " YoucompletetMe vim 自動補全套件
 "----------------------------------------------------------------------
 if index(g:bundle_group, 'youcompleteme') >= 0
+
+    " YCM plugin
     Plug 'Valloric/YouCompleteMe'
+
+    " Complete parameter after select the completion. Integration with YouCompleteMe(ycm), deoplete, neocomplete.
+    Plug 'tenfyzhong/CompleteParameter.vim'
+
 endif
 
 
