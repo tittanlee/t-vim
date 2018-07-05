@@ -144,9 +144,6 @@ augroup InitFileTypesGroup
     " haskell 进行微调
     au FileType haskell setlocal et
 
-    " quickfix 隐藏行号
-    au FileType qf setlocal nonumber
-
     " 强制对某些扩展名的 filetype 进行纠正
     au BufNewFile,BufRead *.as setlocal filetype=actionscript
     au BufNewFile,BufRead *.pro setlocal filetype=prolog
