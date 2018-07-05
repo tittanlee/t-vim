@@ -156,6 +156,9 @@ if index(g:bundle_group, 'enhanced') >= 0
     " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
     Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
 
+    " Pairs of handy bracket mappings
+    Plug 'tpope/vim-unimpaired'
+
 endif
 
 "----------------------------------------------------------------------
