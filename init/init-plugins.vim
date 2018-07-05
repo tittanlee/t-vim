@@ -159,6 +159,9 @@ if index(g:bundle_group, 'enhanced') >= 0
     " Pairs of handy bracket mappings
     Plug 'tpope/vim-unimpaired'
 
+    " A vim plugin for highlighting and navigating through different words in a buffer.
+    Plug 'lfv89/vim-interestingwords'
+
 endif
 
 "----------------------------------------------------------------------
@@ -173,7 +176,7 @@ if index(g:bundle_group, 'source_control') >= 0
     Plug 'mhinz/vim-signify'
 
     " Git 支持
-    Plug 'tpope/vim-fugitive', { 'on': ['Git', 'Gstatus', 'Gdiff', 'Gcommit', 'Gblame', 'Glog', 'Gread', 'Gwrite', 'Gedit' ] }
+    Plug 'tpope/vim-fugitive'
 
 endif
 
@@ -195,7 +198,6 @@ if index(g:bundle_group, 'programming') >= 0
 
     " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
     Plug 'skywind3000/vim-preview', { 'on': ['PreviewTag', 'PreviewQuickfix', 'PreviewClose'] }
-
 
     " 表格对齐，使用命令 Tabularize
     Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
