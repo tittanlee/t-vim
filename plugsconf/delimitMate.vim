@@ -8,7 +8,7 @@
 let delimitMate_offByDefault = 1
 
 " If this option is set to 0, delimitMate will not add a closing delimiter automagically.
-let delimitMate_autoclose = 0
+" let delimitMate_autoclose = 1
 
 " Switches the plug-in on and off.
 " nnoremap <leader>( :DelimitMateSwitch
