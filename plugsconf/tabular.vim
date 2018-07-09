@@ -15,4 +15,5 @@ nmap <Leader>a,, :Tabularize /,\zs<CR>
 vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
+nmap <Leader>a<space> :Tabularize /\S\+;$/l1<CR>
+vmap <Leader>a<space> :Tabularize /\S\+;$/l1<CR>
