@@ -10,7 +10,8 @@
 
 
 if !exists('g:bundle_group')
-    let g:bundle_group =  ['vim_util_lib']
+    let g:bundle_group =  []
+    let g:bundle_group +=  ['vim_util_lib']
     let g:bundle_group += ['basic']
     let g:bundle_group += ['programming']
     let g:bundle_group += ['enhanced']
