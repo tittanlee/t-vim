@@ -7,7 +7,7 @@ augroup quickfix
     autocmd FileType qf setlocal nohidden
     autocmd FileType qf setlocal nolist
     " Split quickfix on vertical left
-    autocmd FileType qf wincmd L
+    " autocmd FileType qf wincmd L
 
     autocmd FileType qf nnoremap <buffer> <space>  :PreviewQuickfix<cr>
     autocmd FileType qf nnoremap <buffer> <space>c :PreviewClose<cr> :cclose<cr>
