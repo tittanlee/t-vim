@@ -9,20 +9,20 @@
 " vim: set ts=4 sw=4 tw=78 noet :
 
 
-if !exists('g:bundle_group')
-    let g:bundle_group =  []
-    let g:bundle_group += ['vim_util_lib']
-    let g:bundle_group += ['basic']
-    let g:bundle_group += ['programming']
-    let g:bundle_group += ['enhanced']
-    let g:bundle_group += ['filetypes']
-    " let g:bundle_group += ['textobj']
-    let g:bundle_group += ['source_control']
-    let g:bundle_group += ['grammer']
-    let g:bundle_group += ['fuzzy_serach']
-    let g:bundle_group += ['youcompleteme']
-    " let g:bundle_group += ['vimsnips']
-    let g:bundle_group += ['uefi']
+if !exists('g:t_vim_bundle_group')
+    let g:t_vim_bundle_group =  []
+    let g:t_vim_bundle_group += ['vim_util_lib']
+    let g:t_vim_bundle_group += ['basic']
+    let g:t_vim_bundle_group += ['programming']
+    let g:t_vim_bundle_group += ['enhanced']
+    let g:t_vim_bundle_group += ['filetypes']
+    " let g:t_vim_bundle_group += ['textobj']
+    let g:t_vim_bundle_group += ['source_control']
+    let g:t_vim_bundle_group += ['grammer']
+    let g:t_vim_bundle_group += ['fuzzy_serach']
+    let g:t_vim_bundle_group += ['youcompleteme']
+    " let g:t_vim_bundle_group += ['vimsnips']
+    let g:t_vim_bundle_group += ['uefi']
 endif
 
 "----------------------------------------------------------------------
@@ -40,16 +40,16 @@ endfunc
 " 在 ~/.vim/bundles 下安装插件
 "----------------------------------------------------------------------
 
-if !exists('g:bundle_home')
-    let g:bundle_home = '~/.vim/bundles'
+if !exists('g:t_vim_bundle_home')
+    let g:t_vim_bundle_home = '~/.vim/bundles'
 endif
-call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
+call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
 
 "----------------------------------------------------------------------
 " Vim Utility Library function
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'vim_util_lib') >= 0
+if index(g:t_vim_bundle_group, 'vim_util_lib') >= 0
 
     "vim: interpret a file by function and cache file automatically
     Plug 'MarcWeber/vim-addon-mw-utils'
@@ -66,10 +66,7 @@ endif
 "----------------------------------------------------------------------
 " 基础插件
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'basic') >= 0
-
-    " 展示开始画面，显示最近编辑过的文件
-    Plug 'mhinz/vim-startify'
+if index(g:t_vim_bundle_group, 'basic') >= 0
 
     " 一次性安装一大堆 colorscheme
     " Plug 'rafi/awesome-vim-colorschemes'
@@ -119,13 +116,16 @@ if index(g:bundle_group, 'basic') >= 0
     " Vim 中文文檔
     Plug 'yianwillis/vimcdoc'
 
+    " 展示开始画面，显示最近编辑过的文件
+    Plug 'mhinz/vim-startify'
+
 endif
 
 
 "----------------------------------------------------------------------
 " 增强插件
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'enhanced') >= 0
+if index(g:t_vim_bundle_group, 'enhanced') >= 0
 
     " 用 v 选中一个区域后，ALT_+/- 按分隔符扩大/缩小选区
     Plug 'terryma/vim-expand-region'
@@ -168,7 +168,7 @@ endif
 "----------------------------------------------------------------------
 "  Source control system plugins
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'source_control') >= 0
+if index(g:t_vim_bundle_group, 'source_control') >= 0
 
     " 提供 gist 接口
     Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
@@ -185,7 +185,7 @@ endif
 "----------------------------------------------------------------------
 "  Programming plugins
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'programming') >= 0
+if index(g:t_vim_bundle_group, 'programming') >= 0
 
     " 自动生成 ctags/gtags，并提供自动索引功能
     " 不在 git/svn 内的项目，需要在项目根目录 touch 一个空的 .root 文件
@@ -224,7 +224,7 @@ endif
 "----------------------------------------------------------------------
 " 文本对象：textobj 全家桶
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'textobj') >= 0
+if index(g:t_vim_bundle_group, 'textobj') >= 0
 
     " 基础插件：提供让用户方便的自定义文本对象的接口
     Plug 'kana/vim-textobj-user'
@@ -253,7 +253,7 @@ endif
 "----------------------------------------------------------------------
 " 文件类型扩展
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'filetypes') >= 0
+if index(g:t_vim_bundle_group, 'filetypes') >= 0
 
     " A solid language pack for Vim.
     Plug 'sheerun/vim-polyglot'
@@ -287,7 +287,7 @@ endif
 "----------------------------------------------------------------------
 " LanguageTool 语法检查
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'grammer') >= 0
+if index(g:t_vim_bundle_group, 'grammer') >= 0
 
     Plug 'rhysd/vim-grammarous'
 
@@ -298,7 +298,7 @@ endif
 "----------------------------------------------------------------------
 " LeaderF：CtrlP / FZF 的超级代替者，文件模糊匹配，tags/函数名 选择
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'fuzzy_serach') >= 0
+if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
 
     " 如果 vim 支持 python 则启用  Leaderf
     if has('python') || has('python3')
@@ -328,7 +328,7 @@ endif
 "----------------------------------------------------------------------
 " YoucompletetMe vim 自動補全套件
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'youcompleteme') >= 0
+if index(g:t_vim_bundle_group, 'youcompleteme') >= 0
 
     " YCM plugin
     Plug 'Valloric/YouCompleteMe'
@@ -342,7 +342,7 @@ endif
 "----------------------------------------------------------------------
 " deoplete.nvim vim 自動補全套件
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'deoplete') >= 0
+if index(g:t_vim_bundle_group, 'deoplete') >= 0
     if has('nvim')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
@@ -356,7 +356,7 @@ endif
 "----------------------------------------------------------------------
 " Sinps plugin package
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'vimsnips') >= 0
+if index(g:t_vim_bundle_group, 'vimsnips') >= 0
 
     " Track the engine.
     Plug 'SirVer/ultisnips'
@@ -370,7 +370,7 @@ endif
 "----------------------------------------------------------------------
 " UEFI 語法高亮
 "----------------------------------------------------------------------
-if index(g:bundle_group, 'uefi') >= 0
+if index(g:t_vim_bundle_group, 'uefi') >= 0
 
     Plug 'martinlroth/vim-acpi-asl'
     Plug 'tittanlee/vim_for_UEFI'

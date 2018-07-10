@@ -4,7 +4,11 @@
 " utf-8. If you want the powerline symbols set this variable:
 let g:airline_powerline_fonts = 1
 
-let g:airline_theme     = 'violet'
+
+if !exists('g:t_vim_airline_theme')
+    let g:t_vim_airline_theme = 'violet'
+endif
+let g:airline_theme = g:t_vim_airline_theme
 " let g:airline_section_b = '%{getcwd()}'
 " let g:airline_section_c = '%F'
 

@@ -2,8 +2,7 @@
 " Load the plugin configuration if the file of plugin configuration name match bundle
 " plugin directory name.
 function! SourcePluginConfiguration(dir)
-    let BundleList = map(glob(fnameescape(a:dir).'/{,.}*/', 1, 1), 'fnamemodify(v:val, ":h:t")')
-    for BundlePlug in BundleList
+    for BundlePlug in g:plugs_order
         let PlugConfFullPath = expand(g:t_vim_root . '/plugsconf/' . BundlePlug . '.vim')
         if filereadable(PlugConfFullPath)
             exec 'source' PlugConfFullPath
@@ -11,4 +10,4 @@ function! SourcePluginConfiguration(dir)
     endfor
 endfunction
 
-call SourcePluginConfiguration(g:bundle_home)
+call SourcePluginConfiguration(g:t_vim_bundle_home)

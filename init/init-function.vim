@@ -148,12 +148,12 @@
 " }
 
 " Vim Bundle Directory function {
-    if !exists('g:bundle_home')
-        let g:bundle_home = '~/.vim/bundles'
+    if !exists('g:t_vim_bundle_home')
+        let g:t_vim_bundle_home = '~/.vim/bundles'
     endif
 
     function! VimBundleDir(bundlename)
-        let bundle_path = expand(g:bundle_home . '/' . a:bundlename )
+        let bundle_path = expand(g:t_vim_bundle_home . '/' . a:bundlename )
         return substitute(bundle_path, '\\', '/', 'g')
     endfunction
 " }

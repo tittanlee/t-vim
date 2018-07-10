@@ -78,6 +78,10 @@ noremap  <leader>sv  :source $MYVIMRC <CR>
 " Source current vim script
 noremap  <leader>sc  :source % <CR>
 
+
+" Edit vimrc
+noremap  <leader>ev  :e $MYVIMRC <CR>
+
 "----------------------------------------------------------------------
 " F1 ~ F12 key mapping
 "----------------------------------------------------------------------

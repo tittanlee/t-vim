@@ -58,7 +58,12 @@ set background=dark
 set t_Co=256
 
 " 设置颜色主题，会在所有 runtimepaths 的 colors 目录寻找同名配置
-colorscheme space-vim-dark
+"
+" g:t_vim_colorscheme
+if !exists('g:t_vim_colorscheme')
+    let g:t_vim_colorscheme = 'space-vim-dark'
+endif
+exec "colorscheme " . g:t_vim_colorscheme
 
 "----------------------------------------------------------------------
 " 更改样式
