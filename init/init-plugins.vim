@@ -11,7 +11,7 @@
 
 if !exists('g:bundle_group')
     let g:bundle_group =  []
-    let g:bundle_group +=  ['vim_util_lib']
+    let g:bundle_group += ['vim_util_lib']
     let g:bundle_group += ['basic']
     let g:bundle_group += ['programming']
     let g:bundle_group += ['enhanced']
@@ -99,7 +99,7 @@ if index(g:bundle_group, 'basic') >= 0
     " Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
 
     " A tree explorer plugin for vim.
-    Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
+    Plug 'scrooloose/nerdtree'
 
     " Extra syntax and highlight for nerdtree files
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
