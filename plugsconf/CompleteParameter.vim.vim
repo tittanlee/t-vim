@@ -1,5 +1,5 @@
 " inoremap <silent><expr> ( complete_parameter#pre_complete("(")
-inoremap <silent><expr> <space> cmp#pre_complete(" ()")
+inoremap <silent><expr> <space> cmp#pre_complete(" ")
 
 " Select next overload function.
 imap <M-d> <Plug>(complete_parameter#overload_down)
