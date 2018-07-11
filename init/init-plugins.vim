@@ -136,6 +136,9 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " 配对括号和引号自动补全
     Plug 'Raimondi/delimitMate'
 
+    " The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+    Plug 'tpope/vim-surround'
+
     " Diff 增强，支持 histogram / patience 等更科学的 diff 算法
     Plug 'chrisbra/vim-diff-enhanced'
 
@@ -318,7 +321,7 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Lines', 'Tags', 'Buffers', 'Commands', 'Windows', 'GitFiles', 'Locate', 'Maps', 'History', 'Snippets', 'Commits', 'Colors', 'Helptags', 'BCommits', 'Btags', 'BLines'] }
 
     " 使用 :FlyGrep 命令进行实时 grep
-    " Plug 'wsdjeg/FlyGrep.vim', { 'on':  'FlyGrep' }
+    Plug 'wsdjeg/FlyGrep.vim'
 
     " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
     Plug 'dyng/ctrlsf.vim'
