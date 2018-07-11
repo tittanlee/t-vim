@@ -1,4 +1,3 @@
-
 " Verbose informations will be printed if you turn this option on.
 let g:ctrlsf_debug_mode = 0
 
@@ -24,7 +23,7 @@ let g:ctrlsf_selected_line_hl = 'p'
 
 let g:ctrlsf_extra_backend_args = {
     \ 'pt': '--home-ptignore',
-    \ 'rg': '--vimgrep',
+    \ 'rg': '--pretty',
     \ }
 
 " Defines the default case-sensitivity in search.
@@ -107,9 +106,9 @@ let g:rg_args_map = {
             \ }
 
 let g:rg_cmd_list = {
-    \ 'def' : ['--vimgrep --no-heading'],
-    \ 'inc' : ['--vimgrep --type-add "fexts:{', '}" -tfexts'],
-    \ 'exc' : ['--vimgrep --type-add "fexts:{', '}" --type-not fexts']
+    \ 'def' : ['--pretty'],
+    \ 'inc' : ['--pretty --type-add "fexts:{', '}" -tfexts'],
+    \ 'exc' : ['--pretty --type-add "fexts:{', '}" --type-not fexts']
 \ }
 
 function! s:CtrlSFBackEndArgsOptions(...)
