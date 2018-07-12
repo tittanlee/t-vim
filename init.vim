@@ -15,16 +15,14 @@
 " endif
 
 "----------------------------------------------------------------------
-" Hers is global varible for setting use
-"----------------------------------------------------------------------
+" These global variables are used for personal customization."
+" ----------------------------------------------------------------------
 " g:t_vim_leader
 " g:t_vim_localleader
 " g:t_vim_bundle_home
 " g:t_vim_bundle_group
 " g:t_vim_colorscheme
 " g:t_vim_airline_theme
-
-
 
 " get the absolute path of t_vim_root
 let g:t_vim_root = fnamemodify(resolve(expand('<sfile>:p')), ':h')
