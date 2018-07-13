@@ -27,6 +27,6 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['\.vim\.*'] = '⋞'
+" let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['\.vim\.*'] = '⋞'
 " Refresh devicons on resourcing vimrc, i.e. <Leader>ac
 
