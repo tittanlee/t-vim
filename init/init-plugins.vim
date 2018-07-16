@@ -166,6 +166,12 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " A vim plugin for highlighting and navigating through different words in a buffer.
     Plug 'lfv89/vim-interestingwords'
 
+    " Substitute preview
+    Plug 'osyo-manga/vim-over'
+
+    " Vim motions on speed!
+    Plug 'easymotion/vim-easymotion'
+
 endif
 
 "----------------------------------------------------------------------
@@ -262,10 +268,10 @@ if index(g:t_vim_bundle_group, 'filetypes') >= 0
     Plug 'sheerun/vim-polyglot'
 
     " powershell 脚本文件的语法高亮
-    Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
+    " Plug 'pprovost/vim-ps1', { 'for': 'ps1' }
 
     " lua 语法高亮增强
-    Plug 'tbastos/vim-lua', { 'for': 'lua' }
+    " Plug 'tbastos/vim-lua', { 'for': 'lua' }
 
     " C++ 语法高亮增强，支持 11/14/17 标准
     Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
@@ -280,10 +286,10 @@ if index(g:t_vim_bundle_group, 'filetypes') >= 0
     Plug 'vim-python/python-syntax', { 'for': ['python'] }
 
     " rust 语法增强
-    Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+    " Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
     " vim org-mode
-    Plug 'jceb/vim-orgmode', { 'for': 'org' }
+    " Plug 'jceb/vim-orgmode', { 'for': 'org' }
 
 endif
 
