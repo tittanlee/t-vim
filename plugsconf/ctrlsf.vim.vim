@@ -39,6 +39,11 @@ let g:ctrlsf_auto_close = {
             \ "compact": 0
             \ }
 
+" 'g:ctrlsf_auto_focus' defines which timing CtrlSF should focus result pane when
+" working in async search mode.
+let g:ctrlsf_auto_focus = {
+    \ "at": "start"
+    \ }
 
 " 'g:CtrlSFAfterMainWindowInit' defines a function will be called after CtrlSF
 " window initialized. It can be used to override default window setting.
