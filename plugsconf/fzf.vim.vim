@@ -47,3 +47,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 "            \ "spinner": ["fg", "IncSearch"],
 "            \ "header":  ["fg", "WildMenu"] }
 
+
+nnoremap <leader>j :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
+

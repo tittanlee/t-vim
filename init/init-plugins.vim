@@ -324,7 +324,7 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
     " Things you can do with fzf and Vim.
-    Plug 'junegunn/fzf.vim', { 'on':  ['Files', 'Lines', 'Tags', 'Buffers', 'Commands', 'Windows', 'GitFiles', 'Locate', 'Maps', 'History', 'Snippets', 'Commits', 'Colors', 'Helptags', 'BCommits', 'Btags', 'BLines'] }
+    Plug 'junegunn/fzf.vim'
 
     " 使用 :FlyGrep 命令进行实时 grep
     Plug 'wsdjeg/FlyGrep.vim'
