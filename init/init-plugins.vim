@@ -90,7 +90,10 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     Plug 'mbbill/undotree'
 
     " Indent Guides is a plugin for visually displaying indent levels in Vim.
-    Plug 'nathanaelkane/vim-indent-guides'
+    " Plug 'nathanaelkane/vim-indent-guides'
+
+    " A vim plugin to display the indention levels with thin vertical lines
+    Plug 'Yggdroot/indentLine'
 
     " 文件浏览器，代替 netrw
     " Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
