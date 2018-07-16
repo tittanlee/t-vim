@@ -95,7 +95,7 @@ else
 endif
 
 if !exists('g:t_vim_localleader')
-    let maplocalleader = '\\'
+    let maplocalleader = '\'
 else
     let maplocalleader=g:t_vim_localleader
 endif
