@@ -68,6 +68,18 @@ let g:Lf_PreviewResult = {
             \ 'Colorscheme' : 1
             \}
 
+" Use this option to customize the mappings in normal mode.
+let g:Lf_NormalMap = {
+            \ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
+            \ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>']],
+            \ "Mru":    [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<CR>']],
+            \ "Tag":    [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>']],
+            \ "BufTag": [["<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<CR>']],
+            \ "Function": [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>']],
+            \ "Line":   [["<ESC>", ':exec g:Lf_py "lineExplManager.quit()"<CR>']],
+            \ "History":[["<ESC>", ':exec g:Lf_py "historyExplManager.quit()"<CR>']],
+            \}
+
 
 "----------------------------------------------------------------------
 " LeaderF key mapping <leader><leader> + [u, p, t, b, m]
