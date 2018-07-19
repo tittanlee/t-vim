@@ -19,6 +19,9 @@ set laststatus=2
 " 总是显示行号
 set number
 
+" Relative number as defalut
+set relativenumber
+
 " Toggle absolute numbering in VIM by insert mode
 autocmd InsertEnter * :set norelativenumber
 
