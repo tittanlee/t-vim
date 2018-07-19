@@ -11,6 +11,8 @@ let g:indentLine_fileTypeExclude = ['startify']
 " Default value is "|".
 let g:indentLine_char = '¦'
 
+let g:indentLine_leadingSpaceChar = '•'
+
 " Specify GUI vim indent line color.
 let g:indentLine_color_gui = '#F2C329'
 
