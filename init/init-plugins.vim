@@ -302,6 +302,7 @@ endif
 "----------------------------------------------------------------------
 if index(g:t_vim_bundle_group, 'grammer') >= 0
 
+    " A powerful grammar checker for Vim using LanguageTool.
     Plug 'rhysd/vim-grammarous'
 
     Plug 'w0rp/ale', { 'on':  'ALEToggle' }
@@ -315,13 +316,24 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
 
     " 如果 vim 支持 python 则启用  Leaderf
     if has('python') || has('python3')
+
+        " An asynchronous fuzzy finder which is used to quickly locate files, buffers, mrus, tags, etc. in large project.
         Plug 'Yggdroot/LeaderF'
+
+        " leaderf <c-]> tag jump
+        Plug 'xltan/LeaderF-tjump'
+
+        " LeaderF extenstion for ripgrep
+        Plug 'bstaint/LeaderF-grep'
+
     else
+
         " 不支持 python ，使用 CtrlP 代替
         Plug 'ctrlpvim/ctrlp.vim'
 
         " 显示函数列表的扩展插件
         Plug 'tacahiroy/ctrlp-funky'
+
     endif
 
     " 快速文件搜索
@@ -331,7 +343,7 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     Plug 'junegunn/fzf.vim'
 
     " 使用 :FlyGrep 命令进行实时 grep
-    Plug 'wsdjeg/FlyGrep.vim'
+    " Plug 'wsdjeg/FlyGrep.vim'
 
     " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
     Plug 'dyng/ctrlsf.vim'
