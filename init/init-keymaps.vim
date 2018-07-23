@@ -52,7 +52,7 @@ inoremap <M-l> <Right>
 "----------------------------------------------------------------------
 nnoremap <silent> <leader>q1 :cclose \| copen 10 <CR>
 nnoremap <silent> <leader>q2 :cclose \| copen \| wincmd L<CR>
-nnoremap <silent> <leader>q  :cclose <CR>
+nnoremap <silent> <leader>qc :cclose <CR>
 
 
 "----------------------------------------------------------------------
