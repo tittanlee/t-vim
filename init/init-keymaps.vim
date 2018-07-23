@@ -50,10 +50,9 @@ inoremap <M-l> <Right>
 "----------------------------------------------------------------------
 "QucikFix window open and close
 "----------------------------------------------------------------------
-nmap <M-k>    : copen<CR>
-nmap <M-j>    : cclose<CR>
-nmap <M-up>   : copen<CR>
-nmap <M-down> : cclose<CR>
+nnoremap <silent> <leader>q1 :cclose \| copen 10 <CR>
+nnoremap <silent> <leader>q2 :cclose \| copen \| wincmd L<CR>
+nnoremap <silent> <leader>q  :cclose <CR>
 
 
 "----------------------------------------------------------------------
