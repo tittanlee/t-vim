@@ -20,6 +20,7 @@ if !exists('g:t_vim_bundle_group')
     let g:t_vim_bundle_group += ['source_control']
     let g:t_vim_bundle_group += ['grammer']
     let g:t_vim_bundle_group += ['fuzzy_serach']
+    let g:t_vim_bundle_group += ['quickfix_enhanced']
     let g:t_vim_bundle_group += ['youcompleteme']
     " let g:t_vim_bundle_group += ['vimsnips']
     let g:t_vim_bundle_group += ['uefi']
@@ -149,9 +150,6 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " 多光標操作
     Plug 'terryma/vim-multiple-cursors'
 
-    " A simple vim plugin for toggling the display of the quickfix list and the location-list.
-    Plug 'Valloric/ListToggle'
-
     " Vim commands for copy various bits of the path for the current file
     Plug 'AdamWhittingham/vim-copy-filename'
 
@@ -175,6 +173,9 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
 
     " Vim motions on speed!
     Plug 'easymotion/vim-easymotion'
+
+    " Plugin to move lines and selections up and down
+    Plug 'matze/vim-move'
 
 endif
 
@@ -310,7 +311,7 @@ if index(g:t_vim_bundle_group, 'grammer') >= 0
 endif
 
 "----------------------------------------------------------------------
-" LeaderF：CtrlP / FZF 的超级代替者，文件模糊匹配，tags/函数名 选择
+" Fuzzy search plugins group
 "----------------------------------------------------------------------
 if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
 
@@ -347,6 +348,23 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
 
     " 使用 :CtrlSF 命令进行模仿 sublime 的 grep
     Plug 'dyng/ctrlsf.vim'
+
+    " Use your favorite grep tool (ag, ack, git grep, ripgrep, pt, sift, findstr, grep) to start an asynchronous search.
+    " All matches will be put in a quickfix or location list.
+    Plug 'mhinz/vim-grepper'
+
+endif
+
+"----------------------------------------------------------------------
+" Quickfix window enhanced - Mulitple open files and filter qf reslut.
+"----------------------------------------------------------------------
+if index(g:t_vim_bundle_group, 'quickfix_enhanced') >= 0
+
+    " Open a Quickfix item in a window you choose. (Vim plugin)
+    Plug 'yssl/QFEnter'
+
+    " Tame the quickfix window
+    Plug 'romainl/vim-qf'
 
 endif
 
