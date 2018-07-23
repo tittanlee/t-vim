@@ -2,7 +2,7 @@
 " This variable specify a list of file types.
 " When opening these types of files, the plugin is disabled by
 " default.
-let g:indentLine_fileTypeExclude = ['startify']
+let g:indentLine_fileTypeExclude = ['startify', 'help']
 
 
 " Specify a character to be used as indent line.
