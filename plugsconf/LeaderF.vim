@@ -35,7 +35,8 @@ let g:Lf_MruMaxFiles = 2048
 
 " ui 定制
 " let g:Lf_StlSeparator = { 'left': '', 'right': '' }
-let g:Lf_StlSeparator = { 'left': "\uE0B0", 'right': "\uE0B2" }
+" let g:Lf_StlSeparator = { 'left': "\uE0B0", 'right': "\uE0B2" }
+let g:Lf_StlSeparator = { 'left': "\uE0BC", 'right': "\uE0BE" }
 
 " 如何识别项目目录，从当前文件目录向父目录递归知道碰到下面的文件/目录
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
