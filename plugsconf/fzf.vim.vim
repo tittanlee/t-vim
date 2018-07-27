@@ -32,21 +32,29 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 "inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " Customize fzf colors to match your color scheme
-"let g:fzf_colors = {
-"            \ "fg":      ["fg", "Normal"],
-"            \ "bg":      ["bg", "Normal"],
-"            \ "hl":      ["fg", "IncSearch"],
-"            \ "fg+":     ["fg", "CursorLine", "CursorColumn", "Normal"],
-"            \ "bg+":     ["bg", "CursorLine", "CursorColumn"],
-"            \ "hl+":     ["fg", "IncSearch"],
-"            \ "info":    ["fg", "IncSearch"],
-"            \ "border":  ["fg", "Ignore"],
-"            \ "prompt":  ["fg", "Comment"],
-"            \ "pointer": ["fg", "IncSearch"],
-"            \ "marker":  ["fg", "IncSearch"],
-"            \ "spinner": ["fg", "IncSearch"],
-"            \ "header":  ["fg", "WildMenu"] }
+let g:fzf_colors = {
+           \ "fg"      : ["fg", "Normal"                               ] ,
+           \ "bg"      : ["bg", "Normal"                               ] ,
+           \ "hl"      : ["fg", "IncSearch"                            ] ,
+           \ "fg+"     : ["fg", "CursorLine", "CursorColumn", "Normal" ] ,
+           \ "bg+"     : ["bg", "CursorLine", "CursorColumn"           ] ,
+           \ "hl+"     : ["fg", "IncSearch"                            ] ,
+           \ "info"    : ["fg", "IncSearch"                            ] ,
+           \ "border"  : ["fg", "Ignore"                               ] ,
+           \ "prompt"  : ["fg", "Comment"                              ] ,
+           \ "pointer" : ["fg", "IncSearch"                            ] ,
+           \ "marker"  : ["fg", "IncSearch"                            ] ,
+           \ "spinner" : ["fg", "IncSearch"                            ] ,
+           \ "header"  : ["fg", "WildMenu"                             ]
+           \ }
 
 
 nnoremap <leader>j :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 
+" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+command! -bang -nargs=* FZfRg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
