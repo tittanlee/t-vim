@@ -81,10 +81,6 @@ if has('clipboard')
     endif
 endif
 
-if exists('+shellslash')
-    set shellslash
-endif
-
 "----------------------------------------------------------------------
 " Vim leader and local_leader key mapping
 "----------------------------------------------------------------------
