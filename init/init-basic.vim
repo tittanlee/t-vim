@@ -165,6 +165,9 @@ set display=lastline
 " 允许下方显示目录
 set wildmenu
 
+"Completion mode that is used for the character specified with 'wildchar'.
+set wildmode=list:full
+
 " 延迟绘制（提升性能）
 set lazyredraw
 
@@ -204,7 +207,7 @@ if has('folding')
     set foldenable
 
     " 代码折叠默认使用缩进
-    set fdm=indent
+    set fdm=manual
 
     " 默认打开所有缩进
     set foldlevel=99
