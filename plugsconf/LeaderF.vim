@@ -115,6 +115,6 @@ noremap <leader><leader>r :Leaderf --bottom --nameOnly colorscheme<CR>
 noremap <leader><leader>r! :Leaderf --stayOpen --bottom --nameOnly colorscheme<CR>
 
 " search a line in the buffer
-noremap <leader><leader>/ :Leaderf --bottom --fuzzy line<CR>
-noremap <leader><leader>/! :Leaderf --stayOpen --bottom --fuzzy line<CR>
+noremap <leader><leader>l :Leaderf --bottom --fuzzy line<CR>
+noremap <leader><leader>l! :Leaderf --stayOpen --bottom --fuzzy line<CR>
 
