@@ -3,7 +3,7 @@
 let g:webdevicons_enable = 1
 
 " adding the flags to NERDTree
-let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_nerdtree = 0
 
 " adding to vim-airline's tabline
 let g:webdevicons_enable_airline_tabline = 1
