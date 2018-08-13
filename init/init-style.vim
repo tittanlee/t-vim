@@ -131,7 +131,7 @@ endif
 "----------------------------------------------------------------------
 " GUI vim setting
 "----------------------------------------------------------------------
-if has('gui_running')
+if GVIM()
     " Remove the toolbar
     set guioptions-=T
     set guioptions-=m
