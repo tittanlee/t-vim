@@ -1,6 +1,6 @@
 
 " Defines whether Gutentags should be enabled
-" let g:gutentags_enabled = 0
+let g:gutentags_enabled = 0
 
 " Defines some advanced commands like
 " |GutentagsToggleEnabled| and |GutentagsUnlock|
