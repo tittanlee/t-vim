@@ -22,6 +22,7 @@ if !exists('g:t_vim_bundle_group')
     let g:t_vim_bundle_group += ['fuzzy_serach']
     let g:t_vim_bundle_group += ['quickfix_enhanced']
     let g:t_vim_bundle_group += ['youcompleteme']
+    "let g:t_vim_bundle_group += ['deoplete']
     " let g:t_vim_bundle_group += ['vimsnips']
     let g:t_vim_bundle_group += ['uefi']
 endif
@@ -393,7 +394,7 @@ endif
 " deoplete.nvim vim 自動補全套件
 "----------------------------------------------------------------------
 if index(g:t_vim_bundle_group, 'deoplete') >= 0
-    if has('nvim')
+    if NVIM()
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
         Plug 'Shougo/deoplete.nvim'
