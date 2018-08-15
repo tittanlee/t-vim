@@ -84,8 +84,8 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     Plug 'liuchengxu/space-vim-dark'
     Plug 'SpaceVim/SpaceVim-theme'
     Plug 'colepeters/spacemacs-theme.vim'
-    Plug 'fenetikm/falcon'
     Plug 'chriskempson/base16-vim'
+    Plug 'NLKNguyen/papercolor-theme'
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
