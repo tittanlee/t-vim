@@ -1,5 +1,5 @@
 " fzf drop down
-let g:fzf_layout         = { 'down': '~30%' }
+let g:fzf_layout         = { 'down': '~40%' }
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
 let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
@@ -31,24 +31,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Advanced customization using autoload functions
 "inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors = {
-           \ "fg"      : ["fg", "Normal"                               ] ,
-           \ "bg"      : ["bg", "Normal"                               ] ,
-           \ "hl"      : ["fg", "IncSearch"                            ] ,
-           \ "fg+"     : ["fg", "CursorLine", "CursorColumn", "Normal" ] ,
-           \ "bg+"     : ["bg", "CursorLine", "CursorColumn"           ] ,
-           \ "hl+"     : ["fg", "IncSearch"                            ] ,
-           \ "info"    : ["fg", "IncSearch"                            ] ,
-           \ "border"  : ["fg", "Ignore"                               ] ,
-           \ "prompt"  : ["fg", "Comment"                              ] ,
-           \ "pointer" : ["fg", "IncSearch"                            ] ,
-           \ "marker"  : ["fg", "IncSearch"                            ] ,
-           \ "spinner" : ["fg", "IncSearch"                            ] ,
-           \ "header"  : ["fg", "WildMenu"                             ]
-           \ }
-
 
 nnoremap <leader>j :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 
