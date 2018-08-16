@@ -58,8 +58,14 @@ let g:ctrlsf_auto_focus = {
 " endfunction
 
 
-nmap <leader>sf <Plug>CtrlSFCwordPath
-nmap <leader>st :CtrlSFToggle<CR>
+nmap     <C-f>f <Plug>CtrlSFPrompt
+vmap     <C-f>f <Plug>CtrlSFVwordPath
+vmap     <C-f>F <Plug>CtrlSFVwordExec
+nmap     <C-f>n <Plug>CtrlSFCwordPath
+nmap     <C-f>p <Plug>CtrlSFPwordPath
+nnoremap <C-f>o :CtrlSFOpen<CR>
+nnoremap <C-f>t :CtrlSFToggle<CR>
+inoremap <C-f>t <Esc>:CtrlSFToggle<CR>
 
 let g:ctrlsf_mapping = {
             \ "open"    : ["<CR>", "o"],
@@ -111,9 +117,9 @@ let g:rg_args_map = {
             \ }
 
 let g:rg_cmd_list = {
-    \ 'def' : ['--pretty'],
-    \ 'inc' : ['--pretty --type-add "fexts:{', '}" -tfexts'],
-    \ 'exc' : ['--pretty --type-add "fexts:{', '}" --type-not fexts']
+    \ 'def' : [''],
+    \ 'inc' : ['--type-add "fexts:{', '}" -tfexts'],
+    \ 'exc' : ['--type-add "fexts:{', '}" --type-not fexts']
 \ }
 
 function! s:CtrlSFBackEndArgsOptions(...)
