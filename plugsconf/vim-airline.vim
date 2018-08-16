@@ -88,3 +88,9 @@ let g:airline#extensions#ycm#error_symbol = 'E:'
 
 " * set warning count prefix >
 let g:airline#extensions#ycm#warning_symbol = 'W:'
+
+
+"----------------------------------------------------------------------
+" Airline key mapping <leader><leader> + [u, p, t, b, m]
+"----------------------------------------------------------------------
+nnoremap <silent> <leader>ab :AirlineToggleWhitespace <CR>
