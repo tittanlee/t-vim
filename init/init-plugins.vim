@@ -177,7 +177,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     Plug 'easymotion/vim-easymotion'
 
     " Plugin to move lines and selections up and down
-    Plug 'matze/vim-move'
+    " Plug 'matze/vim-move'
 
     " 使用 ALT+e 会在不同窗口/标签上显示 A/B/C 等编号，然后字母直接跳转
     Plug 't9md/vim-choosewin'
