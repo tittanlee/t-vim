@@ -23,7 +23,7 @@ let g:ctrlsf_selected_line_hl = 'p'
 
 let g:ctrlsf_extra_backend_args = {
     \ 'pt': '--home-ptignore',
-    \ 'rg': '--pretty',
+    \ 'rg': '--colors "match:fg:magenta" --colors "line:bg:yellow"',
     \ }
 
 " Defines the default case-sensitivity in search.
@@ -63,9 +63,8 @@ vmap     <C-f>f <Plug>CtrlSFVwordPath
 vmap     <C-f>F <Plug>CtrlSFVwordExec
 nmap     <C-f>n <Plug>CtrlSFCwordPath
 nmap     <C-f>p <Plug>CtrlSFPwordPath
-nnoremap <C-f>o :CtrlSFOpen<CR>
-nnoremap <C-f>t :CtrlSFToggle<CR>
-inoremap <C-f>t <Esc>:CtrlSFToggle<CR>
+nnoremap <C-f>o :CtrlSFToggle<CR>
+inoremap <C-f>o <Esc>:CtrlSFToggle<CR>
 
 let g:ctrlsf_mapping = {
             \ "open"    : ["<CR>", "o"],
@@ -117,9 +116,9 @@ let g:rg_args_map = {
             \ }
 
 let g:rg_cmd_list = {
-    \ 'def' : [''],
-    \ 'inc' : ['--type-add "fexts:{', '}" -tfexts'],
-    \ 'exc' : ['--type-add "fexts:{', '}" --type-not fexts']
+    \ 'def' : ['--colors "match:fg:magenta" --colors "line:bg:yellow"'],
+    \ 'inc' : ['--colors "match:fg:magenta" --colors "line:bg:yellow" --type-add "fexts:{', '}" -tfexts'],
+    \ 'exc' : ['--colors "match:fg:magenta" --colors "line:bg:yellow" --type-add "fexts:{', '}" --type-not fexts']
 \ }
 
 function! s:CtrlSFBackEndArgsOptions(...)
