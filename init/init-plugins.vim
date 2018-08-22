@@ -21,9 +21,10 @@ if !exists('g:t_vim_bundle_group')
     " let g:t_vim_bundle_group += ['grammer']
     let g:t_vim_bundle_group += ['fuzzy_serach']
     let g:t_vim_bundle_group += ['quickfix_enhanced']
-    let g:t_vim_bundle_group += ['youcompleteme']
-    "let g:t_vim_bundle_group += ['deoplete']
-    let g:t_vim_bundle_group += ['vimsnips']
+    " let g:t_vim_bundle_group += ['youcompleteme']
+    let g:t_vim_bundle_group += ['ncm2']
+    " let g:t_vim_bundle_group += ['deoplete']
+    " let g:t_vim_bundle_group += ['vimsnips']
     let g:t_vim_bundle_group += ['uefi']
 endif
 
@@ -390,6 +391,37 @@ if index(g:t_vim_bundle_group, 'youcompleteme') >= 0
 
 endif
 
+"----------------------------------------------------------------------
+" ncm2 自動補全套件
+"----------------------------------------------------------------------
+if index(g:t_vim_bundle_group, 'ncm2') >= 0
+
+    " Slim, Fast and Hackable Completion Framework for Neovim
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+
+    "Completion Source
+    "======================================
+    " general purpose
+    "======================================
+    "
+    "completion words from current buffer
+    Plug 'ncm2/ncm2-bufword'
+
+    " tags completion for ncm2. this soruce supports prefix match only.
+    Plug 'ncm2/ncm2-tagprefix'
+
+    "======================================
+    " C / C++ language support
+    "======================================
+    Plug 'ncm2/ncm2-pyclang'
+
+    "======================================
+    " Snippet integration
+    "======================================
+    Plug 'ncm2/ncm2-ultisnips'
+
+endif
 
 "----------------------------------------------------------------------
 " deoplete.nvim vim 自動補全套件

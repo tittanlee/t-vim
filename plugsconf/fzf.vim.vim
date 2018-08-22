@@ -4,6 +4,21 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
 let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
 " fzf mappings
 nnoremap <leader>.f  :Files<CR>
 nnoremap <Leader>.l  :Lines<CR>
