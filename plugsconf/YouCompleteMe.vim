@@ -32,10 +32,10 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_cache_omnifunc = 0
 
 "ycm首先通过ultisnips进行代码块补全
-let g:ycm_use_ultisnips_completer = 0
+let g:ycm_use_ultisnips_completer = 1
 
 " Auto popup the complete in preview
-let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_add_preview_to_completeopt = 0
 set completeopt=longest,menu
 
 "离开插入模式后自动关闭预览窗口
