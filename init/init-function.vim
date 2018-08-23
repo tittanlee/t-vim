@@ -199,3 +199,27 @@
     nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
     nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 " }
+
+" Check if NERDTree is open {
+    function! IsNerdTreeEnabled()
+        return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+    endfunction
+" }
+
+" Check if Tagbar is open {
+    function! IsTagbarEnabled()
+        return exists('t:tagbar_buf_name') && bufwinnr(t:tagbar_buf_name) != -1
+    endfunction
+" }
+
+" Check if Tagbat and NERDTree is open {
+    
+    function! IsTagbarOrNerdTreeOpen()
+        if IsNerdTreeEnabled() || IsTagbarEnabled()
+            return 1
+        else
+            return 0
+        endif
+    endfunction
+    
+" }

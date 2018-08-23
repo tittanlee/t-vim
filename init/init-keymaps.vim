@@ -48,9 +48,9 @@ inoremap <M-k> <Up>
 inoremap <M-l> <Right>
 
 "----------------------------------------------------------------------
-"QucikFix window open and close
+"QuickFix window open and close
 "----------------------------------------------------------------------
-nnoremap <silent> <leader>q1 :cclose \| copen 10 <CR>
+nnoremap <silent> <leader>q1 :cclose \| bo copen 10 <CR>
 nnoremap <silent> <leader>q2 :cclose \| copen \| wincmd L<CR>
 nnoremap <silent> <leader>qc :cclose <CR>
 
@@ -104,6 +104,9 @@ cmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left>
 imap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 vmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 omap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
+
+" <F9> TagbarClose and NERDTreeClose
+nnoremap <expr> <F9>    IsTagbarOrNerdTreeOpen()?  "\<ESC>:NERDTreeClose \| TagbarClose<CR>" : "\<ESC>:NERDTree \| Tagbar<CR>"
 
 " <F10> Show syntax highlighting group under cursor.
 " http://vim.wikia.com/wiki/VimTip99
