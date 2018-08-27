@@ -186,6 +186,9 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " 使用 ALT+e 会在不同窗口/标签上显示 A/B/C 等编号，然后字母直接跳转
     Plug 't9md/vim-choosewin'
 
+    " In Vim, trying to unload, delete or wipe a buffer without closing the window or split?
+    Plug 'qpkorr/vim-bufkill'
+
 endif
 
 "----------------------------------------------------------------------

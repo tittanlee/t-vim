@@ -42,7 +42,11 @@ nmap <M-right> : bn <CR> zz
 "----------------------------------------------------------------------
 " Wipe the current buffer
 "----------------------------------------------------------------------
-nmap <M-w>     : bw <CR>
+if index(g:plugs_order, 'vim-bufkill') >= 0
+    nmap <M-w>     : BW <CR>
+else
+    nmap <M-w>     : bw <CR>
+endif
 
 "----------------------------------------------------------------------
 " Move cursor on inser mode
