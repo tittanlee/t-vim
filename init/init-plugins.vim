@@ -119,7 +119,10 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     Plug 'ryanoasis/vim-devicons'
 
     " This plugin provides extended matching for the % operator.
-    Plug 'adelarsq/vim-matchit'
+    " Plug 'adelarsq/vim-matchit'
+
+" vim match-up: even better % 👊 navigate and highlight matching words 👊 modern matchit and matchparen replacement
+    Plug 'andymass/vim-matchup'
 
     " Vim 中文文檔
     Plug 'yianwillis/vimcdoc'
