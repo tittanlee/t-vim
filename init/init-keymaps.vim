@@ -16,15 +16,20 @@ nmap ; :
 "----------------------------------------------------------------------
 " Switch window
 "----------------------------------------------------------------------
-nmap <silent> <C-left>  <C-w>h
-nmap <silent> <C-down>  <C-w>j
-nmap <silent> <C-up>    <C-w>k
-nmap <silent> <C-right> <C-w>l
+nnoremap <silent> <C-left>  <C-w>h
+nnoremap <silent> <C-down>  <C-w>j
+nnoremap <silent> <C-up>    <C-w>k
+nnoremap <silent> <C-right> <C-w>l
 
-nmap <silent> <C-h> <C-w>h
-nmap <silent> <C-j> <C-w>j
-nmap <silent> <C-k> <C-w>k
-nmap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
 
 "----------------------------------------------------------------------
 " Switch buffer tab
