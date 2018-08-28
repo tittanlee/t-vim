@@ -365,6 +365,9 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     " All matches will be put in a quickfix or location list.
     Plug 'mhinz/vim-grepper'
 
+    " Vim search status.
+    Plug 'osyo-manga/vim-anzu'
+
 endif
 
 "----------------------------------------------------------------------
