@@ -189,6 +189,9 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " In Vim, trying to unload, delete or wipe a buffer without closing the window or split?
     Plug 'qpkorr/vim-bufkill'
 
+    " Vim search status.
+    Plug 'osyo-manga/vim-anzu'
+
 endif
 
 "----------------------------------------------------------------------
@@ -365,8 +368,8 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     " All matches will be put in a quickfix or location list.
     Plug 'mhinz/vim-grepper'
 
-    " Vim search status.
-    Plug 'osyo-manga/vim-anzu'
+    " Perform search in files easily
+    Plug 'eugen0329/vim-esearch'
 
 endif
 
