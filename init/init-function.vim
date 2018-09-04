@@ -223,3 +223,23 @@
     endfunction
     
 " }
+
+" Check if Tagbat and NERDTree is open {
+    function! QFixToggle(forced)
+        if exists("g:qfix_win") && a:forced != 0
+            cclose
+        else
+            if exists("g:t_vim_quickfix_win_height")
+                execute "copen ".g:t_vim_quickfix_win_height
+            else
+                copen
+            endif
+        endif
+    endfunction
+
+    augroup QFixToggle
+        autocmd!
+        autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+        autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+    augroup END
+" }

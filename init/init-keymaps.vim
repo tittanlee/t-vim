@@ -59,10 +59,8 @@ inoremap <M-l> <Right>
 "----------------------------------------------------------------------
 "QuickFix window open and close
 "----------------------------------------------------------------------
-nnoremap <silent> <leader>q1 :cclose \| bo copen 10 <CR>
-nnoremap <silent> <leader>q2 :cclose \| copen \| wincmd L<CR>
-nnoremap <silent> <leader>qc :cclose <CR>
-
+nnoremap <silent> <leader>q :call QFixToggle(1)<CR>
+nnoremap <silent> <leader><leader>q :copen \| wincmd L<CR>
 
 "----------------------------------------------------------------------
 " Go to next function block and focus on middle screen
