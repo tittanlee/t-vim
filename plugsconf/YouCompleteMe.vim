@@ -42,7 +42,7 @@ set completeopt=longest,menu
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 "Enter選中當前選項
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
 let g:ycm_max_num_candidate = 15
 
