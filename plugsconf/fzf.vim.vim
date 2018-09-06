@@ -4,6 +4,23 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
 let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
+
 " fzf mappings
 nnoremap <leader>.f  :Files<CR>
 nnoremap <Leader>.l  :Lines<CR>
@@ -51,3 +68,19 @@ command! -bang -nargs=* FZFRg
             \           : fzf#vim#with_preview('right:50%:hidden', '?'),
             \   <bang>0)
 
+
+" fuzzy search files in parent directory of current file {
+function! s:fzf_neighbouring_files()
+  let current_file =expand("%")
+  let cwd = fnamemodify(current_file, ':p:h')
+  let command = 'ag -g "" -f ' . cwd . ' --depth 0'
+
+  call fzf#run({
+        \ 'source'  : command,
+        \ 'sink'    : 'e',
+        \ 'options' : '-m -x +s',
+        \ 'down'    : '40%'
+        \ })
+endfunction
+nnoremap <leader>.n :call <SID>fzf_neighbouring_files() <CR>
+" }
