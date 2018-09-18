@@ -17,5 +17,18 @@ let g:tagbar_type_typescript = {
             \ ]
             \ }
 
+let g:tagbar_type_sdl = {
+            \ 'ctagstype' : 'sdl',
+            \ 'kinds'     : [
+            \ 't:Token',
+            \ 'e:Elink',
+            \ 'p:Path',
+            \ 'i:IO Dev',
+            \ 'm:Module',
+            \ 'q:IRQ Link',
+            \ 'd:PCI Dev',
+            \ ]
+            \ }
+
 nmap t :TagbarToggle<CR>
 
