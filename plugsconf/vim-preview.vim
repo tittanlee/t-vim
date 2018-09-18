@@ -15,3 +15,8 @@ augroup quickfix
     autocmd FileType qf nnoremap <buffer> <C-n> <down> :PreviewQuickfix<cr>
     autocmd FileType qf nnoremap <buffer> <C-b> <up>   :PreviewQuickfix<cr>
 augroup END
+
+noremap <m-]> :PreviewTag<CR>
+noremap <m-u> :PreviewScroll -1<CR>
+noremap <m-d> :PreviewScroll +1<CR>
+noremap <m-g> :PreviewGoto vsplit<CR> \| :pclose<CR>
