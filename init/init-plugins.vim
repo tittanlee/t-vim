@@ -189,6 +189,9 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " In Vim, trying to unload, delete or wipe a buffer without closing the window or split?
     Plug 'qpkorr/vim-bufkill'
 
+    " Automatic resizing of Vim windows to the golden ratio
+    Plug 'roman/golden-ratio'
+
 endif
 
 "----------------------------------------------------------------------
@@ -236,7 +239,7 @@ if index(g:t_vim_bundle_group, 'programming') >= 0
     Plug 'scrooloose/nerdcommenter'
 
     " A class outline viewer for Vim
-    Plug 'majutsushi/tagbar', { 'on': ['Tagbar', 'TagbarToggle'] }
+    Plug 'majutsushi/tagbar'
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     " Plug 'Shougo/echodoc.vim'
@@ -436,6 +439,9 @@ if index(g:t_vim_bundle_group, 'uefi') >= 0
     Plug 'martinlroth/vim-acpi-asl'
     Plug 'tittanlee/vim_for_UEFI'
     "Plug 'fedorov7/vim-uefi'
+    
+    " Vim plugin for generating and inserting UUIDs
+    Plug 'kburdett/vim-nuuid'
 
 endif
 
