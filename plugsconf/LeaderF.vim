@@ -99,6 +99,7 @@ noremap <leader><leader>n :Leaderf --left function<CR>
 noremap <leader><leader>n! :Leaderf --stayOpen --left function<CR>
 
 " t 打开 tag 列表，i 进入模糊匹配，ESC退出
+noremap t :Leaderf --left bufTag<CR>
 noremap <leader><leader>t :Leaderf --left bufTag<CR>
 noremap <leader><leader>t! :Leaderf --stayOpen --left bufTag<CR>
 

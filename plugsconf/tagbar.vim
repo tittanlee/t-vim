@@ -30,5 +30,5 @@ let g:tagbar_type_sdl = {
             \ ]
             \ }
 
-nmap t :TagbarToggle<CR>
+" nmap t :TagbarToggle<CR>
 
