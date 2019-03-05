@@ -119,3 +119,14 @@ noremap <leader><leader>r! :Leaderf --stayOpen --bottom --nameOnly colorscheme<C
 noremap <leader><leader>l :Leaderf --bottom --fuzzy line<CR>
 noremap <leader><leader>l! :Leaderf --stayOpen --bottom --fuzzy line<CR>
 
+
+map <leader>fs :Leaderf rg --heading -C3 --smart-case -e <c-r>=expand("<cword>")<cr> --match-path<cr>
+let g:Lf_RgConfig = [
+            \ "--no-ignore",
+            \ "--max-columns=150",
+            \ "-g *.{c,h,s,S,asm,dec,dsc,fdf,vfr,hfv,sdl,sd,py,xml,asl,asli,tpl,bat,sh,vim,mak,equ}",
+            \ "--heading -C3",
+            \ "--glob=!git/*",
+            \ "--hidden"
+            \ ]
+
