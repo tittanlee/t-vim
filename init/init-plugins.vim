@@ -337,7 +337,7 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
         Plug 'Yggdroot/LeaderF'
 
         " leaderf <c-]> tag jump
-        Plug 'xltan/LeaderF-tjump'
+        Plug 'tittanlee/LeaderF-tjump'
 
         " LeaderF extenstion for ripgrep
         Plug 'bstaint/LeaderF-grep'
