@@ -28,7 +28,8 @@ let g:Lf_DefaultExternalTool = "rg"
 let g:Lf_UseVersionControlTool = 0
 
 " Use this option to specify a external command to index the files
-let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
+" let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
+let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git'. getcwd() . '"%s"'
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
