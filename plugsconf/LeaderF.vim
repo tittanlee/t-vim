@@ -40,7 +40,10 @@ let g:Lf_MruMaxFiles = 2048
 let g:Lf_StlSeparator = { 'left': "\uE0BC", 'right': "\uE0BE" }
 
 " 如何识别项目目录，从当前文件目录向父目录递归知道碰到下面的文件/目录
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+" let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_RootMarkers = []
+
+let g:Lf_WorkingDirectory = getcwd()
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.40
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
@@ -81,6 +84,9 @@ let g:Lf_NormalMap = {
             \ "Line"     : [  [ "<ESC>", ':exec g:Lf_py "lineExplManager.quit()"<CR>'     ]  ] ,
             \ "History"  : [  [ "<ESC>", ':exec g:Lf_py "historyExplManager.quit()"<CR>'  ]  ] ,
             \}
+
+"Use this option to customize the mappings inside LeaderF's prompt
+let g:Lf_CommandMap = {'<PageUp>': ['<C-u>'], '<PageDown>': ['<C-d>']}
 
 
 "----------------------------------------------------------------------
