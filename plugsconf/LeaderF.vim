@@ -12,7 +12,7 @@ let g:Lf_ShortcutB = '<m-n>'
 let g:Lf_PreviewCode = 0
 
 " 显示绝对路径
-let g:Lf_ShowRelativePath = 1
+let g:Lf_ShowRelativePath = 0
 
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
@@ -28,8 +28,7 @@ let g:Lf_DefaultExternalTool = "rg"
 let g:Lf_UseVersionControlTool = 0
 
 " Use this option to specify a external command to index the files
-" let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
-let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git'. getcwd() . '"%s"'
+ let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
