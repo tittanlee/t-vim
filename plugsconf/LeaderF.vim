@@ -12,7 +12,7 @@ let g:Lf_ShortcutB = '<m-n>'
 let g:Lf_PreviewCode = 0
 
 " 显示绝对路径
-let g:Lf_ShowRelativePath = 0
+let g:Lf_ShowRelativePath = 1
 
 " Setting this option can change the position of the LeaderF window.
 "'top' - the LeaderF window is at the top of the screen.
@@ -22,13 +22,14 @@ let g:Lf_ShowRelativePath = 0
 let g:Lf_WindowPosition = 'bottom'
 
 " Use this option to specify the default external tool which is used to index the files.
-let g:Lf_DefaultExternalTool = "rg"
+let g:Lf_DefaultExternalTool = "fd"
 
 "This option specifies whether to use version control tool to index the files when inside a repository under control.
 let g:Lf_UseVersionControlTool = 0
 
 " Use this option to specify a external command to index the files
- let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
+" let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
+let g:Lf_ExternalCommand = 'fd --hidden --no-ignore --type file --exclude .git "%s'
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
@@ -69,24 +70,33 @@ let g:Lf_PreviewResult = {
             \ 'BufTag'      : 0,
             \ 'Function'    : 0,
             \ 'Line'        : 0,
-            \ 'Colorscheme' : 1
+            \ 'Colorscheme' : 0
             \}
 
 " Use this option to customize the mappings in normal mode.
-let g:Lf_NormalMap = {
-            \ "File"     : [  [ "<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>'     ]  ] ,
-            \ "Buffer"   : [  [ "<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>'      ]  ] ,
-            \ "Mru"      : [  [ "<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<CR>'      ]  ] ,
-            \ "Tag"      : [  [ "<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>'      ]  ] ,
-            \ "BufTag"   : [  [ "<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<CR>'   ]  ] ,
-            \ "Function" : [  [ "<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>' ]  ] ,
-            \ "Line"     : [  [ "<ESC>", ':exec g:Lf_py "lineExplManager.quit()"<CR>'     ]  ] ,
-            \ "History"  : [  [ "<ESC>", ':exec g:Lf_py "historyExplManager.quit()"<CR>'  ]  ] ,
-            \}
+" let g:Lf_NormalMap = {
+"             \ "File"     : [  [ "<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>'     ]  ] ,
+"             \ "Buffer"   : [  [ "<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>'      ]  ] ,
+"             \ "Mru"      : [  [ "<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<CR>'      ]  ] ,
+"             \ "Tag"      : [  [ "<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>'      ]  ] ,
+"             \ "BufTag"   : [  [ "<ESC>", ':exec g:Lf_py "bufTagExplManager.quit()"<CR>'   ]  ] ,
+"             \ "Function" : [  [ "<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>' ]  ] ,
+"             \ "Line"     : [  [ "<ESC>", ':exec g:Lf_py "lineExplManager.quit()"<CR>'     ]  ] ,
+"             \ "History"  : [  [ "<ESC>", ':exec g:Lf_py "historyExplManager.quit()"<CR>'  ]  ] ,
+"             \ "Rg"       : [  [ "<ESC>", ':exec g:Lf_py "rgExplManager.quit()"<CR>'  ]  ] ,
+"             \}
 
 "Use this option to customize the mappings inside LeaderF's prompt
 let g:Lf_CommandMap = {'<PageUp>': ['<C-u>'], '<PageDown>': ['<C-d>']}
 
+" Specify a list of ripgrep configurations.
+let g:Lf_RgConfig = [
+            \ "--no-ignore",
+            \ "--max-columns=150",
+            \ "--heading -C3",
+            \ "--glob=!git/*",
+            \ "--hidden"
+            \ ]
 
 "----------------------------------------------------------------------
 " LeaderF key mapping <leader><leader> + [u, p, t, b, m]
@@ -125,14 +135,11 @@ noremap <leader><leader>r! :Leaderf --stayOpen --bottom --nameOnly colorscheme<C
 noremap <leader><leader>l :Leaderf --bottom --fuzzy line<CR>
 noremap <leader><leader>l! :Leaderf --stayOpen --bottom --fuzzy line<CR>
 
+" search word under cursor, the pattern is treated as regex, and enter normal mode directly
+noremap <leader><leader>rg :<C-U><C-R>=printf("Leaderf rg --heading -C3 --smart-case -e %s %s", expand("<cword>"), getcwd())<CR>
 
-map <leader>fs :Leaderf rg --heading -C3 --smart-case -e <c-r>=expand("<cword>")<cr> --match-path<cr>
-let g:Lf_RgConfig = [
-            \ "--no-ignore",
-            \ "--max-columns=150",
-            \ "-g *.{c,h,s,S,asm,dec,dsc,fdf,vfr,hfv,sdl,sd,py,xml,asl,asli,tpl,bat,sh,vim,mak,equ}",
-            \ "--heading -C3",
-            \ "--glob=!git/*",
-            \ "--hidden"
-            \ ]
+" search visually selected text literally, don't quit LeaderF after accepting an entry
+xnoremap <leader><leader>vrg :<C-U><C-R>=printf("Leaderf rg -F --stayOpen -e %s %s", leaderf#Rg#visual(), getcwd())<CR>
 
+" recall last search. If the result window is closed, reopen it.
+noremap <leader><leader>rt :<C-U>Leaderf rg --stayOpen --recall<CR>
