@@ -385,7 +385,7 @@ if index(g:t_vim_bundle_group, 'quickfix_enhanced') >= 0
     " Plug 'romainl/vim-qf'
 
     " Edit the quickfix/location list freely
-    Plug 'itchyny/vim-qfedit'
+    " Plug 'itchyny/vim-qfedit'
 
 endif
 
