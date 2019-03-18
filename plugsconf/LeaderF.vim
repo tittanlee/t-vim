@@ -5,7 +5,14 @@ let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<m-n>'
 
 " Set this to 2 or 3 to specify the version of Python
-"let g:Lf_PythonVersion = 2
+if has('python')
+    let g:Lf_PythonVersion = 2
+endif
+
+if has('python3')
+    let g:Lf_PythonVersion = 3
+endif
+
 
 " Use this option to specify whether to show the preview of the code the tag
 " locates in when navigating the tags.
