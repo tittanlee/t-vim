@@ -230,9 +230,9 @@
             cclose
         else
             if exists("g:t_vim_quickfix_win_height")
-                execute "copen ".g:t_vim_quickfix_win_height
+                execute "bo copen ".g:t_vim_quickfix_win_height
             else
-                copen
+                bo copen
             endif
         endif
     endfunction
