@@ -112,6 +112,14 @@ imap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left>
 vmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 omap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 
+" <F7> HighLight on/off switch quickly.
+nmap <F7> :set hlsearch! <CR>
+cmap <F7> <Esc> :set hlsearch! <CR>
+imap <F7> <Esc> :set hlsearch! <CR>
+vmap <F7> <Esc> :set hlsearch! <CR>
+omap <F7> <Esc> :set hlsearch! <CR>
+
+
 " <F9> TagbarClose and NERDTreeClose
 nnoremap <expr> <F9>    IsTagbarOrNerdTreeOpen()?  "\<ESC>:NERDTreeClose \| TagbarClose<CR>" : "\<ESC>:NERDTree \| Tagbar<CR>"
 
