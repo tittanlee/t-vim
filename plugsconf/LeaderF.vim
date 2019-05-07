@@ -110,8 +110,8 @@ let g:Lf_RgConfig = [
 "----------------------------------------------------------------------
 
 " f 打開檔案列表
-noremap <leader><leader>f :Leaderf --stayOpen --bottom --nameOnly file<CR>
-noremap <C-p> :Leaderf --bottom --nameOnly file<CR>
+noremap <leader><leader>f :Leaderf --stayOpen --bottom --fullPath file<CR>
+noremap <C-p> :Leaderf --bottom --fullPath file<CR>
 
 " u 打开最近使用的文件 MRU，进行模糊匹配
 noremap <leader><leader>u :Leaderf --bottom --fuzzy mru<CR>
