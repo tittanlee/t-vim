@@ -36,7 +36,11 @@ let g:Lf_UseVersionControlTool = 0
 
 " Use this option to specify a external command to index the files
 " let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
-let g:Lf_ExternalCommand = 'fd --hidden --no-ignore --type file --exclude .git "%s'
+if WINDOWS()
+    let g:Lf_ExternalCommand = 'fd --hidden --no-ignore --type file --exclude .git "%s'
+else
+    let g:Lf_ExternalCommand = 'fd -H -I -t f -E .git "%s"'
+endif
 
 " 最大历史文件保存 2048 个
 let g:Lf_MruMaxFiles = 2048
