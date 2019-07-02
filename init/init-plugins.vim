@@ -121,7 +121,7 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     " This plugin provides extended matching for the % operator.
     " Plug 'adelarsq/vim-matchit'
 
-" vim match-up: even better % 👊 navigate and highlight matching words 👊 modern matchit and matchparen replacement
+    " vim match-up: even better % 👊 navigate and highlight matching words 👊 modern matchit and matchparen replacement
     Plug 'andymass/vim-matchup'
 
     " Vim 中文文檔
@@ -180,17 +180,20 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " Vim motions on speed!
     Plug 'easymotion/vim-easymotion'
 
+    " Lightning fast left-right movement in Vim
+    " Plug 'unblevable/quick-scope'
+
     " Plugin to move lines and selections up and down
     " Plug 'matze/vim-move'
 
     " 使用 ALT+e 会在不同窗口/标签上显示 A/B/C 等编号，然后字母直接跳转
-    Plug 't9md/vim-choosewin'
+    " Plug 't9md/vim-choosewin'
 
     " In Vim, trying to unload, delete or wipe a buffer without closing the window or split?
     Plug 'qpkorr/vim-bufkill'
 
     " Automatic resizing of Vim windows to the golden ratio
-    Plug 'roman/golden-ratio'
+    " Plug 'roman/golden-ratio'
 
 endif
 
@@ -439,7 +442,7 @@ if index(g:t_vim_bundle_group, 'uefi') >= 0
     Plug 'martinlroth/vim-acpi-asl'
     Plug 'tittanlee/vim_for_UEFI'
     "Plug 'fedorov7/vim-uefi'
-    
+
     " Vim plugin for generating and inserting UUIDs
     Plug 'kburdett/vim-nuuid'
 
