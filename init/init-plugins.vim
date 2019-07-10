@@ -181,7 +181,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     Plug 'easymotion/vim-easymotion'
 
     " Lightning fast left-right movement in Vim
-    " Plug 'unblevable/quick-scope'
+    Plug 'unblevable/quick-scope'
 
     " Plugin to move lines and selections up and down
     " Plug 'matze/vim-move'
