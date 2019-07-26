@@ -15,6 +15,8 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Do not use YouCompleteMe to check C, C++ and Objective-C, do it by ale
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0 
+let g:ycm_enable_diagnostic_highlighting = 0
 
 "注解與字符串中的內容也用於補全
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
