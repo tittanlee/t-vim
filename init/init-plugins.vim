@@ -163,10 +163,10 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     Plug 'jlanzarotta/bufexplorer'
 
     " A lightweight implementation of emacs's kill-ring for vim
-    " Plug 'maxbrunsfeld/vim-yankstack'
+    Plug 'maxbrunsfeld/vim-yankstack'
 
     " Maintains a history of previous yanks, changes and deletes
-    Plug 'vim-scripts/YankRing.vim'
+    " Plug 'vim-scripts/YankRing.vim'
 
     " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
     Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
@@ -212,7 +212,7 @@ if index(g:t_vim_bundle_group, 'source_control') >= 0
     Plug 'mhinz/vim-signify'
 
     " Git 支持
-    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive', { 'tag': '*' }
 
 endif
 
