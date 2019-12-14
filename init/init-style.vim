@@ -138,8 +138,8 @@ if GVIM()
     set lines=40
     if WINDOWS()
         set guifont=Knack_NF:h12,Consolas,Courier_New:h10
-    else
-        set guifont=Knack_Regular_Nerd_Font_Complete_Mono:h12
+    elseif MACVIM()
+        set guifont=HackNerdFontComplete-Regular:h14
     endif
 
     " Use ~x on an English Windows version or ~n for French.

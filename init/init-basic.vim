@@ -81,6 +81,11 @@ if has('clipboard')
     endif
 endif
 
+if MACVIM()
+    set macmeta
+endif
+
+
 "----------------------------------------------------------------------
 " Vim leader and local_leader key mapping
 "----------------------------------------------------------------------
