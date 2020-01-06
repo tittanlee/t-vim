@@ -101,6 +101,7 @@ vnoremap <A-j> :move '>+1<cr>gv=gv
 
 "<F2> Save
 nmap <F2> :w! <CR>
+imap <F2> <ESC>:w! <CR>
 
 "<F4>Quit
 nmap <F4> :q! <CR>

@@ -92,7 +92,7 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     Plug 'kshenoy/vim-signature'
 
     " The ultimate undo history visualizer for VIM
-    Plug 'mbbill/undotree'
+    " Plug 'mbbill/undotree'
 
     " Indent Guides is a plugin for visually displaying indent levels in Vim.
     " Plug 'nathanaelkane/vim-indent-guides'
@@ -139,7 +139,7 @@ endif
 if index(g:t_vim_bundle_group, 'enhanced') >= 0
 
     " 用 v 选中一个区域后，ALT_+/- 按分隔符扩大/缩小选区
-    Plug 'terryma/vim-expand-region'
+    " Plug 'terryma/vim-expand-region'
 
     " 给不同语言提供字典补全，插入模式下 c-x c-k 触发
     " Plug 'asins/vim-dict'
@@ -169,7 +169,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " Plug 'vim-scripts/YankRing.vim'
 
     " A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
-    Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
+    " Plug 'severin-lemaignan/vim-minimap', {'on': 'Minimap'}
 
     " Pairs of handy bracket mappings
     Plug 'tpope/vim-unimpaired'
@@ -245,7 +245,7 @@ if index(g:t_vim_bundle_group, 'programming') >= 0
     Plug 'scrooloose/nerdcommenter'
 
     " A class outline viewer for Vim
-    Plug 'majutsushi/tagbar'
+    " Plug 'majutsushi/tagbar'
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     " Plug 'Shougo/echodoc.vim'
@@ -340,13 +340,13 @@ if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
     if has('python') || has('python3')
 
         " An asynchronous fuzzy finder which is used to quickly locate files, buffers, mrus, tags, etc. in large project.
-        Plug 'Yggdroot/LeaderF'
+        " Plug 'Yggdroot/LeaderF'
 
         " leaderf <c-]> tag jump
-        Plug 'tittanlee/LeaderF-tjump'
+        " Plug 'tittanlee/LeaderF-tjump'
 
         " LeaderF extenstion for ripgrep
-        Plug 'bstaint/LeaderF-grep'
+        " Plug 'bstaint/LeaderF-grep'
 
     else
 

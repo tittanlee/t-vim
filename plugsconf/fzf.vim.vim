@@ -1,7 +1,36 @@
 " fzf drop down
 let g:fzf_layout         = { 'down': '~40%' }
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/*'
 let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
+
+
+" 打开 fzf 的方式选择 floating window
+if NVIM()
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()'}
+    
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+
+  let winheight = winheight(0)
+  let winwidth = winwidth(0)
+
+  let width = float2nr(winwidth-(winwidth*2/10))
+
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': &lines - 3,
+        \ 'col': float2nr((winwidth-width)/2),
+        \ 'width': width,
+        \ 'height': &lines - 3
+        \ }
+
+  call nvim_open_win(buf, v:true, opts)
+endfunction
+
+endif
+
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
 " Customize fzf colors to match your color scheme
@@ -20,40 +49,40 @@ let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 "             \ 'spinner': ['fg', 'Label'],
 "             \ 'header':  ['fg', 'Comment'] }
 
-let g:fzf_colors =
-            \ { 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Type'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Identifier'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
-
+" let g:fzf_colors =
+"             \ { 'fg':      ['fg', 'Normal'],
+"             \ 'bg':      ['bg', 'Normal'],
+"             \ 'hl':      ['fg', 'Type'],
+"             \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"             \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"             \ 'hl+':     ['fg', 'Identifier'],
+"             \ 'info':    ['fg', 'PreProc'],
+"             \ 'prompt':  ['fg', 'Conditional'],
+"             \ 'pointer': ['fg', 'Exception'],
+"             \ 'marker':  ['fg', 'Keyword'],
+"             \ 'spinner': ['fg', 'Label'],
+"             \ 'header':  ['fg', 'Comment'] }
+"
 
 " fzf mappings
-nnoremap <leader>.f  :Files<CR>
-nnoremap <Leader>.l  :Lines<CR>
-nnoremap <Leader>.t  :Tags<CR>
-nnoremap <Leader>.b  :Buffers<CR>
-nnoremap <Leader>.c  :Commands<CR>
-nnoremap <Leader>.w  :Windows<CR>
-nnoremap <Leader>.a  :Ag<CR>
-nnoremap <Leader>.g  :GitFiles<CR>
-nnoremap <Leader>.o  :Locate<Space>
-nnoremap <Leader>.m  :Maps<CR>
-nnoremap <Leader>.h  :History<CR>
-nnoremap <Leader>.s  :Snippets<CR>
-nnoremap <Leader>.i  :Commits<CR>
-nnoremap <Leader>.r  :Colors<CR>
-nnoremap <Leader>.e  :Helptags<CR>
-nnoremap <Leader>..c :BCommits<CR>
-nnoremap <Leader>..t :BTags<CR>
-nnoremap <Leader>..l :BLines<CR>
+nnoremap <C-p>  :Files<CR>
+nnoremap <Leader>/  :Lines<CR>
+nnoremap <Leader><Leader>t  :Tags<CR>
+nnoremap <Leader><Leader>b  :Buffers<CR>
+nnoremap <Leader><Leader>c  :Commands<CR>
+nnoremap <Leader><Leader>w  :Windows<CR>
+nnoremap <Leader><Leader>a  :Ag<CR>
+nnoremap <Leader><Leader>g  :GitFiles<CR>
+nnoremap <Leader><Leader>o  :Locate<Space>
+nnoremap <Leader><Leader>m  :Maps<CR>
+nnoremap <Leader><Leader>h  :History<CR>
+nnoremap <Leader><Leader>s  :Snippets<CR>
+nnoremap <Leader><Leader>i  :Commits<CR>
+nnoremap <Leader><Leader>r  :Colors<CR>
+nnoremap <Leader><Leader>e  :Helptags<CR>
+nnoremap <Leader><Leader>..c :BCommits<CR>
+nnoremap t :BTags<CR>
+nnoremap <Leader><leader>bl :BLines<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -97,4 +126,50 @@ function! s:fzf_neighbouring_files()
         \ })
 endfunction
 nnoremap <leader>.n :call <SID>fzf_neighbouring_files() <CR>
+" }
+
+"
+" Fzf jump to tag {
+"
+" Extract the trimmed cmd string between prefix and suffix
+" Valid tag cmd prefixes: /^ | ?^ | / | ?
+" Valid tag cmd suffixes: $/ | $? | / | ?
+function! s:short_cmd(tgi)
+    let short_cmd = substitute(a:tgi['cmd'], '\v^(/\^|\?\^|/|\?)?\s*(.{-})\s*(\$/|\$\?|/|\?)?$', '\2', '')
+    return short_cmd
+endfunction
+
+function! s:Fzf_tjump_source()
+    let TagSort = []
+    let s:word = expand('<cword>')
+    let s:taglist = taglist('^'.s:word.'$')
+    let s:index = 1
+
+    for tgi in s:taglist
+        let tgi['short_cmd'] = s:short_cmd(tgi)
+        let tgi['short_filename'] = tgi['filename']
+        call add(TagSort, printf ("%-4d %-5d %-80s %s", s:index, tgi['line'], tgi['short_filename'], tgi['short_cmd']))
+        let s:index += 1
+    endfo
+
+    return TagSort
+endfunction
+
+function! s:tags_sink(string)
+    let tagIndex = split(a:string, '\zs')[0]
+
+    let cstopt = &cst
+    set nocst
+    exec ":silent! ".tagIndex."tag ".s:word
+    let &cst = cstopt
+endfunction
+
+function! s:fzf_tjump()
+    call fzf#run({
+                \ 'source':  s:Fzf_tjump_source(),
+                \ 'down':    '40%',
+                \ 'sink':    function('s:tags_sink')
+                \ })
+endfunction
+nnoremap <leader><leader>j  :call <SID>fzf_tjump() <CR>
 " }
