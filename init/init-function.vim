@@ -82,6 +82,10 @@
             return has('nvim')
         endfunction
 
+        silent function! MACVIM()
+            return has("gui_macvim")
+        endfunction
+
         silent function! GVIM()
             return has('gui_running')
         endfunction
