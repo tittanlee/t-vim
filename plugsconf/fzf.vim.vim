@@ -8,7 +8,7 @@ let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 if NVIM()
 
 let g:fzf_layout = { 'window': 'call FloatingFZF()'}
-    
+
 function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
@@ -131,6 +131,15 @@ nnoremap <leader>.n :call <SID>fzf_neighbouring_files() <CR>
 "
 " Fzf jump to tag {
 "
+" Return the FSC priority string of a tag, see :help tag-priority
+function! s:priority(tgi)
+    let c_full_match = s:word ==# a:tgi['name'] ? 'F' : ' '
+    let c_static_tag = 1 == a:tgi['static'] ? 'S' : ' '
+    let c_current_file = s:bname == fnamemodify(a:tgi['filename'], ':p') ? 'C' : ' '
+    let priority = c_full_match.c_static_tag.c_current_file
+    return priority
+endfunction
+
 " Extract the trimmed cmd string between prefix and suffix
 " Valid tag cmd prefixes: /^ | ?^ | / | ?
 " Valid tag cmd suffixes: $/ | $? | / | ?
@@ -139,23 +148,62 @@ function! s:short_cmd(tgi)
     return short_cmd
 endfunction
 
-function! s:Fzf_tjump_source()
-    let TagSort = []
-    let s:word = expand('<cword>')
-    let s:taglist = taglist('^'.s:word.'$')
-    let s:index = 1
-
-    for tgi in s:taglist
-        let tgi['short_cmd'] = s:short_cmd(tgi)
-        let tgi['short_filename'] = tgi['filename']
-        call add(TagSort, printf ("%-4d %-5d %-80s %s", s:index, tgi['line'], tgi['short_filename'], tgi['short_cmd']))
-        let s:index += 1
-    endfo
-
-    return TagSort
+function! s:align_right(str, width)
+    let pad = a:width - strlen(a:str)
+    return a:str.repeat(' ', pad)
 endfunction
 
-function! s:tags_sink(string)
+function! s:align_left(str, width)
+    let pad = a:width - strlen(a:str)
+    return repeat(' ', pad).a:str
+endfunction
+
+function! s:maxlen(tgs, key)
+  let max = 0
+  for tgi in a:tgs
+    let len = strlen(tgi[a:key])
+    if len > max
+      let max = len
+    endif
+  endfo
+  return max
+endfunction
+
+" Order must match tselect's order (see :help tag-priority)
+function! s:order_tags()
+    let [FSC, F_C, F__, FS_, _SC, __C, ___, _S_] = [[], [], [], [], [], [], [], []]
+
+    for tgi in s:taglist
+        let priority = s:priority(tgi)
+        let lst = substitute(priority, ' ', '_', 'g')
+        let tgi['pri'] = priority
+        let tgi['short_cmd'] = s:short_cmd(tgi)
+        let tgi['short_filename'] = tgi['filename']
+        call call('add', [{lst}, tgi])
+    endfo
+
+    return FSC + F_C + F__ + FS_ + _SC + __C + ___ + _S_
+endfunction
+
+function! s:Fzf_tjump_source()
+    let s:word = expand('<cword>')
+    let s:taglist = taglist('^'.s:word.'$')
+    let s:bname = fnamemodify(bufname('%'), ':p')
+
+    let tgs = s:order_tags()
+    let max_short_filename = s:maxlen(tgs, 'short_filename') + 1
+    let input = map(tgs, '
+                \ s:align_left(v:key + 1, 3) . "\t" .
+                \ v:val["pri"] . "\t" .
+                \ v:val["kind"] . "\t" .
+                \ v:val["name"] . "\t" .
+                \ s:align_right(v:val["short_filename"], max_short_filename)."\t".
+                \ v:val["short_cmd"]
+                \ ')
+    return input
+endfunction
+
+function! s:Fzf_tjump_sink(string)
     let tagIndex = split(a:string, '\zs')[0]
 
     let cstopt = &cst
@@ -168,7 +216,7 @@ function! s:fzf_tjump()
     call fzf#run({
                 \ 'source':  s:Fzf_tjump_source(),
                 \ 'down':    '40%',
-                \ 'sink':    function('s:tags_sink')
+                \ 'sink':    function('s:Fzf_tjump_sink')
                 \ })
 endfunction
 nnoremap <leader><leader>j  :call <SID>fzf_tjump() <CR>
