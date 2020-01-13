@@ -204,7 +204,7 @@ function! s:Fzf_tjump_source()
 endfunction
 
 function! s:Fzf_tjump_sink(string)
-    let tagIndex = split(a:string, '\zs')[0]
+    let tagIndex = split(a:string, '\t')[0]
 
     let cstopt = &cst
     set nocst

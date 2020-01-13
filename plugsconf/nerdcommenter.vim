@@ -27,6 +27,7 @@ let g:NERDCustomDelimiters = {
             \ 'c'      : { 'left' : '//', 'leftAlt' : '/*', 'rightAlt' : '*/' },
             \ 'uefi'   : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
             \ 'sdl'    : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
+            \ 'dsdl'    : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
             \ 'inform' : { 'left' : '# ', 'leftAlt' : '#', 'rightAlt'  : '#' },
             \ }
 
