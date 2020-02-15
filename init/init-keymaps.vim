@@ -114,11 +114,20 @@ vmap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left>
 omap <F6> <Esc> :line('.'),$s/<C-R>=expand("<cword>")<CR>//gic<left><left><left><left>
 
 " <F7> HighLight on/off switch quickly.
-nmap <F7> :set hlsearch! <CR>
-cmap <F7> <Esc> :set hlsearch! <CR>
-imap <F7> <Esc> :set hlsearch! <CR>
-vmap <F7> <Esc> :set hlsearch! <CR>
-omap <F7> <Esc> :set hlsearch! <CR>
+nmap <F7> :nohl <CR>
+cmap <F7> <Esc> :nohl <CR>
+imap <F7> <Esc> :nohl <CR>
+vmap <F7> <Esc> :nohl <CR>
+omap <F7> <Esc> :nohl <CR>
+
+
+" <F8> Generate the tags and gtags.
+nmap <F8> :GutentagsUpdate! <CR>
+cmap <F8> <Esc> :GutentagsUpdate! <CR>
+imap <F8> <Esc> :GutentagsUpdate! <CR>
+vmap <F8> <Esc> :GutentagsUpdate! <CR>
+omap <F8> <Esc> :GutentagsUpdate! <CR>
+
 
 
 " <F9> TagbarClose and NERDTreeClose
