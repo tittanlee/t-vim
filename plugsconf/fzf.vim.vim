@@ -5,31 +5,31 @@ let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 
 
 " 打开 fzf 的方式选择 floating window
-if NVIM()
-
-let g:fzf_layout = { 'window': 'call FloatingFZF()'}
-
-function! FloatingFZF()
-  let buf = nvim_create_buf(v:false, v:true)
-  call setbufvar(buf, '&signcolumn', 'no')
-
-  let winheight = winheight(0)
-  let winwidth = winwidth(0)
-
-  let width = float2nr(winwidth-(winwidth*2/10))
-
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'row': &lines - 3,
-        \ 'col': float2nr((winwidth-width)/2),
-        \ 'width': width,
-        \ 'height': &lines - 3
-        \ }
-
-  call nvim_open_win(buf, v:true, opts)
-endfunction
-
-endif
+" if NVIM()
+"
+" let g:fzf_layout = { 'window': 'call FloatingFZF()'}
+"
+" function! FloatingFZF()
+"   let buf = nvim_create_buf(v:false, v:true)
+"   call setbufvar(buf, '&signcolumn', 'no')
+"
+"   let winheight = winheight(0)
+"   let winwidth = winwidth(0)
+"
+"   let width = float2nr(winwidth-(winwidth*2/10))
+"
+"   let opts = {
+"         \ 'relative': 'editor',
+"         \ 'row': &lines - 3,
+"         \ 'col': float2nr((winwidth-width)/2),
+"         \ 'width': width,
+"         \ 'height': &lines - 3
+"         \ }
+"
+"   call nvim_open_win(buf, v:true, opts)
+" endfunction
+"
+" endif
 
 "let g:fzf_tags_command   = 'ctags --extra=+f -R'
 
@@ -148,6 +148,12 @@ function! s:short_cmd(tgi)
     return short_cmd
 endfunction
 
+" Shorten file name
+function! s:short_filename(filename)
+    let root_path = substitute(getcwd().'\', '\\', '\\\\', 'g')
+    return substitute (a:filename, root_path, '', 'g')
+endfunction
+
 function! s:align_right(str, width)
     let pad = a:width - strlen(a:str)
     return a:str.repeat(' ', pad)
@@ -178,7 +184,7 @@ function! s:order_tags()
         let lst = substitute(priority, ' ', '_', 'g')
         let tgi['pri'] = priority
         let tgi['short_cmd'] = s:short_cmd(tgi)
-        let tgi['short_filename'] = tgi['filename']
+        let tgi['short_filename'] = s:short_filename(tgi['filename'])
         call call('add', [{lst}, tgi])
     endfo
 
