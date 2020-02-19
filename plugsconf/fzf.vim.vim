@@ -1,6 +1,6 @@
 " fzf drop down
 let g:fzf_layout         = { 'down': '~40%' }
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/*'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/'
 let $FZF_DEFAULT_OPTS    = '--layout=reverse-list --border'
 
 
