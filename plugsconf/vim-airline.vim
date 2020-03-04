@@ -90,11 +90,11 @@ let g:airline#extensions#ycm#error_symbol = 'E:'
 let g:airline#extensions#ycm#warning_symbol = 'W:'
 
 " * enable/disable tagbar integration >
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#enabled = 0
 
 " * change how tags are displayed (:help tagbar-statusline) >
 " let g:airline#extensions#tagbar#flags = ''  (default)
-let g:airline#extensions#tagbar#flags = 'f'
+" let g:airline#extensions#tagbar#flags = 'f'
 " let g:airline#extensions#tagbar#flags = 's'
 " let g:airline#extensions#tagbar#flags = 'p'
 
