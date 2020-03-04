@@ -87,6 +87,7 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     Plug 'chriskempson/base16-vim'
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'joshdick/onedark.vim'
+    Plug 'arzg/vim-colors-xcode'
 
     " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
     Plug 'kshenoy/vim-signature'
@@ -111,6 +112,9 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
 
     " lean & mean status/tabline for vim that's light as air
     Plug 'vim-airline/vim-airline'
+
+    " vim airline extension plugin that how to shown on status bar.
+    Plug 'tittanlee/vim_airline_ex'
 
     " A collection of themes for vim-airline
     Plug 'vim-airline/vim-airline-themes'
@@ -246,6 +250,8 @@ if index(g:t_vim_bundle_group, 'programming') >= 0
 
     " A class outline viewer for Vim
     " Plug 'majutsushi/tagbar'
+
+    Plug 'mgedmin/taghelper.vim'
 
     " echodoc：搭配 YCM/deoplete 在底部显示函数参数
     " Plug 'Shougo/echodoc.vim'
