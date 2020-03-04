@@ -28,7 +28,7 @@
 #
 # For more information, please refer to <http://unlicense.org/>
 
-import ConfigParser
+import configparser
 import codecs
 from io import StringIO
 
@@ -115,7 +115,7 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
 
     return new_flags
 
-def FlagsForFile( filename, **kwargs ):
+def Settings( **kwargs ):
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
 
