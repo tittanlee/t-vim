@@ -25,7 +25,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_comments = 1
 
 "在字串符中也能補全
-let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_strings = 0
 
 " 語法關鍵字補全
 let g:ycm_seed_identifiers_with_syntax = 1
