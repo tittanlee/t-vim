@@ -59,7 +59,8 @@ inoremap <M-l> <Right>
 "----------------------------------------------------------------------
 "QuickFix window open and close
 "----------------------------------------------------------------------
-nnoremap <silent> <leader>q :call QFixToggle(1)<CR>
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 nnoremap <silent> <leader><leader>q :copen \| wincmd L<CR>
 
 "----------------------------------------------------------------------

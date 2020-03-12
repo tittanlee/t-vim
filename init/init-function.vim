@@ -204,46 +204,33 @@
     nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 " }
 
-" Check if NERDTree is open {
-    function! IsNerdTreeEnabled()
-        return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
-    endfunction
-" }
 
-" Check if Tagbar is open {
-    function! IsTagbarEnabled()
-        return exists('t:tagbar_buf_name') && bufwinnr(t:tagbar_buf_name) != -1
+" Search and Replace function {
+    " Toggle to open or close the quickfix window
+    function! GetBufferList()
+        redir =>buflist
+        silent! ls!
+        redir END
+        return buflist
     endfunction
-" }
 
-" Check if Tagbat and NERDTree is open {
-    
-    function! IsTagbarOrNerdTreeOpen()
-        if IsNerdTreeEnabled() || IsTagbarEnabled()
-            return 1
-        else
-            return 0
-        endif
-    endfunction
-    
-" }
-
-" Check if Tagbat and NERDTree is open {
-    function! QFixToggle(forced)
-        if exists("g:qfix_win") && a:forced != 0
-            cclose
-        else
-            if exists("g:t_vim_quickfix_win_height")
-                execute "bo copen ".g:t_vim_quickfix_win_height
-            else
-                bo copen
+    function! ToggleList(bufname, pfx)
+        let buflist = GetBufferList()
+        for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+            if bufwinnr(bufnum) != -1
+                exec(a:pfx.'close')
+                return
             endif
+        endfor
+        if a:pfx == 'l' && len(getloclist(0)) == 0
+            echohl ErrorMsg
+            echo "Location List is Empty."
+            return
+        endif
+        let winnr = winnr()
+        exec('bo '.a:pfx.'open')
+        if winnr() != winnr
+            wincmd p
         endif
     endfunction
-
-    augroup QFixToggle
-        autocmd!
-        autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
-        autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
-    augroup END
 " }
