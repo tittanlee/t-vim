@@ -197,7 +197,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " Plug 't9md/vim-choosewin'
 
     " In Vim, trying to unload, delete or wipe a buffer without closing the window or split?
-    Plug 'qpkorr/vim-bufkill'
+    " Plug 'qpkorr/vim-bufkill'
 
     " Automatic resizing of Vim windows to the golden ratio
     " Plug 'roman/golden-ratio'
@@ -237,7 +237,7 @@ if index(g:t_vim_bundle_group, 'programming') >= 0
     Plug 'skywind3000/gutentags_plus'
 
     " 提供基于 TAGS 的定义预览，函数参数预览，quickfix 预览
-    Plug 'skywind3000/vim-preview', { 'on': ['PreviewTag', 'PreviewQuickfix', 'PreviewClose'] }
+    " Plug 'skywind3000/vim-preview', { 'on': ['PreviewTag', 'PreviewQuickfix', 'PreviewClose'] }
 
     " 表格对齐，使用命令 Tabularize
     Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
