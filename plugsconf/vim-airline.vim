@@ -99,6 +99,17 @@ let g:airline#extensions#tagbar#enabled = 0
 " let g:airline#extensions#tagbar#flags = 'p'
 
 
+" 关闭 vim-airline 集成：
+let g:airline#extensions#coc#enabled = 1
+" 改变错误标签：
+let airline#extensions#coc#error_symbol = 'Error:'
+" 改变警告标签：
+let airline#extensions#coc#warning_symbol = 'Warning:'
+" 改变错误格式：
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+" 改变警告格式：
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
 
 "----------------------------------------------------------------------
 " Airline key mapping <leader><leader> + [u, p, t, b, m]

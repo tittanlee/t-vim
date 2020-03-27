@@ -21,10 +21,12 @@ if !exists('g:t_vim_bundle_group')
     " let g:t_vim_bundle_group += ['grammer']
     let g:t_vim_bundle_group += ['fuzzy_serach']
     let g:t_vim_bundle_group += ['quickfix_enhanced']
-    let g:t_vim_bundle_group += ['youcompleteme']
-    "let g:t_vim_bundle_group += ['deoplete']
     let g:t_vim_bundle_group += ['vimsnips']
     let g:t_vim_bundle_group += ['uefi']
+
+    " let g:t_vim_bundle_group += ['youcompleteme']
+    " let g:t_vim_bundle_group += ['deoplete']
+    let g:t_vim_bundle_group += ['coc']
 endif
 
 "----------------------------------------------------------------------
@@ -54,13 +56,13 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 if index(g:t_vim_bundle_group, 'vim_util_lib') >= 0
 
     "vim: interpret a file by function and cache file automatically
-    Plug 'MarcWeber/vim-addon-mw-utils'
+    " Plug 'MarcWeber/vim-addon-mw-utils'
 
     "Some utility functions for VIM
-    Plug 'tomtom/tlib_vim'
+    " Plug 'tomtom/tlib_vim'
 
     " 支持库，给其他插件用的函默认插件 数库
-    Plug 'xolox/vim-misc'
+    " Plug 'xolox/vim-misc'
 
 endif
 
@@ -105,16 +107,16 @@ if index(g:t_vim_bundle_group, 'basic') >= 0
     " Plug 'justinmk/vim-dirvish', {'on': ['Dirvish'] }
 
     " A tree explorer plugin for vim.
-    Plug 'scrooloose/nerdtree'
+    " Plug 'scrooloose/nerdtree'
 
     " Extra syntax and highlight for nerdtree files
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
     " lean & mean status/tabline for vim that's light as air
     Plug 'vim-airline/vim-airline'
 
     " vim airline extension plugin that how to shown on status bar.
-    Plug 'tittanlee/vim_airline_ex'
+    " Plug 'tittanlee/vim_airline_ex'
 
     " A collection of themes for vim-airline
     Plug 'vim-airline/vim-airline-themes'
@@ -149,7 +151,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     " Plug 'asins/vim-dict'
 
     " 配对括号和引号自动补全
-    Plug 'Raimondi/delimitMate'
+    " Plug 'Raimondi/delimitMate'
 
     " The plugin provides mappings to easily delete, change and add such surroundings in pairs.
     Plug 'tpope/vim-surround'
@@ -158,7 +160,10 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     Plug 'chrisbra/vim-diff-enhanced'
 
     " 多光標操作
-    Plug 'terryma/vim-multiple-cursors'
+    " Plug 'terryma/vim-multiple-cursors'
+
+    " Multiple cursors plugin for vim/neovim
+    Plug 'mg979/vim-visual-multi'
 
     " Vim commands for copy various bits of the path for the current file
     Plug 'AdamWhittingham/vim-copy-filename'
@@ -188,7 +193,7 @@ if index(g:t_vim_bundle_group, 'enhanced') >= 0
     Plug 'easymotion/vim-easymotion'
 
     " Lightning fast left-right movement in Vim
-    Plug 'unblevable/quick-scope'
+    " Plug 'unblevable/quick-scope'
 
     " Plugin to move lines and selections up and down
     " Plug 'matze/vim-move'
@@ -210,7 +215,7 @@ endif
 if index(g:t_vim_bundle_group, 'source_control') >= 0
 
     " 提供 gist 接口
-    Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
+    " Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 
     " 用于在侧边符号栏显示 git/svn 的 diff
     Plug 'mhinz/vim-signify'
@@ -391,7 +396,7 @@ endif
 if index(g:t_vim_bundle_group, 'quickfix_enhanced') >= 0
 
     " Open a Quickfix item in a window you choose. (Vim plugin)
-    Plug 'yssl/QFEnter'
+    " Plug 'yssl/QFEnter'
 
     " Tame the quickfix window
     " Plug 'romainl/vim-qf'
@@ -426,6 +431,22 @@ if index(g:t_vim_bundle_group, 'deoplete') >= 0
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
+endif
+
+
+
+"----------------------------------------------------------------------
+" coc.nim. Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
+"----------------------------------------------------------------------
+if index(g:t_vim_bundle_group, 'coc') >= 0
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Plug 'iamcco/coc-actions'
+    " Plug 'clangd/coc-clangd'
+    " Plug 'neoclide/coc-git'
+    " Plug 'neoclide/coc-highlight'
+    " Plug 'neoclide/coc-lists'
+    " Plug 'neoclide/coc-snippets'
 endif
 
 
