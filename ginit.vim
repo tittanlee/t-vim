@@ -35,8 +35,10 @@
         set guioptions-=L
 
         if has("gui_macvim")
+            " for macvim
             set guifont=HackNerdFontComplete-Regular:h12
-        elseif
+        elseif has("gui_running")
+            "for MS-Gvim
             set guifont=Hack_NF:h12
             autocmd GUIEnter * simalt ~x
             simalt ~x
