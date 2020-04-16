@@ -49,5 +49,13 @@
 " }}}
 
 
+" edge theme {{{
+    if g:t_vim_colorscheme == 'edge'
+        " the configuration options should be placed before `colorscheme edge`
+        let g:edge_style = 'neon'
+        let g:edge_disable_italic_comment = 1
+        let g:edge_current_word = 'underline'
+    endif
+" }}}
 
 exec "colorscheme " . g:t_vim_colorscheme

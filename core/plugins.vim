@@ -51,6 +51,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
             " Hydrangea theme for Vim.
             Plug 'yuttie/hydrangea-vim'
+
+            " Clean & Elegant Color Scheme inspired by Atom One and Material
+            Plug 'sainnhe/edge'
         endif
     " }}}
 

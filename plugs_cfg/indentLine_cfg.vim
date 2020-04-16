@@ -16,6 +16,11 @@ let g:indentLine_fileTypeExclude = ['defx']
 "When opening these types of buffers, the plugin is disabled
 let g:indentLine_bufTypeExclude = ['help', 'terminal']
 
+
+"let g:indentLine_char = ''
+"let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+
 " Bind the key mpa if indentLine exist {{{
     " toggle the indent lines of the current buffer.
     nnoremap <leader>ig :IndentLinesToggle <CR>
@@ -23,3 +28,5 @@ let g:indentLine_bufTypeExclude = ['help', 'terminal']
     " toggle the leading spaces of the current buffer.
     nnoremap <leader>il :LeadingSpaceToggl <CR>
 " }}}
+
+
