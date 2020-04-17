@@ -119,6 +119,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " Rainbow Parentheses Improved, shorter code, no level limit, smooth and fast, powerful configuration.
             Plug 'luochen1990/rainbow'
 
+            " The missing sidebar manager for Vim/Neovim
+            Plug 'brglng/vim-sidebar-manager'
+
         endif
     " }}}
 
@@ -127,7 +130,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         if index(g:t_vim_bundle_group, 'file_explorer') >= 0
             " The dark powered file explorer implementation
             Plug 'Shougo/defx.nvim', { 'as': 'defx', 'on': 'Defx', 'do': ':UpdateRemotePlugins' }
-            Plug 'kristijanhusak/defx-git'
             if !has('nvim')
                 Plug 'roxma/nvim-yarp'
                 Plug 'roxma/vim-hug-neovim-rpc'
