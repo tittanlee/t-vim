@@ -53,8 +53,12 @@
     if g:t_vim_colorscheme == 'edge'
         " the configuration options should be placed before `colorscheme edge`
         let g:edge_style = 'neon'
+
+        " Set to 1 to disable italic in Comment 
         let g:edge_disable_italic_comment = 1
-        let g:edge_current_word = 'underline'
+
+        " Available values: 'bold', 'underline', 'italic', 'grey background'
+        let g:edge_current_word = 'grey background'
     endif
 " }}}
 

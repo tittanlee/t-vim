@@ -195,9 +195,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " fzf-tags bridges the gap between tags and fzf.vim.
             Plug 'tittanlee/fzf-tags'
 
-            " Vim + Fzf + Rg = Super Fast Jumper
-            Plug 'wookayin/fzf-ripgrep.vim'
-
             " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }
 

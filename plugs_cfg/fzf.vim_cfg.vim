@@ -1,5 +1,6 @@
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/'
 let $FZF_DEFAULT_OPTS    = '
+            \ --extended
             \ --pointer="->"
             \ --marker="#"
             \ --layout=reverse
@@ -20,31 +21,23 @@ else
     let g:fzf_layout = { 'down': '~40%' }
 endif
 
-
 " FZF ripgrep search function with bat preview {{{
-    function! FzfRipgrep(query)
-        let fzf_source = 'rg --line-number --no-heading --glob "!.git/*" --smart-case %s | awk -F: "{line = ($2 > 20)? $2-20 : 1; print $1, $2, line}"'
-        let fzf_source_command = printf(fzf_source, shellescape(a:query))
-
-        let fzf_options = $FZF_DEFAULT_OPTS . ' --with-nth 1 --preview="bat --number --color always --theme Dracula --line-range {3}: --highlight-line {2} {1}"'
-
-        function! s:edit_file(item)
-            let l:file_path = split (a:item, " ")[0]
-            let l:num       = split (a:item, " ")[1]
-            execute 'silent e +'. l:num . " " . l:file_path . " | normal zz"
-        endfunction
-
-        call fzf#run({
-                    \ 'source' : fzf_source_command,
-                    \ 'sink'   : function('s:edit_file'),
-                    \ 'options': fzf_options,
-                    \ 'window' : { 'width': 0.9, 'height': 0.9, 'border': 'sharp' }
-                    \})
+    function! RipgrepFzf(query, fullscreen)
+        let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+        let initial_command = printf(command_fmt, shellescape(a:query))
+        let reload_command = printf(command_fmt, '{q}')
+        let spec = {'options': [
+                    \ '--phony',
+                    \ '--query', a:query,
+                    \ '--bind', 'change:reload:'.reload_command,
+                    \ '--preview-window', 'up:hidden',
+                    \ '--preview', 'bat {1..2}',
+                    \ ] }
+        call fzf#vim#grep(initial_command, 1, spec, a:fullscreen)
     endfunction
 
-    command! -nargs=* -bang FzfRg call FzfRipgrep(<q-args>)
+    command! -nargs=* -bang FzfRg call RipgrepFzf(<q-args>, <bang>0)
 " }}}
-
 
 
 " Fzf Key map {{{
