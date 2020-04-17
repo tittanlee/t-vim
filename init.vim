@@ -41,12 +41,12 @@
 
     " vim theme setting
     if !exists('g:t_vim_colorscheme')
-        let g:t_vim_colorscheme = 'edge'
+        let g:t_vim_colorscheme = 'gruvbox9'
     endif
 
     " lightline theme setting
     if !exists('g:t_vim_lightline_theme')
-        let g:t_vim_lightline_theme = 'edge'
+        let g:t_vim_lightline_theme = 'gruvbox9'
     endif
 " }}}
 

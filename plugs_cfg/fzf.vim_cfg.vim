@@ -1,6 +1,5 @@
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/'
 let $FZF_DEFAULT_OPTS    = '
-            \ --extended
             \ --pointer="->"
             \ --marker="#"
             \ --layout=reverse
@@ -23,15 +22,15 @@ endif
 
 " FZF ripgrep search function with bat preview {{{
     function! RipgrepFzf(query, fullscreen)
-        let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+        let command_fmt = 'rg --line-number --no-heading --color=always --smart-case %s | sed "s/:/ /g'
         let initial_command = printf(command_fmt, shellescape(a:query))
         let reload_command = printf(command_fmt, '{q}')
         let spec = {'options': [
                     \ '--phony',
                     \ '--query', a:query,
                     \ '--bind', 'change:reload:'.reload_command,
-                    \ '--preview-window', 'up:hidden',
-                    \ '--preview', 'bat {1..2}',
+                    \ '--preview-window', 'up:70%',
+                    \ '--preview', 'bat --number --color always --theme TwoDark --line-range {2}: --highlight-line {2} {1}',
                     \ ] }
         call fzf#vim#grep(initial_command, 1, spec, a:fullscreen)
     endfunction
