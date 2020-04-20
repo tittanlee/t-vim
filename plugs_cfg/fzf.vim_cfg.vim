@@ -12,12 +12,12 @@ let g:fzf_preview_window = ''
 
 " Determines the size and position of fzf window
 "let s:fzf_use_floating_win = has('nvim') ? 1 : 0
-let s:fzf_use_floating_win = 1
+let s:fzf_use_floating_win = 0
 if s:fzf_use_floating_win
     " Use fzf.vim popup window
     let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.80, 'border': 'sharp'} }
 else
-    let g:fzf_layout = { 'down': '~40%' }
+    let g:fzf_layout = { 'down': '~60%' }
 endif
 
 " FZF ripgrep search function with bat preview {{{

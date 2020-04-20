@@ -3,7 +3,7 @@
 let g:bufExplorerShowRelativePath = 1
 
 " Sort by most recently used.
-let g:bufExplorerSortBy = 'mru'
+let g:bufExplorerSortBy = 'name'
 
 " Split new window below current.
 let g:bufExplorerSplitBelow = 1
@@ -13,3 +13,6 @@ let g:bufExplorerSplitHorzSize = 10
 
 " Do not show default help.
 let g:bufExplorerDefaultHelp = 0
+
+" To control whether to show "No Name" buffers or not, use: >
+let g:bufExplorerShowNoName = 0
