@@ -29,12 +29,16 @@
         " Keep only window {{{
             nnoremap <Tab>o :only <CR>
         " }}}
+
+        " Source current vim {{{
+            nnoremap <Tab>sc :so%<CR>
+        " }}}
     " }}}
 
     " Buffer control - switch and wipe {{{
         nnoremap <silent> <M-h> :bp <CR>
         nnoremap <silent> <M-l> :bn <CR>
-        nnoremap <silent> <M-w> :bw <CR>
+        nnoremap <silent> <M-w> :bd <CR>
     " }}}
 
     " Use jk switch to normal mode {{{

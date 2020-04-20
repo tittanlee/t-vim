@@ -135,6 +135,9 @@
 
 " 20 command line editing {{{
     set wildignore+=*.so,*~,*/.git/*,*/.svn/*,*/.DS_Store,*/tmp/*
+    if !has('nvim')
+        set wildmode=list,full
+    endif
 " }}}
 
 " 21 executing external commands {{{
