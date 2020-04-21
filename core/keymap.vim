@@ -58,6 +58,11 @@
         tnoremap <S-Insert> <C-r>+
     " }}}
 
+    " Jump to next/previous paragraphs {{{
+        nnoremap [[ [[zz
+        nnoremap ]] ]]zz
+    " }}}
+
     " folding qucik key map {{{
         nnoremap z0 :set foldlevel=0 <CR>
         nnoremap z1 :set foldlevel=1 <CR>

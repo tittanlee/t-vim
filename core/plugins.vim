@@ -17,7 +17,7 @@
         let g:t_vim_bundle_group += ['modern_ux']
         let g:t_vim_bundle_group += ['basic_enhanced']
         let g:t_vim_bundle_group += ['file_explorer']
-        let g:t_vim_bundle_group += ['text_object']
+        " let g:t_vim_bundle_group += ['text_object']
         let g:t_vim_bundle_group += ['programming']
         let g:t_vim_bundle_group += ['filetypes']
         let g:t_vim_bundle_group += ['source_control']
@@ -204,7 +204,7 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }
 
             " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim.
-            Plug 'Yggdroot/LeaderF'
+            "Plug 'Yggdroot/LeaderF'
 
             " Vim search status.
             "Plug 'osyo-manga/vim-anzu'
