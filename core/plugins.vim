@@ -197,8 +197,14 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " fzf-tags bridges the gap between tags and fzf.vim.
             Plug 'tittanlee/fzf-tags'
 
+            " Vim plugin to improve project searching with tools like ag and rg
+            Plug 'jesseleite/vim-agriculture'
+
             " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }
+
+            " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim.
+            Plug 'Yggdroot/LeaderF'
 
             " Vim search status.
             "Plug 'osyo-manga/vim-anzu'
