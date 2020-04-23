@@ -1,0 +1,6 @@
+--langdef=asl
+--langmap=asl:.asl
+--regex-asl=/Scope[ \t]*\([ \t]*([_A-Z0-9.\\]+)[ \t]*\)/\1/c,scope/i
+--regex-asl=/Name[ \t]*\([ \t]*([_A-Z0-9.\\]+)[ \t]*\)/\1/n,name/i
+--regex-asl=/Device[ \t]*\([ \t]*([_A-Z0-9.\\]+)[ \t]*\)/\1/d,device/i
+--regex-asl=/Method[ \t]*\([ \t]*([_A-Z0-9]{1,4})[ \t]*,[^)]+\)/\1/f,function/i

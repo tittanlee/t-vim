@@ -1,2 +1,2 @@
 setlocal foldmethod=syntax
-setlocal foldlevel=1
+setlocal foldlevel=99
