@@ -22,7 +22,7 @@ endif
 
 " FZF ripgrep search function with bat preview {{{
     function! RipgrepFzf(query, fullscreen)
-        let command_fmt = 'rg --line-number --no-heading --color=always --smart-case %s | sed "s/:/ /g'
+        let command_fmt = 'rg --line-number --no-heading --color=always --smart-case %s | sed -e "s/:/ /g"'
         let initial_command = printf(command_fmt, shellescape(a:query))
         let reload_command = printf(command_fmt, '{q}')
         let spec = {'options': [

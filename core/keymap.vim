@@ -86,8 +86,8 @@
     " }}}
 
     " <F7> Highligh toggle {{{
-        nmap <F7> :nohl <CR>
-        imap <F7> <Esc> :nohl <CR>
+        nnoremap <F7> :nohl <CR>
+        inoremap <F7> <Esc> :nohl <CR>
     " }}}
 
 " }}}
