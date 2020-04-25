@@ -54,6 +54,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
             " Clean & Elegant Color Scheme inspired by Atom One and Material
             Plug 'sainnhe/edge'
+
+            " Dark blue color scheme for Vim and Neovim
+            Plug 'cocopon/iceberg.vim'
         endif
     " }}}
 

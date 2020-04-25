@@ -90,4 +90,8 @@
         inoremap <F7> <Esc> :nohl <CR>
     " }}}
 
+    " <F12> "Remove all trailing whitespace by pressing F12. {{{
+        nnoremap <F12> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+    " }}}
+
 " }}}

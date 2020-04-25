@@ -41,12 +41,12 @@
 
     " vim theme setting
     if !exists('g:t_vim_colorscheme')
-        let g:t_vim_colorscheme = 'gruvbox9'
+        let g:t_vim_colorscheme = 'iceberg'
     endif
 
     " lightline theme setting
     if !exists('g:t_vim_lightline_theme')
-        let g:t_vim_lightline_theme = 'gruvbox9'
+        let g:t_vim_lightline_theme = 'iceberg'
     endif
 " }}}
 
