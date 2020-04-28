@@ -110,7 +110,7 @@
 
 " 15 folding {{{
     set foldenable
-    set foldcolumn=3
+    set foldcolumn=2
 " }}}
 
 " 16 diff mode {{{
@@ -118,7 +118,7 @@
 
 " 17 mapping {{{
     set ttimeout
-    set ttimeoutlen=50
+    set ttimeoutlen=80
 " }}}
 
 " 18 reading and writing files {{{
