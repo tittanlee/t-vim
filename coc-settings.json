@@ -36,6 +36,7 @@
 
     //  coc preferences
     "coc.preferences.currentFunctionSymbolAutoUpdate":true,
+    "coc.preferences.extensionUpdateCheck": "weekly",
 
     //diagnostic
     "diagnostic.enable":false,
@@ -46,7 +47,7 @@
     "diagnostic.refreshOnInsertMode": true,
 
     //coc-clagnd
-    //"clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd",
+    "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd",
 
     //coc-git
     "git.enableGutters": false,

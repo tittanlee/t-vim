@@ -16,6 +16,7 @@
         let g:t_vim_bundle_group += ['color_scheme']
         let g:t_vim_bundle_group += ['modern_ux']
         let g:t_vim_bundle_group += ['basic_enhanced']
+        let g:t_vim_bundle_group += ['buffer_related']
         let g:t_vim_bundle_group += ['file_explorer']
         " let g:t_vim_bundle_group += ['text_object']
         let g:t_vim_bundle_group += ['programming']
@@ -60,7 +61,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         endif
     " }}}
 
-
     " g:t_vim_bundle_group['modern_ux'] {{{
         if index(g:t_vim_bundle_group, 'modern_ux') >= 0
             " Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline, Powerline, Unite, vim-startify and more
@@ -76,7 +76,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             "Plug 'mengelbrecht/lightline-bufferline'
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['basic_enhanced'] {{{
         if index(g:t_vim_bundle_group, 'basic_enhanced') >= 0
@@ -104,9 +103,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " Vim commands for copy various bits of the path for the current file
             Plug 'AdamWhittingham/vim-copy-filename'
 
-            " Display the list of buffers in various sort orders
-            Plug 'jlanzarotta/bufexplorer'
-
             " A vim plugin for highlighting and navigating through different words in a buffer.
             Plug 'lfv89/vim-interestingwords'
 
@@ -128,6 +124,15 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         endif
     " }}}
 
+    " g:t_vim_bundle_group['buffer_related'] {{{
+        if index(g:t_vim_bundle_group, 'buffer_related') >= 0
+            " Display the list of buffers in various sort orders
+            Plug 'jlanzarotta/bufexplorer'
+
+            " Delete buffers and close files in Vim without closing your windows or messing up your layout. Like Bclose.vim
+            Plug 'moll/vim-bbye'
+        endif
+    " }}}
 
     " g:t_vim_bundle_group['file_explorer'] {{{
         if index(g:t_vim_bundle_group, 'file_explorer') >= 0
@@ -140,7 +145,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         endif
     " }}}
 
-
     " g:t_vim_bundle_group['text_object'] {{{
         if index(g:t_vim_bundle_group, 'text_object') >= 0
             Plug 'AndrewRadev/splitjoin.vim'
@@ -149,7 +153,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'kana/vim-operator-user'
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['programming'] {{{
         if index(g:t_vim_bundle_group, 'programming') >= 0
@@ -165,14 +168,12 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         endif
     " }}}
 
-
     " g:t_vim_bundle_group['filetypes'] {{{
         if index(g:t_vim_bundle_group, 'filetypes') >= 0
             " A solid language pack for Vim.
             Plug 'sheerun/vim-polyglot'
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['source_control'] {{{
         if index(g:t_vim_bundle_group, 'source_control') >= 0
@@ -183,7 +184,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'tpope/vim-fugitive'
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['fuzzy_serach'] {{{
         if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
@@ -214,14 +214,12 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         endif
     " }}}
 
-
     " g:t_vim_bundle_group['coc'] {{{
         if index(g:t_vim_bundle_group, 'coc') >= 0
             " Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
             Plug 'neoclide/coc.nvim', {'as': 'coc', 'branch': 'release'}
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['snippets'] {{{
         if index(g:t_vim_bundle_group, 'snippets') >= 0
@@ -232,7 +230,6 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             "Plug 'SirVer/ultisnips'
         endif
     " }}}
-
 
     " g:t_vim_bundle_group['uefi'] {{{
         if index(g:t_vim_bundle_group, 'uefi') >= 0
