@@ -17,7 +17,7 @@ if s:fzf_use_floating_win
     " Use fzf.vim popup window
     let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.80, 'border': 'sharp'} }
 else
-    let g:fzf_layout = { 'down': '~60%' }
+    let g:fzf_layout = { 'down': '~50%' }
 endif
 
 " FZF ripgrep search function with bat preview {{{
@@ -69,4 +69,42 @@ endif
     nnoremap [fzf-leaderkey]gW  :<C-u>FzfRg <C-R>=expand("<cword>")<CR><CR>
 " }}}
 
+" FZF gtags search function with bat preview {{{
+    function! Fzfgtags(query, param)
+        let command_fmt = 'global %s %s --result cscope'
+        let initial_command = system(printf(command_fmt, shellescape(a:param), shellescape(a:query)))
+        let lines = split(initial_command, "\n")
 
+        let s:preview_source_cmd = [
+                    \'--preview-window="up:hidden"',
+                    \ '--preview="',
+                    \ 'bat ',
+                    \ '--number',
+                    \ '--color always',
+                    \ '--theme Dracula',
+                    \ '--line-range {3}:',
+                    \ '--highlight-line {3} {1}"'
+                    \ ]
+
+        function! s:gtagsSelection(content)
+            let filename = split(a:content, " ")[0]
+            let lineno= split(a:content, " ")[2]
+            let editfilecmd = printf('edit +%s %s', lineno, filename)
+            execute editfilecmd . '| normal zz'
+        endfunction
+
+        call fzf#run ({
+                    \   'source': lines,
+                    \   'sink': function('s:gtagsSelection'),
+                    \   'options': join(s:preview_source_cmd, ' '),
+                    \   'window': { 'width': 0.70, 'height': 0.70, 'border': 'sharp'}
+                    \  })
+    endfunction
+
+    command! -nargs=+ -bang FzfGtags call Fzfgtags(<f-args>)
+
+    nnoremap <C-\>d :FzfGtags <C-R>=expand('<cword>')<CR> -d<CR>
+    nnoremap <C-\>g :FzfGtags <C-R>=expand('<cword>')<CR> -g<CR>
+    nnoremap <C-\>r :FzfGtags <C-R>=expand('<cword>')<CR> -r<CR>
+    nnoremap <C-\>s :FzfGtags <C-R>=expand('<cword>')<CR> -s<CR>
+" }}}

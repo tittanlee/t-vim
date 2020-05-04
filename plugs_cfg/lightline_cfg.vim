@@ -116,7 +116,7 @@ function! GetTagStatus() abort
         let l:msg .= 'ctags '.'⏳'
     endif
     if index(l:modules_in_progress, 'gtags_cscope') >= 0
-        let l:msg .= 'gtags'.'⏳'
+        let l:msg .= 'gtags '.'⏳'
     endif
     return l:msg
 endfunction
