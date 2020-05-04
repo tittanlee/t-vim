@@ -42,6 +42,8 @@ endif
 " Fzf Key map {{{
     nmap <Leader>f [fzf-leaderkey]
 
+    nnoremap <silent> [fzf-leaderkey]vim :<C-u>Files <C-R>=expand(g:t_vim_root)<CR><CR>
+
     nnoremap <silent> [fzf-leaderkey]f   :<C-u>Files<CR>
     nnoremap <silent> [fzf-leaderkey]F   :<C-u>Filetypes<CR>
     nnoremap <silent> [fzf-leaderkey]b   :<C-u>Buffers<CR>
