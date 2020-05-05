@@ -162,6 +162,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " The right way to use gtags with gutentags
             Plug 'skywind3000/gutentags_plus'
 
+            " The missing preview window for vim
+            Plug 'skywind3000/vim-preview'
+
             " Comment functions so powerful—no comment necessary.
             Plug 'scrooloose/nerdcommenter'
 
@@ -201,7 +204,7 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'tittanlee/fzf-tags'
 
             " Vim plugin to improve project searching with tools like ag and rg
-            Plug 'jesseleite/vim-agriculture'
+            "Plug 'jesseleite/vim-agriculture'
 
             " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }

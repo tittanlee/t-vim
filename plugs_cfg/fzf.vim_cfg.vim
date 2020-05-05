@@ -69,6 +69,7 @@ endif
     nnoremap [fzf-leaderkey]gW  :<C-u>FzfRg <C-R>=expand("<cword>")<CR><CR>
 " }}}
 
+if 0
 " FZF gtags search function with bat preview {{{
     function! Fzfgtags(query, param)
         let command_fmt = 'global %s %s --result cscope'
@@ -108,3 +109,4 @@ endif
     nnoremap <C-\>r :FzfGtags <C-R>=expand('<cword>')<CR> -r<CR>
     nnoremap <C-\>s :FzfGtags <C-R>=expand('<cword>')<CR> -s<CR>
 " }}}
+endif
