@@ -160,10 +160,10 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'ludovicchabant/vim-gutentags'
 
             " The right way to use gtags with gutentags
-            Plug 'skywind3000/gutentags_plus'
+            "Plug 'skywind3000/gutentags_plus'
 
             " The missing preview window for vim
-            Plug 'skywind3000/vim-preview'
+            "Plug 'skywind3000/vim-preview'
 
             " Comment functions so powerful—no comment necessary.
             Plug 'scrooloose/nerdcommenter'

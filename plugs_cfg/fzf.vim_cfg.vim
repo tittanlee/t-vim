@@ -15,7 +15,7 @@ let g:fzf_preview_window = ''
 let s:fzf_use_floating_win = 0
 if s:fzf_use_floating_win
     " Use fzf.vim popup window
-    let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.80, 'border': 'sharp'} }
+    let g:fzf_layout = { 'window': { 'width': 0.90, 'height': 0.9, 'border': 'sharp'} }
 else
     let g:fzf_layout = { 'down': '~50%' }
 endif
@@ -69,36 +69,49 @@ endif
     nnoremap [fzf-leaderkey]gW  :<C-u>FzfRg <C-R>=expand("<cword>")<CR><CR>
 " }}}
 
-if 0
+if 1
 " FZF gtags search function with bat preview {{{
+    function! s:trimGtags(index, item)
+        let file_name = split(a:item, ' ')[0]
+        let line_no= split(a:item, ' ')[2]
+        return printf('%d %s %d %d', a:index, file_name, line_no, (line_no > 8 ? line_no - 8 : line_no))
+    endfunction
+
     function! Fzfgtags(query, param)
         let command_fmt = 'global %s %s --result cscope'
         let initial_command = system(printf(command_fmt, shellescape(a:param), shellescape(a:query)))
+
+        if empty(initial_command)
+            return
+        endif
         let lines = split(initial_command, "\n")
+        let fzf_gtags_result = map(lines, function('s:trimGtags'))
 
         let s:preview_source_cmd = [
-                    \'--preview-window="up:hidden"',
+                    \ '--with-nth=1,2,3',
+                    \ '--preview-window="up:50%%"',
                     \ '--preview="',
-                    \ 'bat ',
+                    \ 'bat',
                     \ '--number',
                     \ '--color always',
                     \ '--theme Dracula',
-                    \ '--line-range {3}:',
-                    \ '--highlight-line {3} {1}"'
+                    \ '--line-range {4}:',
+                    \ '--highlight-line {3} {2}"'
                     \ ]
+        call add(s:preview_source_cmd, printf('--prompt="==> %s <== #>"', a:query))
 
         function! s:gtagsSelection(content)
-            let filename = split(a:content, " ")[0]
+            let filename = split(a:content, " ")[1]
             let lineno= split(a:content, " ")[2]
             let editfilecmd = printf('edit +%s %s', lineno, filename)
             execute editfilecmd . '| normal zz'
         endfunction
 
         call fzf#run ({
-                    \   'source': lines,
+                    \   'source': fzf_gtags_result,
                     \   'sink': function('s:gtagsSelection'),
                     \   'options': join(s:preview_source_cmd, ' '),
-                    \   'window': { 'width': 0.70, 'height': 0.70, 'border': 'sharp'}
+                    \   'window': { 'width': 0.90, 'height': 0.90, 'border': 'sharp'}
                     \  })
     endfunction
 
