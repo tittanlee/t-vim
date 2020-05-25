@@ -52,6 +52,7 @@ endif
 let g:gutentags_ctags_extra_args = []
 let g:gutentags_ctags_extra_args += ['-R']
 let g:gutentags_ctags_extra_args += ['--sort=foldcase']
+let g:gutentags_ctags_extra_args += ['--excmd=combine']
 let g:gutentags_ctags_extra_args += ['--exclude=Build']
 
 " $ ctags --list-kinds=C
@@ -130,7 +131,7 @@ let g:gutentags_ctags_extra_args += ['--extras=+fq']
 let g:gutentags_ctags_extra_args += ['--fields=+niazS']
 
 " 使用 universal-ctags 的话需要下面这行，请反注释
-let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+"let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 " 禁止 gutentags 自动链接 gtags 数据库
 let g:gutentags_auto_add_gtags_cscope = 1
