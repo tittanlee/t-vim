@@ -200,6 +200,8 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " fzf ❤️ vim
             Plug 'junegunn/fzf.vim'
 
+            " Plug 'yuki-ycino/fzf-preview.vim', { 'as': 'fzf-preview' }
+
             " fzf-tags bridges the gap between tags and fzf.vim.
             Plug 'tittanlee/fzf-tags'
 
