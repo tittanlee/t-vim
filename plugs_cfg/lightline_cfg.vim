@@ -7,7 +7,7 @@ let g:lightline = {
             \ 'subseparator': { 'left'       : '', 'right'   : ''} ,
             \ 'active': {
             \       'left':  [['mode'],['CocStatus'],['FunctionName']],
-            \       'right': [['LineInfo'],['FileFormat'],['FileEncoding'],['GutenTagStatus']]
+            \       'right': [['LineInfo'],['FileFormat','FileEncoding','FileSyntax'],['GutenTagStatus']]
             \   },
             \ 'inactive': {
             \       'left':  [['mode']],
@@ -20,6 +20,7 @@ let g:lightline = {
             \       'LineInfo'       : 'GetLineInfo'           ,
             \       'FileFormat'     : 'GetFileFormat'         ,
             \       'FileEncoding'   : 'GetFileEncoding'       ,
+            \       'FileSyntax'     : 'GetFileSyntax'       ,
             \   },
             \ 'component_expand' : {
             \       'GitInfo' : 'GetGitInfo'      ,
@@ -78,7 +79,7 @@ endfunction
 
 " Get Function Name {{{
 function! GetFunctionName() abort
-    return get(b:, 'coc_current_function', '')
+    return tagbar#currenttag('%s -> ', '') . tagbar#currenttagtype("(%s) ", '')
 endfunction
 " }}}
 
@@ -157,6 +158,15 @@ function! GetFileEncoding()
         return ""
     endif
     return empty(&fenc) ? &enc.' 👽' : &fenc.' 👽'
+endf
+" }}}
+
+" FileSyntax {{{
+function! GetFileSyntax()
+    if s:IsSpecial() || winwidth(0) <= 70
+        return ""
+    endif
+    return empty(&syntax) ? '': &syntax
 endf
 " }}}
 

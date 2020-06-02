@@ -168,6 +168,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " Comment functions so powerful—no comment necessary.
             Plug 'scrooloose/nerdcommenter'
 
+            " Vim plugin that displays tags in a window, ordered by scope 
+            Plug 'majutsushi/tagbar'
+
         endif
     " }}}
 
