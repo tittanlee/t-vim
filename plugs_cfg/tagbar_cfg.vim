@@ -29,6 +29,6 @@ let g:tagbar_type_c = {
             \ }
 
 " Tagbar key mapping {{{
-    nnoremap <F8>    :TagbarToggle<CR>
+    "nnoremap <F8>    :TagbarToggle<CR>
 " }}}
 

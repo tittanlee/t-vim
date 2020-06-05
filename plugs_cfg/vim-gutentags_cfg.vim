@@ -48,10 +48,13 @@ if executable('gtags') && executable('gtags-cscope')
     let g:gutentags_modules += ['gtags_cscope']
 endif
 
+let g:gutentags_resolve_symlinks = 1
+let g:gutentags_file_list_command = "rg --files --hidden"
+
 " 设置 ctags 的参数
 let g:gutentags_ctags_extra_args = []
-let g:gutentags_ctags_extra_args += ['-R']
-let g:gutentags_ctags_extra_args += ['--sort=yes']
+"let g:gutentags_ctags_extra_args += ['-R']
+let g:gutentags_ctags_extra_args += ['--sort=foldcase']
 let g:gutentags_ctags_extra_args += ['--excmd=combine']
 let g:gutentags_ctags_extra_args += ['--exclude=Build']
 
