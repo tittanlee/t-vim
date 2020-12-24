@@ -193,20 +193,20 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
     " g:t_vim_bundle_group['fuzzy_serach'] {{{
         if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
-            if !(has('win32') || has('win64'))
-                " A command-line fuzzy finder
-                Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-            else
-                Plug 'junegunn/fzf'
-            endif
+            "if !(has('win32') || has('win64'))
+            "    " A command-line fuzzy finder
+            "    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+            "else
+            "    Plug 'junegunn/fzf'
+            "endif
 
-            " fzf ❤️ vim
-            Plug 'junegunn/fzf.vim'
+            "" fzf ❤️ vim
+            "Plug 'junegunn/fzf.vim'
 
-            " Plug 'yuki-ycino/fzf-preview.vim', { 'as': 'fzf-preview' }
+            "" Plug 'yuki-ycino/fzf-preview.vim', { 'as': 'fzf-preview' }
 
-            " fzf-tags bridges the gap between tags and fzf.vim.
-            Plug 'tittanlee/fzf-tags'
+            "" fzf-tags bridges the gap between tags and fzf.vim.
+            "Plug 'tittanlee/fzf-tags'
 
             " Vim plugin to improve project searching with tools like ag and rg
             "Plug 'jesseleite/vim-agriculture'
@@ -215,7 +215,10 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }
 
             " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim.
-            "Plug 'Yggdroot/LeaderF'
+            Plug 'Yggdroot/LeaderF'
+
+            " LeaderF plugin for tag jump
+            Plug 'tittanlee/LeaderF-tjump'
 
             " Vim search status.
             "Plug 'osyo-manga/vim-anzu'

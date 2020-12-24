@@ -3,6 +3,7 @@
     " let g:t_vim_bundle_home = '~/.vim/bundles'
     " let g:t_vim_colorscheme = 'gruvbox9'
     " let g:t_vim_lightline_theme = 'one'
+    " let g:t_vim_cache = ''
 
     " let g:t_vim_bundle_group = [
     " 'color_scheme',
