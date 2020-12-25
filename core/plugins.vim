@@ -137,11 +137,13 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
     " g:t_vim_bundle_group['file_explorer'] {{{
         if index(g:t_vim_bundle_group, 'file_explorer') >= 0
             " The dark powered file explorer implementation
-            Plug 'Shougo/defx.nvim', { 'as': 'defx', 'on': 'Defx', 'do': ':UpdateRemotePlugins' }
-            if !has('nvim')
-                Plug 'roxma/nvim-yarp'
-                Plug 'roxma/vim-hug-neovim-rpc'
-            endif
+            "Plug 'Shougo/defx.nvim', { 'as': 'defx', 'on': 'Defx', 'do': ':UpdateRemotePlugins' }
+            "if !has('nvim')
+            "    Plug 'roxma/nvim-yarp'
+            "    Plug 'roxma/vim-hug-neovim-rpc'
+            "endif
+
+            Plug 'preservim/nerdtree'
         endif
     " }}}
 
