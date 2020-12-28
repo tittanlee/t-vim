@@ -22,7 +22,7 @@ let g:Lf_DefaultMode = 'NameOnly'
 
 " Set this option to change the location of the cache directory.
 "let g:Lf_CacheDirectory = expand('D:\Tools\vim\vim_8.2.2129\vimfiles\cache')
-let g:Lf_CacheDirectory = get(g:, 't_vim_cache', '~/.vim/cache')
+let g:Lf_CacheDirectory = expand(get(g:, 't_vim_cache', '~/.vim/cache'))
 
 " A Dictionary to store separators.
 "let g:Lf_StlSeparator = { 'left': '', 'right': '' }
