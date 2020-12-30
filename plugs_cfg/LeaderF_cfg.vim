@@ -12,6 +12,12 @@ let g:Lf_ShortcutF = ''
 " Use this option to set the mapping of searching buffers command.
 let g:Lf_ShortcutB = ''
 
+" Use this option to customize the mappings inside LeaderF's
+let g:Lf_CommandMap = {
+            \ '<PageDown>': ['<C-D>'], 
+            \ '<PageUp>': ['<C-U>']
+            \ }
+
 "Specify the default mode when LeaderF is launched.
 "There are 4 modes, and the corresponding values are:
 "'NameOnly' - fuzzy mode, match file name only when searching

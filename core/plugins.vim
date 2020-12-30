@@ -170,7 +170,7 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
             " Comment functions so powerful—no comment necessary.
             Plug 'scrooloose/nerdcommenter'
 
-            " Vim plugin that displays tags in a window, ordered by scope 
+            " Vim plugin that displays tags in a window, ordered by scope
             Plug 'majutsushi/tagbar'
 
         endif
@@ -247,7 +247,11 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
     " g:t_vim_bundle_group['uefi'] {{{
         if index(g:t_vim_bundle_group, 'uefi') >= 0
             " Syntax highlighting and filetype detection for BIOS programmer
-            Plug 'aphroteus/vim-uefi'
+            "Plug 'aphroteus/vim-uefi'
+
+            Plug 'tittanlee/vim_for_UEFI'
+
+            Plug 'martinlroth/vim-acpi-asl'
 
             " Vim plugin for generating and inserting UUIDs
             " Plug 'kburdett/vim-nuuid'

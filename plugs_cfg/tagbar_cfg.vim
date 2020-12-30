@@ -28,7 +28,17 @@ let g:tagbar_type_c = {
             \ ],
             \ }
 
+
+let g:tagbar_type_asl = {
+            \ 'kinds' : [
+            \ 'c:scope',
+            \ 'n:name:1:1',
+            \ 'd:device',
+            \ 'f:method',
+            \ ],
+            \ }
+
 " Tagbar key mapping {{{
-    "nnoremap <F8>    :TagbarToggle<CR>
+    nnoremap <Leader>t :TagbarToggle<CR>
 " }}}
 
