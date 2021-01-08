@@ -62,7 +62,7 @@ let g:Lf_PreviewResult = {
             \ 'Line'        : 0,
             \ 'Colorscheme' : 1,
             \ 'Rg'          : 0,
-            \ 'Gtags'       : 1
+            \ 'Gtags'       : 0
             \}
 
 " This option specifies whether to preview the result in a popup window.
