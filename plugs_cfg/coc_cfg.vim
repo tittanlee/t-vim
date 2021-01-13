@@ -2,10 +2,8 @@
 let g:coc_config_home = g:t_vim_root
 
 " Error character used for statusline, default: `
-let g:coc_status_error_sign = '❌'
 
 " Warning character used for statusline, default: `W`
-let g:coc_status_warning_sign = '❗'
 
 
 call coc#add_extension(
@@ -15,14 +13,12 @@ call coc#add_extension(
             \'coc-git',
             \'coc-lists',
             \'coc-yank',
-            \'coc-tabnine',
             \'coc-marketplace',
             \'coc-syntax',
             \'coc-gitignore',
             \'coc-highlight',
             \'coc-snippets',
             \'coc-dictionary',
-            \'coc-utils',
             \'coc-zi',
             \'coc-translator',
             \'coc-vimlsp',
