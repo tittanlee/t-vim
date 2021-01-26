@@ -23,6 +23,8 @@
         let g:t_vim_bundle_group += ['filetypes']
         let g:t_vim_bundle_group += ['source_control']
         let g:t_vim_bundle_group += ['fuzzy_serach']
+        "let g:t_vim_bundle_group += ['fuzzy_serach_LF']
+        let g:t_vim_bundle_group += ['fuzzy_serach_FZF']
         let g:t_vim_bundle_group += ['coc']
         let g:t_vim_bundle_group += ['snippets']
         let g:t_vim_bundle_group += ['uefi']
@@ -195,35 +197,44 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
     " g:t_vim_bundle_group['fuzzy_serach'] {{{
         if index(g:t_vim_bundle_group, 'fuzzy_serach') >= 0
-            "if !(has('win32') || has('win64'))
-            "    " A command-line fuzzy finder
-            "    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-            "else
-            "    Plug 'junegunn/fzf'
-            "endif
-
-            "" fzf ❤️ vim
-            "Plug 'junegunn/fzf.vim'
-
-            "" Plug 'yuki-ycino/fzf-preview.vim', { 'as': 'fzf-preview' }
-
-            "" fzf-tags bridges the gap between tags and fzf.vim.
-            "Plug 'tittanlee/fzf-tags'
-
             " Vim plugin to improve project searching with tools like ag and rg
             "Plug 'jesseleite/vim-agriculture'
 
             " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
             Plug 'dyng/ctrlsf.vim', { 'as': 'ctrlsf' }
 
+            " Vim search status.
+            Plug 'osyo-manga/vim-anzu'
+        endif
+    " }}}
+
+    " g:t_vim_bundle_group['fuzzy_serach_FZF'] {{{
+        if index(g:t_vim_bundle_group, 'fuzzy_serach_FZF') >= 0
+            if !(has('win32') || has('win64'))
+                " A command-line fuzzy finder
+                Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+            else
+                Plug 'junegunn/fzf'
+            endif
+
+            "" fzf ❤️ vim
+            Plug 'junegunn/fzf.vim'
+
+            "" Plug 'yuki-ycino/fzf-preview.vim', { 'as': 'fzf-preview' }
+
+            "" fzf-tags bridges the gap between tags and fzf.vim.
+            Plug 'tittanlee/fzf-tags'
+        endif
+    " }}}
+
+
+    " g:t_vim_bundle_group['fuzzy_serach_LF'] {{{
+        if index(g:t_vim_bundle_group, 'fuzzy_serach_LF') >= 0
             " An efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly for both vim and neovim.
             Plug 'Yggdroot/LeaderF'
 
             " LeaderF plugin for tag jump
             Plug 'tittanlee/LeaderF-tjump'
-
-            " Vim search status.
-            "Plug 'osyo-manga/vim-anzu'
         endif
     " }}}
 

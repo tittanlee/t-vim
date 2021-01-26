@@ -7,7 +7,7 @@ let g:lightline = {
             \ 'subseparator': { 'left'       : '', 'right'   : ''} ,
             \ 'active': {
             \       'left':  [['mode'],['CocStatus'],['FunctionName']],
-            \       'right': [['LineInfo'],['FileFormat','FileEncoding','FileSyntax'],['GutenTagStatus']]
+            \       'right': [['LineInfo'],['FileFormat','FileEncoding','FileSyntax'],['GutenTagStatus'],['anzu']]
             \   },
             \ 'inactive': {
             \       'left':  [['mode']],
@@ -17,6 +17,7 @@ let g:lightline = {
             \       'CocStatus'      : 'coc#status'            ,
             \       'FunctionName'   : 'GetFunctionName'       ,
             \       'GutenTagStatus' : 'GetTagStatus'          ,
+            \       'anzu'           : 'anzu#search_status'    ,
             \       'LineInfo'       : 'GetLineInfo'           ,
             \       'FileFormat'     : 'GetFileFormat'         ,
             \       'FileEncoding'   : 'GetFileEncoding'       ,

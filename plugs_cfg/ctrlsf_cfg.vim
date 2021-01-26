@@ -24,6 +24,9 @@ let g:ctrlsf_selected_line_hl = 'p'
 " Defines the default case-sensitivity in search.
 let g:ctrlsf_case_sensitive = 'smart'
 
+" Defines whether the backend should follow symbolic links or not.
+let g:ctrlsf_follow_symlinks = 0
+
 " defines how CtrlSF handles itself in 'normal' and 'compact'
 " view mode(|g:ctrlsf_default_view_mode|) respectively after you have opened a file
 " from CtrlSF window. By default, CtrlSF will close itself in 'normal' view mode and

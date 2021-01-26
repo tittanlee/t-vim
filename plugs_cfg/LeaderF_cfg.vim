@@ -26,6 +26,9 @@ let g:Lf_CommandMap = {
 "'Regex' - regex mode
 let g:Lf_DefaultMode = 'NameOnly'
 
+" Support commands: buffer,file,mru,window
+let g:Lf_ShowDevIcons = 0
+
 " Set this option to change the location of the cache directory.
 "let g:Lf_CacheDirectory = expand('D:\Tools\vim\vim_8.2.2129\vimfiles\cache')
 let g:Lf_CacheDirectory = expand(get(g:, 't_vim_cache', '~/.vim/cache'))
@@ -34,11 +37,11 @@ let g:Lf_CacheDirectory = expand(get(g:, 't_vim_cache', '~/.vim/cache'))
 "let g:Lf_StlSeparator = { 'left': '', 'right': '' }
 
 "Use this option to specify the default external tool which is used to index the files.
-let g:Lf_ShowRelativePath = 1
-let g:Lf_DefaultExternalTool = 'rg'
+"let g:Lf_ShowRelativePath = 1
 let g:Lf_UseVersionControlTool = 0
-let g:Lf_ExternalCommand = 'rg --files --no-ignore --hidden -g !.git "%s"'
-"let g:Lf_ExternalCommand = 'fd --hidden --type file -E .git -E "*.{exe,dll,lib,Lib,pyd,pyc,pyo,so,o}" "%s"'
+let g:Lf_DefaultExternalTool = 'rg'
+"let g:Lf_ExternalCommand = 'rg --files --no-follow --no-ignore --hidden -g !.git "%s"'
+let g:Lf_ExternalCommand = 'fd --hidden --type file -E .git -E .repo -E "*.{exe,dll,lib,Lib,pyd,pyc,pyo,so,o}" "%s"'
 
 " Set LeaderF's working directory.
 let g:Lf_RootMarkers = []
@@ -67,7 +70,7 @@ let g:Lf_PreviewResult = {
 
 " This option specifies whether to preview the result in a popup window.
 let g:Lf_PreviewCode = 1
-let g:Lf_PreviewInPopup = 0
+let g:Lf_PreviewInPopup = 1
 let g:Lf_PreviewHorizontalPosition = 'right'
 let g:Lf_PopupPreviewPosition = 'bottom'
 
@@ -98,7 +101,7 @@ let g:Lf_PopupPreviewPosition = 'bottom'
         let g:Lf_GtagsGutentags = 1
         let g:gutentags_cache_dir = expand(g:Lf_CacheDirectory.'/.LfCache/gtags')
         let g:Lf_GtagsSource = 1
-        let g:Lf_Gtagslabel = 'native'
+        let g:Lf_Gtagslabel = 'new-ctags'
         if has('win32') || has('win64')
             let g:Lf_Gtagsconf = 'C:/utility_tools/share/gtags/gtags.conf'
         else

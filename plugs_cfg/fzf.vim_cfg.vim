@@ -1,4 +1,4 @@
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --no-ignore -g !.git/'
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-follow --hidden --no-ignore -g !.git/ -g !.repo'
 let $FZF_DEFAULT_OPTS    = '
             \ --multi
             \ --pointer="->"

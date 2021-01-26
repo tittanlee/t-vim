@@ -9,6 +9,9 @@ let NERDTreeShowHidden = 1
 "This setting tells vim whether to display line numbers for the NERDTree window.
 let NERDTreeShowLineNumbers = 1
 
+" Setting this to -1 will deactivate it so that your global `'statusline'`
+let NERDTreeStatusline = -1
+
 " Change the default arrows?
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'

@@ -4,7 +4,7 @@
         " Starts in fullscreen, Maximized should work too (untested)
         exec 'call GuiWindowMaximized(1)'
 
-        exe 'Guifont! Hack Nerd Font:h12'
+        exe 'Guifont! Hack Nerd Font:h10'
 
         GuiTabline 0
         GuiPopupmenu 0

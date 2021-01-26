@@ -41,4 +41,7 @@
     " enable custom folder/directory glyph exact matching
     " (enabled by default when g:WebDevIconsUnicodeDecorateFolderNodes is set to 1)
     let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
+
+    " Can be enabled or disabled
+    let g:webdevicons_enable_nerdtree = 0
 " }
