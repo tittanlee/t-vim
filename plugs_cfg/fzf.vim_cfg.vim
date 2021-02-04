@@ -90,9 +90,9 @@ if 1
 
         let s:preview_source_cmd = [
                     \ '--with-nth=1,2,3',
-                    \ '--preview-window="up:50%%"',
+                    \ '--preview-window=up:50%',
                     \ '--preview="',
-                    \ 'bat',
+                    \ 'bat ',
                     \ '--number',
                     \ '--color always',
                     \ '--theme Dracula',
