@@ -15,7 +15,7 @@ let g:tagbar_type_c = {
             \ 'kinds' : [
             \ 'f:functions',
             \ 'h:header files:1:1',
-            \ 'd:macros:1:1',
+            \ 'd:macros',
             \ 'p:prototypes:1:1',
             \ 'g:enums',
             \ 'e:enumerators:1:1',
@@ -23,7 +23,7 @@ let g:tagbar_type_c = {
             \ 's:structs',
             \ 'u:unions',
             \ 'm:members:1:1',
-            \ 'v:variables:1:1',
+            \ 'v:variables',
             \ '?:unknown',
             \ ],
             \ }

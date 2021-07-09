@@ -25,7 +25,8 @@
         let g:t_vim_bundle_group += ['fuzzy_serach']
         "let g:t_vim_bundle_group += ['fuzzy_serach_LF']
         let g:t_vim_bundle_group += ['fuzzy_serach_FZF']
-        let g:t_vim_bundle_group += ['coc']
+        "let g:t_vim_bundle_group += ['coc']
+        let g:t_vim_bundle_group += ['ycm']
         let g:t_vim_bundle_group += ['snippets']
         let g:t_vim_bundle_group += ['uefi']
     endif
@@ -224,6 +225,9 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
 
             "" fzf-tags bridges the gap between tags and fzf.vim.
             Plug 'tittanlee/fzf-tags'
+
+            " A super simple function navigator for fzf, porting from ctrlp-funky.
+            Plug 'tracyone/fzf-funky'
         endif
     " }}}
 
@@ -242,6 +246,14 @@ call plug#begin(get(g:, 't_vim_bundle_home', '~/.vim/bundles'))
         if index(g:t_vim_bundle_group, 'coc') >= 0
             " Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
             Plug 'neoclide/coc.nvim', {'as': 'coc', 'branch': 'release'}
+        endif
+    " }}}
+
+
+    " g:t_vim_bundle_group['ycm'] {{{
+        if index(g:t_vim_bundle_group, 'ycm') >= 0
+            "Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp'] }
+            Plug 'ycm-core/YouCompleteMe'
         endif
     " }}}
 
